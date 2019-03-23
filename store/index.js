@@ -29,7 +29,7 @@ const createStore = () => {
       },
       async facebookSignIn() {
         try {
-          await auth.signInWithRedirect(FacebookProvider)
+          await auth.signInWithPopup(FacebookProvider)
           console.log('Finished Facebook login')
           alert('Facebook login successful')
           return location.reload()
