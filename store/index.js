@@ -1,5 +1,5 @@
 import Vuex from 'vuex'
-import { auth, GoogleProvider } from '~/services/fireinit.js'
+import { auth, GoogleProvider, FacebookProvider } from '~/services/fireinit.js'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -23,10 +23,18 @@ const createStore = () => {
         commit('setUser', payload)
       },
       async googleSignIn() {
-        console.log('in the store')
         await auth.signInWithPopup(GoogleProvider)
         console.log('Finished Google login')
         return location.reload()
+      },
+      async facebookSignIn() {
+        try {
+          await auth.signInWithRedirect(FacebookProvider)
+          console.log('Finished Facebook login')
+          return location.reload()
+        } catch (err) {
+          alert(err)
+        }
       },
 
       signOut({ commit }) {

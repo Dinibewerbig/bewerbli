@@ -36,7 +36,7 @@
                   Sign Up mit 
                 </div>
                 <div class="flex">
-                  <button class="facebook p-2 flex-1 rounded mr-8 my-3 ">
+                  <button class="facebook p-2 flex-1 rounded mr-8 my-3 " @click="facebookSignIn">
                     <img width="24" src="~/assets/facebook.svg" style="fill: #fff" alt="Icon github">
                     <span class="text-white font-thin">
                       Facebook
@@ -144,6 +144,16 @@ export default {
     googleSignIn() {
       this.$store
         .dispatch('googleSignIn')
+        .then(() => {
+          console.log('dispatched')
+        })
+        .catch(e => {
+          console.log(e.message)
+        })
+    },
+    facebookSignIn() {
+      this.$store
+        .dispatch('facebookSignIn')
         .then(() => {
           console.log('dispatched')
         })

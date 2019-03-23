@@ -14,7 +14,7 @@ const isLogin = store => {
 }
 
 const isAdminRoute = route => {
-  if (route.matched.some(record => record.path === '/admin')) {
+  if (route.matched.some(record => record.path === '/user/konto')) {
     return true
   }
 }

@@ -1,8 +1,5 @@
 <template>
   <section class="">
-    <h4 class="blue--text">
-      You're logged in!
-    </h4>
     <div id="adminChild">
       <nuxt-child :key="$router.fullPath" />
     </div>
