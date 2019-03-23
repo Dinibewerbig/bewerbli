@@ -37,7 +37,7 @@
                 </div>
                 <div class="flex">
                   <button class="facebook p-2 flex-1 rounded mr-8 my-3 ">
-                    <img width="24" src="~/assets/Facebook.svg" style="fill: #fff" alt="Icon github">
+                    <img width="24" src="~/assets/facebook.svg" style="fill: #fff" alt="Icon github">
                     <span class="text-white font-thin">
                       Facebook
                     </span> 
