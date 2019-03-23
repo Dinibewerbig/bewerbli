@@ -1,0 +1,695 @@
+
+<template>
+  <div class="perspective">
+    <div :class="{scrolledNavbarHeight: scrolled}" class="navbar px-24">
+      <li class="logo">
+        <!-- <transition mode="out-in"> -->
+        <div>
+          <img
+            class="logoImg"
+            :class="{scrolledLogo : scrolled}"
+            src="~/assets/newlogo2.svg"
+            @click="$router.push('/')"
+          >
+        </div>
+       
+        <!-- </transition> -->
+      </li>
+
+      <span class="nav navSection hoverable" @mouseover="navShow=true" @mouseleave="navShow=false">
+        <!-- <div v-if="!scrolled"> -->
+        <li
+          id="1"
+          ref="btn"
+          class="btn antialiased"
+          :class="{'headroom--unpinned': scrolled}"
+          @mouseover="select"
+        >
+          Produkte
+        </li>
+        <li
+          id="2"
+          ref="btn"
+          class="btn antialiased"
+          :class="{'headroom--unpinned': scrolled}"
+          @mouseover="select"
+        >
+          Kunden
+        </li>
+        <li
+          id="3"
+          ref="btn"
+          class="btn antialiased"
+          :class="{'headroom--unpinned': scrolled}"
+          @mouseover="select"
+        >
+          Firma
+        </li>
+        <li
+          id="4"
+          ref="btn"
+          class="btn bord antialiased"
+          :class="{'headroom--unpinned': scrolled}"
+          @mouseover="select"
+        >
+          Fragebögen
+        </li>
+        <!-- </div> -->
+
+        <!-- <nuxt-link
+          class="btn bord antialiased"
+          :class="{'headroom--unpinned': scrolled}"
+          to="/user/login"
+        >
+          Konto
+        </nuxt-link> -->
+      </span>
+      <nuxt-link
+        class="btn2 btn3 antialiased px-5"
+        :class="{'btn2--unpinned': scrolled}"
+        tag="li"
+        to="/user/login"
+      >
+        anmelden
+      </nuxt-link>
+      <nuxt-link
+        class="btn2 btn1 bg-blue px-4  ml-5 antialiased"
+        :class="{'btn2--unpinned': scrolled}"
+        tag="li"
+        to="/bestellung/bestellung"
+      >
+        bestellen
+      </nuxt-link>
+
+      <li class="mobile item-mobileMenu">
+        <tasty-burger-button />
+      </li>
+    </div>
+
+    <transition name="slide-fade" mode="out-in">
+      <div v-if="navShow">
+        <div
+          :id="className"
+          key="nav"
+          class="dropdown rounded-lg"
+          :style="{ left: offset + 'px' }"
+          @mouseover="navShow=true"
+          @mouseleave="navShow=false"
+        >
+          <div class="dropdownArrow" />
+          <div>
+            <transition name="counter">
+              <div>
+                <transition-group class="group" :name="direction" mode="out-in">
+                  <div v-show="activeTab == 1" id="div1" ref="div" key="one">
+                    <div>
+                      <ul class="m-8 w-full">
+                        <li class="mb-6">
+                          <div class="">
+                            <div class="w-full " />
+                            <nuxt-link to="/angebot/bewerbungsbrief" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Bewerbungsbrief
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/angebot/lebenslauf" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Lebenslauf
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/angebot/titelblatt" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Titelblatt
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Folgebriefe
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="bg-grey-lightest w-full ">
+                      <h3 class="m-8 w-full">
+                        Preise
+                      </h3> 
+                    </div>
+                  </div>
+                  <div v-show="activeTab == 2" id="div2" ref="div" key="two" class="w-full">
+                    <div class="pt-5 px-10 w-full">
+                      <ul class="flex -mx-2">
+                        <li class="w-1/3 px-2 ">
+                          <a href>
+                            <div class="flex ">
+                              <!-- <div class="w-8 float-left">
+                                <font-awesome-icon icon="book-reader" style="font-size: 28px" />
+                              </div> -->
+                              <div class="">
+                                <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                                  <h3 class="border-b border-grey-light pb-4">
+                                    Schüler und Schülerinnen
+                                  </h3>
+                                </nuxt-link>
+                              </div>
+                              <div>
+                                <ul>
+                                  <li />
+                                </ul>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="w-1/3  px-2 ">
+                          <a href>
+                            <div class="flex ">
+                              <div class=" float-left">
+                                <!-- <font-awesome-icon
+                                  icon="chalkboard-teacher"
+                                  style="font-size: 28px"
+                                /> -->
+                              </div>
+                              <div class="float-left w-full">
+                                <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                                  <h3 class="border-b border-grey-light pb-4">
+                                    Schulen und Lehrkräfte
+                                  </h3>
+                                </nuxt-link>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="w-1/3 px-2">
+                          <a href>
+                            <div class="flex  ">
+                              <!-- <div class="w-8 float-left">
+                                <font-awesome-icon icon="user-tie" style="font-size: 28px" />
+                              </div> -->
+                              <div class="w-full flex-column">
+                                <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                                  <h3 class="border-b border-grey-light pb-4">
+                                    Eltern
+                                  </h3>
+                                </nuxt-link>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div v-show="activeTab ==3" id="div3" ref="div" key="three">
+                    <div>
+                      <ul class="m-8 w-full">
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Unser Team
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Zusammenarbeit
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Kunden
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div v-show="activeTab == 4" id="div4" ref="div" key="four">
+                    <div>
+                      <ul class="m-8 w-full">
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/fragebogen/fb_bewerbungsbrief" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Fragebogen Bewerbungsbrief
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Fragebogen Lebenslauf
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                        <li class="mb-6 ">
+                          <div class="">
+                            <div class="w-full float-left" />
+                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
+                              <h3 class="border-b border-grey-light pb-4">
+                                Fragebogen Deckblatt
+                              </h3>
+                            </nuxt-link>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div v-show="activeTab ==5" id="div5" ref="div" key="five">
+                    <div>
+                      <ul>
+                        <li class="container mt-8">
+                          <a href>
+                            <div class="flex items-stretch">
+                              <div class="float-left">
+                                <p
+                                  class="mb-2"
+                                />
+                                <h3>
+                                  <span class="w-16 float-left">
+                                    <font-awesome-icon icon="sign-in-alt" style="font-size: 20px" />
+                                  </span>
+                                  <nuxt-link
+                                 
+                                  
+                                    to="/user/login"
+                                  >
+                                    Sign Up
+                                  </nuxt-link>
+                                </h3>
+                                <h3>
+                                  <span class="w-16 float-left">
+                                    <font-awesome-icon icon="sign-in-alt" style="font-size: 20px" />
+                                  </span>
+                                  <nuxt-link
+                                 
+                                  
+                                    to="/user/login"
+                                  >
+                                    Login
+                                  </nuxt-link>
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </transition-group>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+</template>
+
+<script>
+import TastyBurgerButton from '~/components/BurgerButton'
+
+export default {
+  components: {
+    TastyBurgerButton
+  },
+  props: { scrolled: Boolean },
+  data() {
+    return {
+      clicked: false,
+      direction: 'tabNext',
+      navShow: false,
+      previousTab: 1,
+      activeTab: 1,
+      className: '',
+      navbarLeft: null,
+      navbarLeft1: null,
+      hamburgers: '',
+      offset: ''
+    }
+  },
+  methods: {
+    addProgress: function() {
+      return true
+    }, // todo
+    delProgress: function() {
+      return true
+    },
+    select: function(event) {
+      this.previousTab = this.activeTab
+      this.activeTab = event.target.id
+      this.className = 'content-class' + this.activeTab
+      // console.log(this.previousTab);
+      // console.log(this.activeTab);
+
+      // console.log(event.target.getBoundingClientRect());
+      this.navbarLeft = event.target.getBoundingClientRect().left
+      this.offset = this.navbarLeft - 190
+
+      if (this.previousTab < this.activeTab) {
+        this.direction = 'tabNext'
+      } else {
+        this.direction = 'tabPrev'
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@media only screen and (max-width: 768px) {
+  .item-mobileMenu {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    display: none !important;
+  }
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.scrolledLogo {
+  width: 140px !important;
+}
+.logoImg {
+  padding-top: 32px;
+  width: 145px;
+  transition: width 0.3s;
+}
+
+ul {
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn2--unpinned {
+  cursor: pointer;
+}
+
+.btn2--unpinned:hover {
+  background-color: #fff !important;
+  color: #4d5270 !important;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn {
+  padding-top: 35px;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-family: Avenir Next;
+  font-size: 15px;
+  color: #cccccc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  margin-bottom: 25px;
+}
+
+.btn3 {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.btn3:hover {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: none;
+}
+.btn2 {
+  margin-top: 25px;
+  height: 40px;
+  line-height: 37px;
+  font-family: Avenir Next;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: #fcfcfc;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+
+  // background-color: #26f3d1;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.btn1:hover {
+  background-color: #2271d8;
+  color: #fff;
+}
+.headroom--unpinned {
+}
+.headroom--unpinned:hover {
+  color: rgb(230, 230, 230) !important;
+}
+
+h3 {
+  line-height: 1.1em !important;
+  font-size: 0.9rem;
+  color: #434257;
+  font-family: Avenir Next;
+  font-weight: 500;
+  padding-top: 3px;
+  margin-bottom: 3px;
+  // text-transform: uppercase;
+}
+
+.container:hover {
+  -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(100%); /* FF 35+ */
+}
+
+p {
+  font-family: Avenir Next;
+  letter-spacing: 0.02em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #3f3f3fbe;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1070px;
+  height: 80px;
+}
+
+.scrolledNavbarHeight {
+  height: 72px;
+}
+
+.navSection {
+  position: relative;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.mobile {
+  width: 90px;
+}
+.item-mobileMenu {
+  position: relative;
+  width: 90px;
+  display: none;
+}
+.item-mobileMenu:hover {
+  opacity: 0.5;
+}
+
+li {
+  display: block;
+  height: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.3rem;
+}
+
+#content-class1 {
+  width: 496px;
+  height: 343px;
+}
+
+#content-class2 {
+  width: 650px;
+  height: 470px;
+}
+
+#content-class3 {
+  width: 430px;
+  height: 330px;
+}
+
+#content-class4 {
+  width: 430px;
+  height: 230px;
+}
+
+#content-class5 {
+  width: 430px;
+  height: 330px;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+div.dropdown {
+  border-radius: 3px;
+  position: absolute;
+  background-color: #ffffff;
+  height: 300px;
+  width: 400px;
+  transition: width 200ms, height 200ms, left 300ms, opacity 200ms;
+  margin-top: -1px;
+  overflow: visible;
+  opacity: 1;
+  box-shadow: rgba(82, 95, 127, 0.1);
+  z-index: 100000;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11);
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 300px;
+  height: 50px;
+  width: 600px;
+}
+
+.dropdownArrow {
+  box-sizing: border-box;
+  left: 240px;
+  top: -6px;
+  margin: 0 0 0 -6px;
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  transform: rotate(45deg);
+  box-shadow: -3px -3px 5px rgba(82, 95, 127, 0.04);
+  background-color: rgb(255, 255, 255);
+  will-change: transform, opacity;
+}
+
+#div1,
+#div2,
+#div3,
+#div4,
+#div5 {
+  position: absolute;
+}
+
+.perspective {
+  -webkit-perspective: 700px;
+  perspective: 700px;
+  z-index: 10000;
+}
+.slide-fade-enter-active {
+  transition: all 0.2s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateY(50px) rotateX(-10deg);
+  opacity: 0;
+}
+
+.tabNext-enter,
+.tabNext-leave-to {
+  opacity: 0;
+}
+.tabNext-enter-active {
+  transition: opacity 0.3s;
+}
+.tabNext-leave-active {
+  transition: opacity 0.3s;
+}
+.tabNext-leave,
+.tabNext-enter-to {
+  opacity: 1;
+}
+
+.tabPrev-enter,
+.tabPrev-leave-to {
+  opacity: 0;
+}
+.tabPrev-enter-active {
+  transition: opacity 0.25s ease-in-out;
+}
+.tabPrev-leave-active {
+  transition: opacity 0.25s ease-in-out;
+}
+.tabPrev-leave,
+.tabPrev-enter-to {
+  opacity: 1;
+}
+
+.v-leave {
+  opacity: 1;
+}
+.v-leave-active {
+  transition: opacity 0.3s;
+}
+.v-leave-to {
+  opacity: 0;
+}
+.v-enter {
+  opacity: 0;
+}
+.v-enter-active {
+  transition: opacity 0.3s;
+}
+.v-enter-to {
+  opacity: 1;
+}
+</style>
