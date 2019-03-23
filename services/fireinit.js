@@ -15,7 +15,6 @@ const config = {
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
   firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-  firebase.firestore().settings({ timestampsInSnapshots: true })
 }
 export const GoogleProvider = new firebase.auth.GoogleAuthProvider()
 export const FacebookProvider = new firebase.auth.FacebookAuthProvider()

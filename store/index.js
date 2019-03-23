@@ -31,6 +31,7 @@ const createStore = () => {
         try {
           await auth.signInWithRedirect(FacebookProvider)
           console.log('Finished Facebook login')
+          alert('Facebook login successful')
           return location.reload()
         } catch (err) {
           alert(err)
