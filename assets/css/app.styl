@@ -1,0 +1,177 @@
+@font-face {
+  font-family: Avenir Book;
+  src: url('~static/fonts/Avenir-Book.ttf');
+}
+@font-face {
+  font-family: Avenir Roman;
+  src: url('~static/fonts/Avenir-Roman.ttf');
+}
+
+@font-face {
+  font-family: Avenir Light;
+  src: url('~static/fonts/AvenirLTStd-Light.woff');
+}
+
+@font-face {
+  font-family: Avenir UltraLight;
+  src: url('~static/fonts/AvenirNext-UltraLight.ttf');
+}
+
+@font-face {
+  font-family: Univers;
+  src: url('~static/fonts/Univers_LT_55_Roman.ttf');
+}
+
+@font-face {
+  font-family: Univers Light;
+  src: url('~static/fonts/UniversLTStd-Light.otf');
+}
+
+@font-face {
+  font-family: Proxima Nova Light;
+  src: url('~static/fonts/Proxima Nova Light.otf');
+}
+
+@font-face {
+  font-family: Proxima Nova Regular;
+  src: url('~static/fonts/Proxima Nova Regular.otf');
+}
+
+@font-face {
+  font-family: Proxima Nova Light;
+  src: url('~static/fonts/Proxima Nova Light.otf');
+}
+
+@font-face {
+  font-family: Proxima Nova Semibold;
+  src: url('~static/fonts/Proxima Nova Semibold.otf');
+}
+
+@font-face {
+  font-family: Proxima Nova Medium;
+  src: url('~static/fonts/ProximaNova-Medium.otf');
+}
+
+
+// @font-face {
+//   font-family: Camphor; 
+//   font-weight: 300;
+//   src: url("~static/camphor-ss/300-light.woff2");
+// } 
+
+//   @font-face{
+//     font-family:Camphor; 
+//     font-weight:300;font-style:italic;
+//     src:url("~static/camphor-ss/300-light-italic.woff2") format("woff2");
+//     }
+
+//   @font-face{
+//     font-family:Camphor; 
+//     font-weight:400;
+//   src:url("~static/camphor-ss/400-regular.woff2") format("woff2");
+//   }
+
+//   @font-face{
+//     font-family:Camphor; 
+//     font-weight:400;
+//     font-style:italic;
+//     src:url("~static/camphor-ss/400-regular-italic.woff2") format("woff2");
+//     }
+
+//     @font-face{
+//       font-family:Camphor; 
+//       font-weight:500;
+//     src:url("~static/camphor-ss/500-medium.woff2") format("woff2");
+//     }
+
+// @font-face{
+//   font-family:Camphor; 
+//   font-weight:500; 
+//   font-style:italic;
+//   src:url("~static/camphor-ss/500-medium-italic.woff2") format("woff2");
+//   }
+
+// @font-face{
+//   font-family:Camphor; 
+//   font-weight:600;
+//   src:url("~static/camphor-ss/600-bold.woff2") format("woff2");
+//   }
+
+//  @font-face{
+//     font-family:Camphor; 
+//     font-weight:600;
+//     font-style:italic;
+//     src:url("~static/camphor-ss/600-bold-italic.woff2") format("woff2");
+//     }
+
+
+// Fonts
+body {
+// font-family: 'Open Sans', sans-serif;
+//font-family: 'Poppins', sans-serif;
+// font-family: 'Source Sans Pro', sans-serif;
+// font-family: 'Work Sans', sans-serif;
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Hind', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+font-family: 'Muli', sans-serif;
+
+}
+
+
+
+$primary   = #112F3D
+$secondary = #f2f
+$tertiary  = #4D5365
+
+$neutral   = #E0E1E2
+$positive  = #656B6F
+$negative  = #F2F4F8
+$info      = #635FF6
+$warning   = #BCC3D1
+
+
+// Line Height
+html, h1, h2, h3, h4, h5, h6, p {
+  line-height: 1.2em !important;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+  overflow: -moz-scrollbars-none;
+}
+// ::-moz-scrollbar {
+//     display: none; 
+// }
+
+.clicked {
+  /* box-shadow: 0 5px #666; */
+  /* transform: translateY(4px); */
+  animation: hue 0.25s linear normal none running;
+  animation-iteration-count: 3;
+  background-color: #edcffd !important;
+  background-color: #edcffd !important;
+}
+
+@keyframes hue {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

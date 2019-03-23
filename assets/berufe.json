@@ -1,0 +1,1273 @@
+﻿ [{
+     "value": "Abdichter/in EFZ",
+     "label": "Abdichter/in EFZ"
+   },
+   {
+     "value": "Abdichtungspraktiker/in EBA",
+     "label": "Abdichtungspraktiker/in EBA"
+   },
+   {
+     "value": "Agrarpraktiker/in EBA",
+     "label": "Agrarpraktiker/in EBA"
+   },
+   {
+     "value": "Anlagen- und Apparatebauer/in EFZ",
+     "label": "Anlagen- und Apparatebauer/in EFZ"
+   },
+   {
+     "value": "Anlagenführer/in EFZ",
+     "label": "Anlagenführer/in EFZ"
+   },
+   {
+     "value": "Architekturmodellbauer/in EFZ",
+     "label": "Architekturmodellbauer/in EFZ"
+   },
+   {
+     "value": "Assistent/in Gesundheit und Soziales EBA",
+     "label": "Assistent/in Gesundheit und Soziales EBA"
+   },
+   {
+     "value": "Augenoptiker/in EFZ",
+     "label": "Augenoptiker/in EFZ"
+   },
+   {
+     "value": "Automatiker/in EFZ",
+     "label": "Automatiker/in EFZ"
+   },
+   {
+     "value": "Automatikmonteur/in EFZ",
+     "label": "Automatikmonteur/in EFZ"
+   },
+   {
+     "value": "Automobil-Assistent/in EBA",
+     "label": "Automobil-Assistent/in EBA"
+   },
+   {
+     "value": "Automobil-Fachmann/-frau EFZ",
+     "label": "Automobil-Fachmann/-frau EFZ"
+   },
+   {
+     "value": "Automobil-Mechatroniker/in EFZ",
+     "label": "Automobil-Mechatroniker/in EFZ"
+   },
+   {
+     "value": "Bäcker/in-Konditor/in-Confiseur/in EBA",
+     "label": "Bäcker/in-Konditor/in-Confiseur/in EBA"
+   },
+   {
+     "value": "Bäcker/in-Konditor/in-Confiseur/in EFZ",
+     "label": "Bäcker/in-Konditor/in-Confiseur/in EFZ"
+   },
+   {
+     "value": "Baumaschinenmechaniker/in EFZ",
+     "label": "Baumaschinenmechaniker/in EFZ"
+   },
+   {
+     "value": "Baupraktiker/in EBA",
+     "label": "Baupraktiker/in EBA"
+   },
+   {
+     "value": "Bauwerktrenner/in EFZ",
+     "label": "Bauwerktrenner/in EFZ"
+   },
+   {
+     "value": "Bekleidungsgestalter/in EFZ",
+     "label": "Bekleidungsgestalter/in EFZ"
+   },
+   {
+     "value": "Bekleidungsnäher/in EBA",
+     "label": "Bekleidungsnäher/in EBA"
+   },
+   {
+     "value": "Betonwerker/in EFZ",
+     "label": "Betonwerker/in EFZ"
+   },
+   {
+     "value": "Boden-Parkettleger/in EFZ",
+     "label": "Boden-Parkettleger/in EFZ"
+   },
+   {
+     "value": "Bootbauer/in EFZ",
+     "label": "Bootbauer/in EFZ"
+   },
+   {
+     "value": "Bootfachwart/in EFZ",
+     "label": "Bootfachwart/in EFZ"
+   },
+   {
+     "value": "Buchhändler/in EFZ",
+     "label": "Buchhändler/in EFZ"
+   },
+   {
+     "value": "Büchsenmacher/in EFZ",
+     "label": "Büchsenmacher/in EFZ"
+   },
+   {
+     "value": "Bühnentänzer/in EFZ",
+     "label": "Bühnentänzer/in EFZ"
+   },
+   {
+     "value": "Büroassistent/in EBA",
+     "label": "Büroassistent/in EBA"
+   },
+   {
+     "value": "Carrosserielackierer/in EFZ",
+     "label": "Carrosserielackierer/in EFZ"
+   },
+   {
+     "value": "Carrosseriespengler/in EFZ",
+     "label": "Carrosseriespengler/in EFZ"
+   },
+   {
+     "value": "Chemie- und Pharmapraktiker/in EBA",
+     "label": "Chemie- und Pharmapraktiker/in EBA"
+   },
+   {
+     "value": "Chemie- und Pharmatechnologe/-login EFZ",
+     "label": "Chemie- und Pharmatechnologe/-login EFZ"
+   },
+   {
+     "value": "Coiffeur/-euse EBA",
+     "label": "Coiffeur/-euse EBA"
+   },
+   {
+     "value": "Coiffeur/-euse EFZ",
+     "label": "Coiffeur/-euse EFZ"
+   },
+   {
+     "value": "Dachdecker/in EFZ",
+     "label": "Dachdecker/in EFZ"
+   },
+   {
+     "value": "Dachdeckerpraktiker/in EBA",
+     "label": "Dachdeckerpraktiker/in EBA"
+   },
+   {
+     "value": "Décolleteur/Décolleteuse",
+     "label": "Décolleteur/Décolleteuse"
+   },
+   {
+     "value": "Dekorationsnäher/in EBA",
+     "label": "Dekorationsnäher/in EBA"
+   },
+   {
+     "value": "Dentalassistent/in EFZ",
+     "label": "Dentalassistent/in EFZ"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA",
+     "label": "Detailhandelsassistent/in EBA"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Autoteile-Logistik",
+     "label": "Detailhandelsassistent/in EBA Autoteile-Logistik"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Bäckerei/Konditorei/Confiserie",
+     "label": "Detailhandelsassistent/in EBA Bäckerei/Konditorei/Confiserie"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Consumer-Electronics",
+     "label": "Detailhandelsassistent/in EBA Consumer-Electronics"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Do-it-yourself",
+     "label": "Detailhandelsassistent/in EBA Do-it-yourself"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Eisenwaren",
+     "label": "Detailhandelsassistent/in EBA Eisenwaren"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Elektrofach",
+     "label": "Detailhandelsassistent/in EBA Elektrofach"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Farben",
+     "label": "Detailhandelsassistent/in EBA Farben"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Fleischwirtschaft",
+     "label": "Detailhandelsassistent/in EBA Fleischwirtschaft"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Flower",
+     "label": "Detailhandelsassistent/in EBA Flower"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Garden",
+     "label": "Detailhandelsassistent/in EBA Garden"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Haushalt",
+     "label": "Detailhandelsassistent/in EBA Haushalt"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Kiosk",
+     "label": "Detailhandelsassistent/in EBA Kiosk"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Landi",
+     "label": "Detailhandelsassistent/in EBA Landi"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Lederwaren und Reiseartikel",
+     "label": "Detailhandelsassistent/in EBA Lederwaren und Reiseartikel"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Möbel",
+     "label": "Detailhandelsassistent/in EBA Möbel"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Musikinstrumente",
+     "label": "Detailhandelsassistent/in EBA Musikinstrumente"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Nahrungs- und Genussmittel",
+     "label": "Detailhandelsassistent/in EBA Nahrungs- und Genussmittel"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Papeterie",
+     "label": "Detailhandelsassistent/in EBA Papeterie"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Parfümerie",
+     "label": "Detailhandelsassistent/in EBA Parfümerie"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Post",
+     "label": "Detailhandelsassistent/in EBA Post"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Schuhe",
+     "label": "Detailhandelsassistent/in EBA Schuhe"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Spielwaren",
+     "label": "Detailhandelsassistent/in EBA Spielwaren"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Sportartikel",
+     "label": "Detailhandelsassistent/in EBA Sportartikel"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Teppich und Bodenbeläge",
+     "label": "Detailhandelsassistent/in EBA Teppich und Bodenbeläge"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Textil",
+     "label": "Detailhandelsassistent/in EBA Textil"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Uhren-Schmuck-Edelsteine",
+     "label": "Detailhandelsassistent/in EBA Uhren-Schmuck-Edelsteine"
+   },
+   {
+     "value": "Detailhandelsassistent/in EBA Zoofachhandel",
+     "label": "Detailhandelsassistent/in EBA Zoofachhandel"
+   },
+   {
+     "value": "Detailhandelsfachmann/-fachfrau EFZ (Consumer-Electronics)",
+     "label": "Detailhandelsfachmann/-fachfrau EFZ (Consumer-Electronics)"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ",
+     "label": "Detailhandelsfachmann/-frau EFZ"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Autoteile-Logistik",
+     "label": "Detailhandelsfachmann/-frau EFZ Autoteile-Logistik"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Bäckerei/Konditorei/Confiserie",
+     "label": "Detailhandelsfachmann/-frau EFZ Bäckerei/Konditorei/Confiserie"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Do-it-yourself",
+     "label": "Detailhandelsfachmann/-frau EFZ Do-it-yourself"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Eisenwaren",
+     "label": "Detailhandelsfachmann/-frau EFZ Eisenwaren"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Elektrofach",
+     "label": "Detailhandelsfachmann/-frau EFZ Elektrofach"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Farben",
+     "label": "Detailhandelsfachmann/-frau EFZ Farben"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Fleischwirtschaft",
+     "label": "Detailhandelsfachmann/-frau EFZ Fleischwirtschaft"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Flower",
+     "label": "Detailhandelsfachmann/-frau EFZ Flower"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Garden",
+     "label": "Detailhandelsfachmann/-frau EFZ Garden"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Haushalt",
+     "label": "Detailhandelsfachmann/-frau EFZ Haushalt"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Kiosk",
+     "label": "Detailhandelsfachmann/-frau EFZ Kiosk"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Landi",
+     "label": "Detailhandelsfachmann/-frau EFZ Landi"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Lederwaren u. Reiseartikel",
+     "label": "Detailhandelsfachmann/-frau EFZ Lederwaren u. Reiseartikel"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Möbel",
+     "label": "Detailhandelsfachmann/-frau EFZ Möbel"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Musikinstrumente",
+     "label": "Detailhandelsfachmann/-frau EFZ Musikinstrumente"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Nahrungs- und Genussmittel",
+     "label": "Detailhandelsfachmann/-frau EFZ Nahrungs- und Genussmittel"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ öffentlicher Verkehr",
+     "label": "Detailhandelsfachmann/-frau EFZ öffentlicher Verkehr"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Papeterie",
+     "label": "Detailhandelsfachmann/-frau EFZ Papeterie"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Parfümerie",
+     "label": "Detailhandelsfachmann/-frau EFZ Parfümerie"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Post",
+     "label": "Detailhandelsfachmann/-frau EFZ Post"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Schuhe",
+     "label": "Detailhandelsfachmann/-frau EFZ Schuhe"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Spielwaren",
+     "label": "Detailhandelsfachmann/-frau EFZ Spielwaren"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Sportartikel",
+     "label": "Detailhandelsfachmann/-frau EFZ Sportartikel"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Teppich und Bodenbeläge",
+     "label": "Detailhandelsfachmann/-frau EFZ Teppich und Bodenbeläge"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Textil",
+     "label": "Detailhandelsfachmann/-frau EFZ Textil"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Uhren-Schmuck-Edelsteine",
+     "label": "Detailhandelsfachmann/-frau EFZ Uhren-Schmuck-Edelsteine"
+   },
+   {
+     "value": "Detailhandelsfachmann/-frau EFZ Zoofachhandel",
+     "label": "Detailhandelsfachmann/-frau EFZ Zoofachhandel"
+   },
+   {
+     "value": "Diätkoch/-köchin EFZ",
+     "label": "Diätkoch/-köchin EFZ"
+   },
+   {
+     "value": "Drogist/in EFZ",
+     "label": "Drogist/in EFZ"
+   },
+   {
+     "value": "Drucktechnologe/-login EFZ",
+     "label": "Drucktechnologe/-login EFZ"
+   },
+   {
+     "value": "Elektroinstallateur/in EFZ",
+     "label": "Elektroinstallateur/in EFZ"
+   },
+   {
+     "value": "Elektroniker/in EFZ",
+     "label": "Elektroniker/in EFZ"
+   },
+   {
+     "value": "Elektroplaner/in EFZ",
+     "label": "Elektroplaner/in EFZ"
+   },
+   {
+     "value": "Entwässerungspraktiker/in EBA",
+     "label": "Entwässerungspraktiker/in EBA"
+   },
+   {
+     "value": "Entwässerungstechnologe/-login EFZ",
+     "label": "Entwässerungstechnologe/-login EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Betreuung EFZ",
+     "label": "Fachmann/-frau Betreuung EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Betriebsunterhalt EFZ",
+     "label": "Fachmann/-frau Betriebsunterhalt EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Bewegungs-/Gesundheitsförd. EFZ",
+     "label": "Fachmann/-frau Bewegungs-/Gesundheitsförd. EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Gesundheit EFZ",
+     "label": "Fachmann/-frau Gesundheit EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Hauswirtschaft EFZ",
+     "label": "Fachmann/-frau Hauswirtschaft EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Information u. Dokumentation EFZ",
+     "label": "Fachmann/-frau Information u. Dokumentation EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Kundendialog EFZ",
+     "label": "Fachmann/-frau Kundendialog EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Leder und Textil EFZ",
+     "label": "Fachmann/-frau Leder und Textil EFZ"
+   },
+   {
+     "value": "Fachmann/-frau öffentlicher Verkehr EFZ",
+     "label": "Fachmann/-frau öffentlicher Verkehr EFZ"
+   },
+   {
+     "value": "Fachmann/-frau Textilpflege EFZ",
+     "label": "Fachmann/-frau Textilpflege EFZ"
+   },
+   {
+     "value": "Fahrradmechaniker/in EFZ",
+     "label": "Fahrradmechaniker/in EFZ"
+   },
+   {
+     "value": "Fahrzeugschlosser/in EFZ",
+     "label": "Fahrzeugschlosser/in EFZ"
+   },
+   {
+     "value": "Fassadenbauer/in EFZ",
+     "label": "Fassadenbauer/in EFZ"
+   },
+   {
+     "value": "Fassadenbaupraktiker/in EBA",
+     "label": "Fassadenbaupraktiker/in EBA"
+   },
+   {
+     "value": "Feinwerkoptiker/in EFZ",
+     "label": "Feinwerkoptiker/in EFZ"
+   },
+   {
+     "value": "Fleischfachassistent/in EBA",
+     "label": "Fleischfachassistent/in EBA"
+   },
+   {
+     "value": "Fleischfachmann/-frau EFZ",
+     "label": "Fleischfachmann/-frau EFZ"
+   },
+   {
+     "value": "Flexodrucker/in EFZ",
+     "label": "Flexodrucker/in EFZ"
+   },
+   {
+     "value": "Florist/in EBA",
+     "label": "Florist/in EBA"
+   },
+   {
+     "value": "Florist/in EFZ",
+     "label": "Florist/in EFZ"
+   },
+   {
+     "value": "Formenbauer/in EFZ",
+     "label": "Formenbauer/in EFZ"
+   },
+   {
+     "value": "Formenpraktiker/in EBA",
+     "label": "Formenpraktiker/in EBA"
+   },
+   {
+     "value": "Forstpraktiker/in EBA",
+     "label": "Forstpraktiker/in EBA"
+   },
+   {
+     "value": "Forstwart/in EFZ",
+     "label": "Forstwart/in EFZ"
+   },
+   {
+     "value": "Fotofachmann/-frau EFZ",
+     "label": "Fotofachmann/-frau EFZ"
+   },
+   {
+     "value": "Fotograf/in EFZ",
+     "label": "Fotograf/in EFZ"
+   },
+   {
+     "value": "Gärtner/in EBA",
+     "label": "Gärtner/in EBA"
+   },
+   {
+     "value": "Gärtner/in EFZ",
+     "label": "Gärtner/in EFZ"
+   },
+   {
+     "value": "Gästeempfangsfachmann/-frau HGA (Hotel, Gastronomie, Animation)",
+     "label": "Gästeempfangsfachmann/-frau HGA (Hotel, Gastronomie, Animation)"
+   },
+   {
+     "value": "Gebäudereiniger/in EBA",
+     "label": "Gebäudereiniger/in EBA"
+   },
+   {
+     "value": "Gebäudereiniger/in EFZ",
+     "label": "Gebäudereiniger/in EFZ"
+   },
+   {
+     "value": "Gebäudetechnikplaner/in Heizung EFZ",
+     "label": "Gebäudetechnikplaner/in Heizung EFZ"
+   },
+   {
+     "value": "Gebäudetechnikplaner/in Lüftung EFZ",
+     "label": "Gebäudetechnikplaner/in Lüftung EFZ"
+   },
+   {
+     "value": "Gebäudetechnikplaner/in Sanitär EFZ",
+     "label": "Gebäudetechnikplaner/in Sanitär EFZ"
+   },
+   {
+     "value": "Geflügelfachmann/-frau EFZ",
+     "label": "Geflügelfachmann/-frau EFZ"
+   },
+   {
+     "value": "Geigenbauer/in EFZ",
+     "label": "Geigenbauer/in EFZ"
+   },
+   {
+     "value": "Gemüsegärtner/in EFZ",
+     "label": "Gemüsegärtner/in EFZ"
+   },
+   {
+     "value": "Geomatiker/in EFZ",
+     "label": "Geomatiker/in EFZ"
+   },
+   {
+     "value": "Gerüstbauer/in EFZ",
+     "label": "Gerüstbauer/in EFZ"
+   },
+   {
+     "value": "Gerüstbaupraktiker/in EBA",
+     "label": "Gerüstbaupraktiker/in EBA"
+   },
+   {
+     "value": "Gestalter/in Werbetechnik EFZ",
+     "label": "Gestalter/in Werbetechnik EFZ"
+   },
+   {
+     "value": "Gewebegestalter/in EFZ",
+     "label": "Gewebegestalter/in EFZ"
+   },
+   {
+     "value": "Gipser/in-Trockenbauer/in EFZ",
+     "label": "Gipser/in-Trockenbauer/in EFZ"
+   },
+   {
+     "value": "Gipserpraktiker/in EBA",
+     "label": "Gipserpraktiker/in EBA"
+   },
+   {
+     "value": "Glasapparatebauer/in (EFZ/BS)",
+     "label": "Glasapparatebauer/in (EFZ/BS)"
+   },
+   {
+     "value": "Glaser/in EFZ",
+     "label": "Glaser/in EFZ"
+   },
+   {
+     "value": "Glasmaler/in EFZ",
+     "label": "Glasmaler/in EFZ"
+   },
+   {
+     "value": "Gleisbauer/in EFZ",
+     "label": "Gleisbauer/in EFZ"
+   },
+   {
+     "value": "Gleisbaupraktiker/in EBA",
+     "label": "Gleisbaupraktiker/in EBA"
+   },
+   {
+     "value": "Goldschmied/in EFZ",
+     "label": "Goldschmied/in EFZ"
+   },
+   {
+     "value": "Grafiker/in EFZ",
+     "label": "Grafiker/in EFZ"
+   },
+   {
+     "value": "Graveur/in EFZ",
+     "label": "Graveur/in EFZ"
+   },
+   {
+     "value": "Grundbauer/in EFZ",
+     "label": "Grundbauer/in EFZ"
+   },
+   {
+     "value": "Grundbaupraktiker/in EBA",
+     "label": "Grundbaupraktiker/in EBA"
+   },
+   {
+     "value": "Gussformer/in EFZ",
+     "label": "Gussformer/in EFZ"
+   },
+   {
+     "value": "Gusstechnologe/-login EFZ",
+     "label": "Gusstechnologe/-login EFZ"
+   },
+   {
+     "value": "Haustechnikpraktiker/in EBA",
+     "label": "Haustechnikpraktiker/in EBA"
+   },
+   {
+     "value": "Hauswirtschaftspraktiker/in EBA",
+     "label": "Hauswirtschaftspraktiker/in EBA"
+   },
+   {
+     "value": "Heizungsinstallateur/in EFZ",
+     "label": "Heizungsinstallateur/in EFZ"
+   },
+   {
+     "value": "Holzbearbeiter/in EBA",
+     "label": "Holzbearbeiter/in EBA"
+   },
+   {
+     "value": "Holzbildhauer/in EFZ",
+     "label": "Holzbildhauer/in EFZ"
+   },
+   {
+     "value": "Holzhandwerker/in EFZ",
+     "label": "Holzhandwerker/in EFZ"
+   },
+   {
+     "value": "Hörsystemakustiker/in EFZ",
+     "label": "Hörsystemakustiker/in EFZ"
+   },
+   {
+     "value": "Hotel- und Gastrofachmann/-frau",
+     "label": "Hotel- und Gastrofachmann/-frau"
+   },
+   {
+     "value": "Hotelfachmann/-frau EFZ",
+     "label": "Hotelfachmann/-frau EFZ"
+   },
+   {
+     "value": "Hotel-Kommunikationsfachmann/-frau EFZ",
+     "label": "Hotel-Kommunikationsfachmann/-frau EFZ"
+   },
+   {
+     "value": "Hotellerieangestellte/r EBA",
+     "label": "Hotellerieangestellte/r EBA"
+   },
+   {
+     "value": "Hufschmied/in EFZ",
+     "label": "Hufschmied/in EFZ"
+   },
+   {
+     "value": "ICT-Fachmann/-frau EFZ",
+     "label": "ICT-Fachmann/-frau EFZ"
+   },
+   {
+     "value": "Industrie- und Unterlagsbodenbauer/in EFZ",
+     "label": "Industrie- und Unterlagsbodenbauer/in EFZ"
+   },
+   {
+     "value": "Industrie- und Unterlagsbodenbaupraktiker/in EBA",
+     "label": "Industrie- und Unterlagsbodenbaupraktiker/in EBA"
+   },
+   {
+     "value": "Industriekeramiker/in EFZ",
+     "label": "Industriekeramiker/in EFZ"
+   },
+   {
+     "value": "Industrielackierer/in EFZ",
+     "label": "Industrielackierer/in EFZ"
+   },
+   {
+     "value": "Industriepolsterer/-polsterin EFZ",
+     "label": "Industriepolsterer/-polsterin EFZ"
+   },
+   {
+     "value": "Informatiker/in EFZ",
+     "label": "Informatiker/in EFZ"
+   },
+   {
+     "value": "Innendekorateur/in",
+     "label": "Innendekorateur/in"
+   },
+   {
+     "value": "Interactive Media Designer EFZ",
+     "label": "Interactive Media Designer EFZ"
+   },
+   {
+     "value": "Isolierspengler/in EFZ",
+     "label": "Isolierspengler/in EFZ"
+   },
+   {
+     "value": "Kältemontage-Praktiker/in EBA",
+     "label": "Kältemontage-Praktiker/in EBA"
+   },
+   {
+     "value": "Kältesystem-Monteur/in EFZ",
+     "label": "Kältesystem-Monteur/in EFZ"
+   },
+   {
+     "value": "Kältesystem-Planer/in EFZ",
+     "label": "Kältesystem-Planer/in EFZ"
+   },
+   {
+     "value": "Kaminfeger/in EFZ",
+     "label": "Kaminfeger/in EFZ"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ",
+     "label": "Kaufmann/-frau EFZ"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Automobil-Gewerbe",
+     "label": "Kaufmann/-frau EFZ Automobil-Gewerbe"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Bank",
+     "label": "Kaufmann/-frau EFZ Bank"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Bauen und Wohnen",
+     "label": "Kaufmann/-frau EFZ Bauen und Wohnen"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Bundesverwaltung",
+     "label": "Kaufmann/-frau EFZ Bundesverwaltung"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Chemie",
+     "label": "Kaufmann/-frau EFZ Chemie"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Dienstleistung und Administration",
+     "label": "Kaufmann/-frau EFZ Dienstleistung und Administration"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Handel",
+     "label": "Kaufmann/-frau EFZ Handel"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Hotel-Gastro-Tourismus HGT",
+     "label": "Kaufmann/-frau EFZ Hotel-Gastro-Tourismus HGT"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Internationale Speditionslogistik",
+     "label": "Kaufmann/-frau EFZ Internationale Speditionslogistik"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Marketing & Kommunikation",
+     "label": "Kaufmann/-frau EFZ Marketing & Kommunikation"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Maschinen-, Elektro-, Metallind.",
+     "label": "Kaufmann/-frau EFZ Maschinen-, Elektro-, Metallind."
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Nahrungsmittel-Industrie",
+     "label": "Kaufmann/-frau EFZ Nahrungsmittel-Industrie"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Notariate Schweiz",
+     "label": "Kaufmann/-frau EFZ Notariate Schweiz"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Öffentliche Verwaltung",
+     "label": "Kaufmann/-frau EFZ Öffentliche Verwaltung"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Öffentlicher Verkehr",
+     "label": "Kaufmann/-frau EFZ Öffentlicher Verkehr"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Privatversicherung",
+     "label": "Kaufmann/-frau EFZ Privatversicherung"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Reisebüro",
+     "label": "Kaufmann/-frau EFZ Reisebüro"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ santésuisse",
+     "label": "Kaufmann/-frau EFZ santésuisse"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Spitäler/Kliniken/Heime",
+     "label": "Kaufmann/-frau EFZ Spitäler/Kliniken/Heime"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Transport",
+     "label": "Kaufmann/-frau EFZ Transport"
+   },
+   {
+     "value": "Kaufmann/-frau EFZ Treuhand/Immobilien",
+     "label": "Kaufmann/-frau EFZ Treuhand/Immobilien"
+   },
+   {
+     "value": "Keramiker/in EFZ",
+     "label": "Keramiker/in EFZ"
+   },
+   {
+     "value": "Kleinmotorrad- und Fahrradmechaniker/in EFZ",
+     "label": "Kleinmotorrad- und Fahrradmechaniker/in EFZ"
+   },
+   {
+     "value": "Koch/Köchin EFZ",
+     "label": "Koch/Köchin EFZ"
+   },
+   {
+     "value": "Konstrukteur/in EFZ",
+     "label": "Konstrukteur/in EFZ"
+   },
+   {
+     "value": "Korb- und Flechtwerkgestalter/in EFZ",
+     "label": "Korb- und Flechtwerkgestalter/in EFZ"
+   },
+   {
+     "value": "Kosmetiker/in EFZ",
+     "label": "Kosmetiker/in EFZ"
+   },
+   {
+     "value": "Küchenangestellte/r EBA",
+     "label": "Küchenangestellte/r EBA"
+   },
+   {
+     "value": "Küfer/in EFZ",
+     "label": "Küfer/in EFZ"
+   },
+   {
+     "value": "Kunststofftechnologe/-login EFZ",
+     "label": "Kunststofftechnologe/-login EFZ"
+   },
+   {
+     "value": "Kunststoffverarbeiter/in EBA",
+     "label": "Kunststoffverarbeiter/in EBA"
+   },
+   {
+     "value": "Laborant/in EFZ",
+     "label": "Laborant/in EFZ"
+   },
+   {
+     "value": "Lackierassistent/in EBA",
+     "label": "Lackierassistent/in EBA"
+   },
+   {
+     "value": "Landmaschinenmechaniker/in EFZ",
+     "label": "Landmaschinenmechaniker/in EFZ"
+   },
+   {
+     "value": "Landwirt/in EFZ",
+     "label": "Landwirt/in EFZ"
+   },
+   {
+     "value": "Lebensmittelpraktiker/in EBA",
+     "label": "Lebensmittelpraktiker/in EBA"
+   },
+   {
+     "value": "Lebensmitteltechnologe/-login EFZ",
+     "label": "Lebensmitteltechnologe/-login EFZ"
+   },
+   {
+     "value": "Logistiker/in EBA",
+     "label": "Logistiker/in EBA"
+   },
+   {
+     "value": "Logistiker/in EFZ",
+     "label": "Logistiker/in EFZ"
+   },
+   {
+     "value": "Lüftungsanlagenbauer/in EFZ",
+     "label": "Lüftungsanlagenbauer/in EFZ"
+   },
+   {
+     "value": "Maler/in EFZ",
+     "label": "Maler/in EFZ"
+   },
+   {
+     "value": "Malerpraktiker/in EBA",
+     "label": "Malerpraktiker/in EBA"
+   },
+   {
+     "value": "Marmorist/in EFZ",
+     "label": "Marmorist/in EFZ"
+   },
+   {
+     "value": "Matrose/Matrosin der Binnenschifffahrt EFZ",
+     "label": "Matrose/Matrosin der Binnenschifffahrt EFZ"
+   },
+   {
+     "value": "Maurer/in EFZ",
+     "label": "Maurer/in EFZ"
+   },
+   {
+     "value": "Mechanikpraktiker/in EBA",
+     "label": "Mechanikpraktiker/in EBA"
+   },
+   {
+     "value": "Mechanikpraktiker/in EBA, Schwerpunktausbildung Werkstoffe aus Glas und ähnlichen Werkstoffen bearbeiten",
+     "label": "Mechanikpraktiker/in EBA, Schwerpunktausbildung Werkstoffe aus Glas und ähnlichen Werkstoffen bearbeiten"
+   },
+   {
+     "value": "Mediamatiker/in EFZ",
+     "label": "Mediamatiker/in EFZ"
+   },
+   {
+     "value": "Medizinische/r Praxisassistent/in EFZ",
+     "label": "Medizinische/r Praxisassistent/in EFZ"
+   },
+   {
+     "value": "Medizinproduktetechnologe/-login EFZ",
+     "label": "Medizinproduktetechnologe/-login EFZ"
+   },
+   {
+     "value": "Messerschmied/in EFZ",
+     "label": "Messerschmied/in EFZ"
+   },
+   {
+     "value": "Metallbauer/in EFZ",
+     "label": "Metallbauer/in EFZ"
+   },
+   {
+     "value": "Metallbaukonstrukteur/in EFZ",
+     "label": "Metallbaukonstrukteur/in EFZ"
+   },
+   {
+     "value": "Metallbaupraktiker/in EBA",
+     "label": "Metallbaupraktiker/in EBA"
+   },
+   {
+     "value": "Mikromechaniker/in EFZ",
+     "label": "Mikromechaniker/in EFZ"
+   },
+   {
+     "value": "Mikrozeichner/in EFZ",
+     "label": "Mikrozeichner/in EFZ"
+   },
+   {
+     "value": "Milchpraktiker/in EBA",
+     "label": "Milchpraktiker/in EBA"
+   },
+   {
+     "value": "Milchtechnologe/-login EFZ",
+     "label": "Milchtechnologe/-login EFZ"
+   },
+   {
+     "value": "Montage-Elektriker/in EFZ",
+     "label": "Montage-Elektriker/in EFZ"
+   },
+   {
+     "value": "Motorgerätemechaniker/in EFZ",
+     "label": "Motorgerätemechaniker/in EFZ"
+   },
+   {
+     "value": "Motorradmechaniker/in EFZ",
+     "label": "Motorradmechaniker/in EFZ"
+   },
+   {
+     "value": "Müller/in EFZ",
+     "label": "Müller/in EFZ"
+   },
+   {
+     "value": "Multimediaelektroniker/in EFZ",
+     "label": "Multimediaelektroniker/in EFZ"
+   },
+   {
+     "value": "Musikinstrumentenbauer/in EFZ",
+     "label": "Musikinstrumentenbauer/in EFZ"
+   },
+   {
+     "value": "Netzelektriker/in EFZ",
+     "label": "Netzelektriker/in EFZ"
+   },
+   {
+     "value": "Oberflächenbeschichter/in EFZ",
+     "label": "Oberflächenbeschichter/in EFZ"
+   },
+   {
+     "value": "Oberflächenpraktiker/in EBA",
+     "label": "Oberflächenpraktiker/in EBA"
+   },
+   {
+     "value": "Oberflächenveredler/in Uhren und Schmuck EFZ",
+     "label": "Oberflächenveredler/in Uhren und Schmuck EFZ"
+   },
+   {
+     "value": "Obstfachmann/-frau EFZ",
+     "label": "Obstfachmann/-frau EFZ"
+   },
+   {
+     "value": "Ofenbauer/in EFZ",
+     "label": "Ofenbauer/in EFZ"
+   },
+   {
+     "value": "Orthopädieschuhmacher/in EFZ",
+     "label": "Orthopädieschuhmacher/in EFZ"
+   },
+   {
+     "value": "Orthopädist/in EFZ",
+     "label": "Orthopädist/in EFZ"
+   },
+   {
+     "value": "Papiertechnologe/-login EFZ",
+     "label": "Papiertechnologe/-login EFZ"
+   },
+   {
+     "value": "Pferdefachmann/-frau EFZ",
+     "label": "Pferdefachmann/-frau EFZ"
+   },
+   {
+     "value": "Pferdewart/in EBA",
+     "label": "Pferdewart/in EBA"
+   },
+   {
+     "value": "Pflästerer/Pflästerin EFZ",
+     "label": "Pflästerer/Pflästerin EFZ"
+   },
+   {
+     "value": "Pharma-Assistent/in EFZ",
+     "label": "Pharma-Assistent/in EFZ"
+   },
+   {
+     "value": "Physiklaborant/in EFZ",
+     "label": "Physiklaborant/in EFZ"
+   },
+   {
+     "value": "Plattenleger/in EFZ",
+     "label": "Plattenleger/in EFZ"
+   },
+   {
+     "value": "Plattenlegerpraktiker/in EBA",
+     "label": "Plattenlegerpraktiker/in EBA"
+   },
+   {
+     "value": "Podologe/-login EFZ",
+     "label": "Podologe/-login EFZ"
+   },
+   {
+     "value": "Polisseur/-euse EBA",
+     "label": "Polisseur/-euse EBA"
+   },
+   {
+     "value": "Polydesigner/in 3D EFZ",
+     "label": "Polydesigner/in 3D EFZ"
+   },
+   {
+     "value": "Polygraf/in EFZ",
+     "label": "Polygraf/in EFZ"
+   },
+   {
+     "value": "Polymechaniker/in EFZ",
+     "label": "Polymechaniker/in EFZ"
+   },
+   {
+     "value": "Printmedienpraktiker/in EBA",
+     "label": "Printmedienpraktiker/in EBA"
+   },
+   {
+     "value": "Printmedienverarbeiter/in EFZ",
+     "label": "Printmedienverarbeiter/in EFZ"
+   },
+   {
+     "value": "Produktionsmechaniker/in EFZ",
+     "label": "Produktionsmechaniker/in EFZ"
+   },
+   {
+     "value": "Recyclist/in EFZ",
+     "label": "Recyclist/in EFZ"
+   },
+   {
+     "value": "Reifenpraktiker/in EBA",
+     "label": "Reifenpraktiker/in EBA"
+   },
+   {
+     "value": "Restaurationsangestellte/r EBA",
+     "label": "Restaurationsangestellte/r EBA"
+   },
+   {
+     "value": "Restaurationsfachmann/-frau EFZ",
+     "label": "Restaurationsfachmann/-frau EFZ"
+   },
+   {
+     "value": "Säger/in Holzindustrie EFZ",
+     "label": "Säger/in Holzindustrie EFZ"
+   },
+   {
+     "value": "Sanitärinstallateur/in EFZ",
+     "label": "Sanitärinstallateur/in EFZ"
+   },
+   {
+     "value": "Schreiner/in EFZ",
+     "label": "Schreiner/in EFZ"
+   },
+   {
+     "value": "Schreinerpraktiker/in EBA",
+     "label": "Schreinerpraktiker/in EBA"
+   },
+   {
+     "value": "Schuhmacher/in EFZ",
+     "label": "Schuhmacher/in EFZ"
+   },
+   {
+     "value": "Seilbahner/in EBA",
+     "label": "Seilbahner/in EBA"
+   },
+   {
+     "value": "Seilbahn-Mechatroniker/in EFZ",
+     "label": "Seilbahn-Mechatroniker/in EFZ"
+   },
+   {
+     "value": "Spengler/in EFZ",
+     "label": "Spengler/in EFZ"
+   },
+   {
+     "value": "Steinbildhauer/in EFZ",
+     "label": "Steinbildhauer/in EFZ"
+   },
+   {
+     "value": "Steinmetz/in EFZ",
+     "label": "Steinmetz/in EFZ"
+   },
+   {
+     "value": "Steinsetzer/in EBA",
+     "label": "Steinsetzer/in EBA"
+   },
+   {
+     "value": "Steinwerker/in EFZ",
+     "label": "Steinwerker/in EFZ"
+   },
+   {
+     "value": "Storenmontagepraktiker/in EBA",
+     "label": "Storenmontagepraktiker/in EBA"
+   },
+   {
+     "value": "Storenmonteur/in EFZ",
+     "label": "Storenmonteur/in EFZ"
+   },
+   {
+     "value": "Strassenbauer/in EFZ",
+     "label": "Strassenbauer/in EFZ"
+   },
+   {
+     "value": "Strassenbaupraktiker/in EBA",
+     "label": "Strassenbaupraktiker/in EBA"
+   },
+   {
+     "value": "Strassentransportfachmann/-frau EFZ",
+     "label": "Strassentransportfachmann/-frau EFZ"
+   },
+   {
+     "value": "Strassentransportpraktiker/in EBA",
+     "label": "Strassentransportpraktiker/in EBA"
+   },
+   {
+     "value": "Systemgastronomiefachmann/-frau EFZ",
+     "label": "Systemgastronomiefachmann/-frau EFZ"
+   },
+   {
+     "value": "Telematiker/in EFZ",
+     "label": "Telematiker/in EFZ"
+   },
+   {
+     "value": "Textilpraktiker/in EBA",
+     "label": "Textilpraktiker/in EBA"
+   },
+   {
+     "value": "Textiltechnologe/-login EFZ",
+     "label": "Textiltechnologe/-login EFZ"
+   },
+   {
+     "value": "Theatermaler/in EFZ",
+     "label": "Theatermaler/in EFZ"
+   },
+   {
+     "value": "Tiermedizinische/r Praxisassistent/in EFZ",
+     "label": "Tiermedizinische/r Praxisassistent/in EFZ"
+   },
+   {
+     "value": "Tierpfleger/in EFZ",
+     "label": "Tierpfleger/in EFZ"
+   },
+   {
+     "value": "Uhrenarbeiter/in EBA",
+     "label": "Uhrenarbeiter/in EBA"
+   },
+   {
+     "value": "Uhrmacher/in EFZ",
+     "label": "Uhrmacher/in EFZ"
+   },
+   {
+     "value": "Uhrmacher/in Produktion EFZ",
+     "label": "Uhrmacher/in Produktion EFZ"
+   },
+   {
+     "value": "Unterhaltspraktiker/in EBA",
+     "label": "Unterhaltspraktiker/in EBA"
+   },
+   {
+     "value": "Veranstaltungsfachmann/-frau EFZ",
+     "label": "Veranstaltungsfachmann/-frau EFZ"
+   },
+   {
+     "value": "Vergolder/in-Einrahmer/in EFZ",
+     "label": "Vergolder/in-Einrahmer/in EFZ"
+   },
+   {
+     "value": "Verpackungstechnologe/-login EFZ",
+     "label": "Verpackungstechnologe/-login EFZ"
+   },
+   {
+     "value": "Weintechnologe/-login EFZ",
+     "label": "Weintechnologe/-login EFZ"
+   },
+   {
+     "value": "Werkstofftechniker/in FZ Werkstoffprüfung/ Werkstoffprüfung und Wärmebehandlung (Liechtensteinisches Fähigkeitszeugnis)",
+     "label": "Werkstofftechniker/in FZ Werkstoffprüfung/ Werkstoffprüfung und Wärmebehandlung (Liechtensteinisches Fähigkeitszeugnis)"
+   },
+   {
+     "value": "Winzer/in EFZ",
+     "label": "Winzer/in EFZ"
+   },
+   {
+     "value": "Wohntextilgestalter/in EFZ",
+     "label": "Wohntextilgestalter/in EFZ"
+   },
+   {
+     "value": "Zahntechniker/in EFZ",
+     "label": "Zahntechniker/in EFZ"
+   },
+   {
+     "value": "Zeichner/in EFZ",
+     "label": "Zeichner/in EFZ"
+   },
+   {
+     "value": "Zimmermann/Zimmerin EFZ",
+     "label": "Zimmermann/Zimmerin EFZ"
+   }
+ ]
