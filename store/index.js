@@ -31,10 +31,9 @@ const createStore = () => {
         try {
           await auth.signInWithPopup(FacebookProvider)
           console.log('Finished Facebook login')
-          alert('Facebook login successful')
           return location.reload()
         } catch (err) {
-          alert(err)
+          console.log(err)
         }
       },
 
