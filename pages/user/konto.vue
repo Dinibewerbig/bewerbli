@@ -4,8 +4,8 @@
       <nuxt-child :key="$router.fullPath" />
     </div>
     <h1>hello</h1>
-    <div v-for="(item, key) in items" :key="key">
-      <div>{{ item.name }}</div>  
+    <div v-for="(item1, key) in items" :key="key">
+      <div>{{ item1.name }}</div>  
       <button @click="deleteItem(key)">
         <div>delete</div>
       </button>
@@ -20,7 +20,6 @@
     <button @click="addItem">
       Add Item
     </button>
-    </div>
   </section>
 </template>
 
@@ -63,6 +62,9 @@ export default {
 </script>
 
 <style>
+.group:hover .group-hover\:text-white {
+  color: #fff;
+}
 #adminNav {
   display: flex;
   flex-flow: row wrap;
@@ -78,7 +80,7 @@ input {
   padding: 0.25em;
 }
 #adminChild {
-  margin-top: 1em;
+  margin-top: 5em;
 }
 </style>
 <!--  -->

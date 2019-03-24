@@ -37,16 +37,13 @@
       <div class="w-full text-center  m-b:10px; ">
         <a
           v-scroll-to="{
-            el: '#element',
-                
+            el: '#element',             
             duration: 700,
             easing: 'ease-out',
             offset: -62,
             force: true,
             cancelable: true,
-            onStart: onStart,
-            onDone: onDone,
-            onCancel: onCancel,
+
             x: false,
             y: true
           }"
@@ -66,6 +63,7 @@
     <feature6 />
     <pricing1 /> 
     <pricing2 /> 
+    <section1 /> 
     <footer1 />
   </div>
 </template>
@@ -80,6 +78,7 @@ import feature5 from '~/components/Feature5'
 import feature6 from '~/components/Feature6'
 import pricing1 from '~/components/Pricing'
 import pricing2 from '~/components/Pricing2'
+import section1 from '~/components/section1'
 import footer1 from '~/components/Footer'
 
 export default {
@@ -94,7 +93,8 @@ export default {
     feature6,
     footer1,
     pricing1,
-    pricing2
+    pricing2,
+    section1
   }
 }
 </script>

@@ -1,5 +1,5 @@
 export default function({ store, redirect, route }) {
-  if (isLogin(store) && route.name === 'login') {
+  if (isLogin(store) && route.name === '/user/login') {
     console.log('user is authenitcated')
     return redirect('/user/konto')
   }

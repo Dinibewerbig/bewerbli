@@ -64,23 +64,51 @@
           Konto
         </nuxt-link> -->
       </span>
+     
       <nuxt-link
-        class="btn2 btn3 antialiased px-5"
-        :class="{'btn2--unpinned': scrolled}"
-        tag="li"
-        to="/user/login"
-      >
-        anmelden
-      </nuxt-link>
-      <nuxt-link
-        class="btn2 btn1 bg-blue px-4  ml-5 antialiased"
+        class="btn2 btn1 bg-green px-2 ml-4  antialiased cursor-pointer"
         :class="{'btn2--unpinned': scrolled}"
         tag="li"
         to="/bestellung/bestellung"
       >
-        bestellen
+        BESTELLEN
       </nuxt-link>
-
+      <nuxt-link
+        v-if="!$store.state.user"
+        class="btn2 btn3 antialiased ml-2 cursor-pointer"
+        :class="{'btn2--unpinned': scrolled}"
+        tag="li"
+        to="/user/login"
+      >
+        MEIN KONTO
+      </nuxt-link>
+  
+    
+      <div class="group mt-6 ml-4 relative ">
+        <img v-if="$store.state.user" class="avatar cursor-pointer" :src="$store.state.user.photoURL" alt="avatar">
+        <div class="dropdown2 rounded items-center absolute border pin-l border-t-0 mt-4 bg-white invisible group-hover:visible">
+          <div class="dropdownArrow2" />
+          <ul class="list-reset">
+            <li>
+              <a href="#" class="px-4 py-2 block text-grey-darkest hover:bg-grey-light">
+                My account
+              </a>
+            </li>
+            <li>
+              <a href="#" class="px-4 py-2 block text-black hover:bg-grey-light">
+                Notifications
+              </a>
+            </li>
+            <li>
+              <div class="px-4 py-2 block text-black hover:bg-grey-light" @click="signOut">
+                Logout
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+ 
+      
       <li class="mobile item-mobileMenu">
         <tasty-burger-button />
       </li>
@@ -382,12 +410,30 @@ export default {
       } else {
         this.direction = 'tabPrev'
       }
+    },
+    signOut() {
+      this.$store
+        .dispatch('signOut')
+        .then(() => {
+          console.log('signed out')
+        })
+        .catch(e => {
+          console.log(e.message)
+        })
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.avatar {
+  border-radius: 50%;
+  height: 35px;
+  outline: 0;
+
+  width: 35px;
+}
+
 @media only screen and (max-width: 768px) {
   .item-mobileMenu {
     display: flex !important;
@@ -459,12 +505,12 @@ a {
 }
 .btn2 {
   margin-top: 25px;
-  height: 40px;
+  height: 38px;
   line-height: 37px;
-  font-family: Avenir Next;
-  font-size: 15px;
+  font-family: Muli;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.085em;
   color: #fcfcfc;
   text-decoration: none;
   -webkit-transition: all 0.15s ease;
@@ -476,7 +522,7 @@ a {
 }
 
 .btn1:hover {
-  background-color: #2271d8;
+  background-color: #0dbe42;
   color: #fff;
 }
 .headroom--unpinned {
@@ -487,9 +533,9 @@ a {
 
 h3 {
   line-height: 1.1em !important;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #434257;
-  font-family: Avenir Next;
+  font-family: Muli;
   font-weight: 500;
   padding-top: 3px;
   margin-bottom: 3px;
@@ -545,8 +591,8 @@ p {
 li {
   display: block;
   height: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.3rem;
+  padding-right: 1.1rem;
+  padding-left: 1.1rem;
 }
 
 #content-class1 {
@@ -618,6 +664,23 @@ nav {
   background-color: rgb(255, 255, 255);
   will-change: transform, opacity;
 }
+.dropdownArrow2 {
+  box-sizing: border-box;
+  left: 115px;
+  top: -6px;
+  margin: 0 0 0 -6px;
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  transform: rotate(45deg);
+  box-shadow: -3px -3px 5px rgba(82, 95, 127, 0.04);
+  background-color: rgb(255, 255, 255);
+  will-change: transform, opacity;
+}
+
+.dropdown2 {
+  left: -100px;
+}
 
 #div1,
 #div2,
@@ -633,14 +696,13 @@ nav {
   z-index: 10000;
 }
 .slide-fade-enter-active {
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
 }
 .slide-fade-leave-active {
-  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter,
 .slide-fade-leave-to {
-  transform: translateY(50px) rotateX(-10deg);
   opacity: 0;
 }
 

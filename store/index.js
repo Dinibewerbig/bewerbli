@@ -4,7 +4,8 @@ import { auth, GoogleProvider, FacebookProvider } from '~/services/fireinit.js'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      user: null
+      user: null,
+      account: null
     },
     getters: {
       activeUser: state => {
@@ -14,7 +15,27 @@ const createStore = () => {
     mutations: {
       setUser(state, payload) {
         state.user = payload
-        console.log(state.user + 'hello state user')
+        if (state.user != null) {
+          console.log(
+            state.user +
+              state.user.displayName +
+              ' ' +
+              state.user.photoURL +
+              ' ' +
+              state.user.email +
+              ' ' +
+              state.user.emailVerified
+          )
+        }
+        if (state.user != null) {
+          state.user.providerData.forEach(function(profile) {
+            console.log('Sign-in provider: ' + profile.providerId)
+            console.log('  Provider-specific UID: ' + profile.uid)
+            console.log('  Name: ' + profile.displayName)
+            console.log('  Email: ' + profile.email)
+            console.log('  Photo URL: ' + profile.photoURL)
+          })
+        }
       }
     },
     actions: {
@@ -25,13 +46,26 @@ const createStore = () => {
       async googleSignIn() {
         await auth.signInWithPopup(GoogleProvider)
         console.log('Finished Google login')
-        return location.reload()
+        this.$router.push('/user/konto')
       },
       async facebookSignIn() {
         try {
           await auth.signInWithPopup(FacebookProvider)
           console.log('Finished Facebook login')
-          return location.reload()
+          this.$router.push('/user/konto')
+        } catch (err) {
+          console.log(err)
+        }
+      },
+      async signInWithEmail({ state }, account) {
+        try {
+          console.log('in the store')
+          await auth.createUserWithEmailAndPassword(
+            account.email,
+            account.password
+          )
+          console.log('Email and Password Login')
+          this.$router.push('/user/konto')
         } catch (err) {
           console.log(err)
         }
@@ -41,7 +75,9 @@ const createStore = () => {
         auth
           .signOut()
           .then(() => {
+            console.log('in the store signed out...')
             commit('setUser', null)
+            this.$router.push('/')
           })
           .catch(error => console.log(error))
       }

@@ -31,6 +31,7 @@
               <form
                 id="signup-form"
                 class="simple_form new_user flex-grow"
+                @submit.prevent="emailLogin"
               >
                 <div class="text-grey-darker font-thin text-center">
                   Sign Up mit 
@@ -59,6 +60,7 @@
                   <font-awesome-icon class="icon-lock icon-fw" :icon="['far', 'envelope']" style="font-size: 20px" />
                   <input
                     id="user_email"
+                    v-model="formEmail"
                     autofocus="autofocus"
                     required="required"
                     class="w-full invalid"
@@ -79,10 +81,10 @@
                     <font-awesome-icon class="icon-lock icon-fw" :icon="['fas', 'lock']" style="font-size: 20px" />
                     <input
                       id="user_password"
+                      v-model="formPassword"
                       minlength="8"
                       required="required"
                       class="password required form-control w-full"
-                  
                       placeholder="Password (at least 8 chars)"
                       type="password"
                       name="user[password]"
@@ -96,7 +98,7 @@
 
                 <div class="spacer8" />
                 <div class="text-center">
-                  <button class="">
+                  <button type="submit" class="">
                     Create an Account
                     <i class="icon-arrow-right" />
                   </button>
@@ -136,6 +138,7 @@ export default {
         .then(() => {
           this.formEmail = ''
           this.formPassword = ''
+          this.$router.push('/user/konto')
         })
         .catch(e => {
           console.log(e.message)
@@ -145,7 +148,7 @@ export default {
       this.$store
         .dispatch('googleSignIn')
         .then(() => {
-          console.log('dispatched')
+          console.log('inside login component of googleSignIn')
         })
         .catch(e => {
           console.log(e.message)
@@ -155,7 +158,7 @@ export default {
       this.$store
         .dispatch('facebookSignIn')
         .then(() => {
-          console.log('dispatched')
+          console.log('dispatched facebook Login')
         })
         .catch(e => {
           console.log(e.message)
