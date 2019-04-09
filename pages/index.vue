@@ -55,6 +55,8 @@
       </div>
     </section>
 
+
+    <content1 />
     <feature3 id="element" />
     <feature1 />
     <feature4 />
@@ -80,6 +82,7 @@ import pricing1 from '~/components/Pricing'
 import pricing2 from '~/components/Pricing2'
 import section1 from '~/components/section1'
 import footer1 from '~/components/Footer'
+import content1 from '~/components/content1'
 
 export default {
   layout: 'default',
@@ -94,7 +97,8 @@ export default {
     footer1,
     pricing1,
     pricing2,
-    section1
+    section1,
+    content1
   }
 }
 </script>
