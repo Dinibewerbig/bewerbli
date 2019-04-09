@@ -1,8 +1,17 @@
 <template>
   <div>
-    <h1>hello hooper 2</h1>
+    <h1> {{ fragen }}</h1>
     <resizable-textarea>
-      <textarea ref="input" spellcheck="false" autofocus placeholder="Antwort eingeben" />
+      <form
+        ref="input"
+      >
+        <textarea
+          spellcheck="false"
+          autofocus
+          placeholder="Antwort eingeben"
+          @submit.prevent="updateEmployee"
+        />
+      </form>
     </resizable-textarea>
   </div>
 </template>
@@ -13,10 +22,13 @@ export default {
   name: 'Form2',
   components: { resizableTextarea },
   // eslint-disable-next-line vue/require-prop-types
-  props: ['active'],
+  props: ['active', 'fragen'],
   methods: {
     setFocus: function() {
       this.$refs.input.focus()
+    },
+    setValue: function(activeSlide) {
+      console.log('button pushed form2 from active Slide ' + activeSlide)
     }
   }
 }

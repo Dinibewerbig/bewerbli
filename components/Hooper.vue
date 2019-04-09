@@ -4,7 +4,7 @@
       <hooper-pagination slot="hooper-addons" mode="fraction" />
       <slide v-for="(step, index) in steps" :key="index+1" class="form__slide">
         <div>
-          <component :is="step.component" :items="step.options" />
+          <component :is="step.component" ref="childComponent" :items="step.options" :fragen="step.frage" />
         </div>
       </slide>
 
@@ -20,7 +20,7 @@
           oder drücke Enter
         </span>
       </button>
-      
+
       <button class="btn self-stretch" :class="{disabled: index === 3}" @click.prevent="slideNext">
         <h2>Weiter</h2>
       </button>
@@ -85,6 +85,7 @@ export default {
     },
     slideNext() {
       this.$refs.carousel.slideNext()
+      this.$refs.childComponent[this.activeSlide + 1].setValue(this.activeSlide)
       this.activeSlide = this.$refs.carousel.currentSlide
     }
   }

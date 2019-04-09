@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="mb-12 font-light">
-      hello slide 1
+      {{ fragen }}
     </h1>
     <div>
       <button
@@ -21,7 +21,7 @@
 export default {
   name: 'Form1',
   // eslint-disable-next-line vue/require-prop-types
-  props: ['items', 'active'],
+  props: ['items', 'active', 'fragen'],
   data() {
     return {
       selected: [],
@@ -40,6 +40,9 @@ export default {
         this.selected.push(text)
         elem.classList.add('flash')
       }
+    },
+    setValue: function(activeSlide) {
+      console.log('button pushed in form1 from active Slide ' + activeSlide)
     }
 
     // /* eslint-disable no-console */
