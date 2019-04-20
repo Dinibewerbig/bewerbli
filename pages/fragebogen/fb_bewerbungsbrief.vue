@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <Hooper ref="HooperCall" />
-  </div>
+  <Hooper ref="HooperCall" />
 </template>
 <script>
 import Hooper from '~/components/Hooper.vue'
@@ -10,3 +8,6 @@ export default {
   layout: 'container'
 }
 </script>
+
+<style lang="scss" scoped>
+</style>

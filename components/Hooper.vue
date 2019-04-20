@@ -1,27 +1,28 @@
 <template>
   <div class="form__container mt-10">
-    <hooper :key="componentKey" ref="carousel" :mouse-drag="false" class="form__slides">
+    <hooper :key="componentKey" ref="carousel" :mouse-drag="false" class="form__slides" @slide="updateSlide">
       <hooper-pagination slot="hooper-addons" mode="fraction" />
-      <slide v-for="(step, index) in steps" :key="index+1" class="form__slide">
+      <slide v-for="(step, i) in steps" :key="i+1" class="form__slide">
         <div>
-          <component :is="step.component" ref="childComponent" :items="step.options" :fragen="step.frage" />
+          <component :is="step.component" ref="childComponent" :items="step.options" :fragen="step.frage" :active="activeSlide" />
         </div>
       </slide>
 
       <hooper-progress slot="hooper-addons" />
     </hooper>
     <div class="nav">
-      <button class="btn btn--alt" :class="{disabled: index === 0}" @click.prevent="slidePrev">
+      <button class="btn btn--alt" :class="{disabled: activeSlide === 0}" @click.prevent="slidePrev">
         <font-awesome-icon
           :icon="['fas', 'arrow-left']"
-          style="color: rgb(55, 41, 136); font-size: 25px;"
+          style="color: rgb(55, 41, 136); font-size: 20px;"
         />
         <span class="trial__btn-hint">
+          activeSlide
           oder drücke Enter
         </span>
       </button>
 
-      <button class="btn self-stretch" :class="{disabled: index === 3}" @click.prevent="slideNext">
+      <button class="btn self-stretch" :class="{disabled: activeSlide > 16}" @click.prevent="slideNext">
         <h2>Weiter</h2>
       </button>
     </div>
@@ -64,13 +65,9 @@ export default {
   },
   watch: {
     activeSlide: function() {
-      setTimeout(this.$refs.carousel.$children[this.activeSlide].setFocus, 500)
-      /* eslint-disable no-console */
-      console.log(this.activeSlide)
-      console.log(this.$refs)
-      console.log(this.$refs.carousel.$children[3])
-      // console.log(this.$refs.focusInput[1])
-      /* eslint-enable no-console */
+      this.$nextTick(function() {
+        setTimeout(this.$refs.carousel.$children[this.activeSlide].setFocus, 50)
+      })
     }
   },
   mounted: function() {
@@ -79,14 +76,16 @@ export default {
     })
   },
   methods: {
+    updateSlide(Slide) {
+      const passedSlide = Slide.slideFrom
+      this.$refs.childComponent[passedSlide].setValue(passedSlide)
+      this.activeSlide = Slide.currentSlide
+    },
     slidePrev() {
       this.$refs.carousel.slidePrev()
-      this.activeSlide = this.$refs.carousel.currentSlide
     },
     slideNext() {
       this.$refs.carousel.slideNext()
-      this.$refs.childComponent[this.activeSlide + 1].setValue(this.activeSlide)
-      this.activeSlide = this.$refs.carousel.currentSlide
     }
   }
 }

@@ -52,7 +52,7 @@
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
-          Fragebögen
+          Fragebogen
         </li>
         <!-- </div> -->
 
@@ -74,33 +74,29 @@
         BESTELLEN
       </nuxt-link>
       <nuxt-link
-        v-if="!$store.state.user"
+        v-if="!user"
         class="btn2 btn3 antialiased ml-2 cursor-pointer"
         :class="{'btn2--unpinned': scrolled}"
         tag="li"
         to="/user/login"
       >
-        MEIN KONTO
+        KONTO
       </nuxt-link>
   
     
       <div class="group mt-6 ml-4 relative ">
-        <img v-if="$store.state.user" class="avatar cursor-pointer" :src="$store.state.user.photoURL" alt="avatar">
+        <img v-if="user" class="avatar cursor-pointer" :src="user.photoURL" alt="avatar">
         <div class="dropdown2 rounded items-center absolute border pin-l border-t-0 mt-4 bg-white invisible group-hover:visible">
           <div class="dropdownArrow2" />
           <ul class="list-reset">
             <li>
-              <a href="#" class="px-4 py-2 block text-grey-darkest hover:bg-grey-light">
-                My account
-              </a>
+              <nuxt-link to="/user/dashboard" />Dashboard</nuxt-link>
             </li>
             <li>
-              <a href="#" class="px-4 py-2 block text-black hover:bg-grey-light">
-                Notifications
-              </a>
+              <nuxt-link to="/user/settings" />Settings</nuxt-link>
             </li>
             <li>
-              <div class="px-4 py-2 block text-black hover:bg-grey-light" @click="signOut">
+              <div class="px-4 py-2 block text-black hover:bg-grey-light" @click="logout">
                 Logout
               </div>
             </li>
@@ -367,6 +363,8 @@
 
 <script>
 import TastyBurgerButton from '~/components/BurgerButton'
+import { mapState } from 'vuex'
+const fb = require('~/services/firebaseConfig.js')
 
 export default {
   components: {
@@ -386,6 +384,11 @@ export default {
       hamburgers: '',
       offset: ''
     }
+  },
+  computed: {
+    ...mapState({
+      user: state => state.currentUser
+    })
   },
   methods: {
     addProgress: function() {
@@ -410,6 +413,17 @@ export default {
       } else {
         this.direction = 'tabPrev'
       }
+    },
+    logout() {
+      fb.auth
+        .signOut()
+        .then(() => {
+          this.$store.dispatch('clearData')
+          this.$router.push('/user/login')
+        })
+        .catch(err => {
+          console.log(err)
+        })
     },
     signOut() {
       this.$store

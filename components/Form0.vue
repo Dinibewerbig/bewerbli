@@ -1,9 +1,15 @@
 <template>
   <div>
     <div class="bg-image" />
-    <h1 ref="image" class="mt-5">
+    <h1 class="mt-5">
       Willkommen zum Fragebogen Bewerbungsbrief
     </h1>
+    <textarea
+      ref="input"
+      spellcheck="false"
+      autofocus
+      placeholder="Antwort eingeben"
+    />
     <p>Je ausführlicher du die Fragen beantwortest, desto besser wird dein Brief.</p>
   </div>
 </template>
@@ -13,8 +19,9 @@ export default {
   name: 'Form0',
   methods: {
     setFocus: function() {
-      this.$refs.image.focus()
-    }
+      this.$refs.input.focus()
+    },
+    setValue: function() {}
   }
 }
 </script>
@@ -36,5 +43,9 @@ h1 {
 
   background-position-y: top;
   background-repeat: no-repeat;
+}
+
+textarea {
+  opacity: 0;
 }
 </style>

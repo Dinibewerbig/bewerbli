@@ -41,8 +41,12 @@ export default {
         elem.classList.add('flash')
       }
     },
-    setValue: function(activeSlide) {
-      console.log('button pushed in form1 from active Slide ' + activeSlide)
+    setValue(active) {
+      this.$store.commit('setUserData', {
+        value: this.selected,
+        active
+      })
+      console.log(this.selected)
     }
 
     // /* eslint-disable no-console */

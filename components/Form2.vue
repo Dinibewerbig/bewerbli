@@ -2,14 +2,13 @@
   <div>
     <h1> {{ fragen }}</h1>
     <resizable-textarea>
-      <form
-        ref="input"
-      >
+      <form>
         <textarea
+          ref="input"
+          v-model="message"
           spellcheck="false"
           autofocus
           placeholder="Antwort eingeben"
-          @submit.prevent="updateEmployee"
         />
       </form>
     </resizable-textarea>
@@ -23,12 +22,21 @@ export default {
   components: { resizableTextarea },
   // eslint-disable-next-line vue/require-prop-types
   props: ['active', 'fragen'],
+
+  // mounted: function(userData) {
+  //   this.message = userData
+  //   console.log(userData)
+  // },
+
   methods: {
+    setValue(active) {
+      this.$store.commit('setUserData', {
+        value: this.message,
+        active
+      })
+    },
     setFocus: function() {
       this.$refs.input.focus()
-    },
-    setValue: function(activeSlide) {
-      console.log('button pushed form2 from active Slide ' + activeSlide)
     }
   }
 }

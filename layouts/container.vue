@@ -1,5 +1,5 @@
 <template>
-  <div class="container-lg">
+  <div ref="container" class="container-lg">
     <div class="pt-4 flex items-center w-full">
       <!-- <img src="~/assets/logo44.svg" style=" width:150px" class="mr-4" @click="$router.push('/')"> -->
       <h3 class="font-regular">
@@ -27,6 +27,7 @@ export default {}
   padding: 0 50px;
   max-width: 1070px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  z-index: 100000;
 }
 
 h3 {

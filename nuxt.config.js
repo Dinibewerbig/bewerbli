@@ -79,7 +79,8 @@ export const router = {
 export const modules = [
   'nuxt-fontawesome',
   '@neneos/nuxt-animate.css',
-  'vue-scrollto/nuxt'
+  'vue-scrollto/nuxt',
+  '@nuxtjs/moment'
 ]
 export const fontawesome = {
   imports: [
