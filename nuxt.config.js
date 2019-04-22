@@ -1,6 +1,7 @@
 export const mode = 'spa'
 export const head = {
   title: 'Bewerbli, Bewerbungsbriefe für Jugendliche',
+  script: [{ src: 'https://js.stripe.com/v3/' }],
   meta: [
     {
       charset: 'utf-8'
@@ -16,6 +17,9 @@ export const head = {
       content: 'Bewerbli'
     }
   ],
+  render: {
+    resourceHints: false
+  },
   link: [
     {
       rel: 'icon',
