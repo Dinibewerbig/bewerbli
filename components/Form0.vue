@@ -21,7 +21,7 @@ export default {
     setFocus: function() {
       this.$refs.input.focus()
     },
-    setValue: function() {}
+    setValue(active) {}
   }
 }
 </script>

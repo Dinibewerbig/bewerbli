@@ -1,15 +1,15 @@
 <template>
   <div>
     <h1> {{ fragen }}</h1>
+    
     <resizable-textarea>
       <form>
-        <textarea
+        <textarea  
           ref="input"
-          v-model="message"
+          v-model="answers[active]"
           spellcheck="false"
           autofocus
-          placeholder="Antwort eingeben"
-        />
+        />  
       </form>
     </resizable-textarea>
   </div>
@@ -17,22 +17,35 @@
 
 <script>
 import resizableTextarea from '~/components/resizableTextareas.vue'
+import { mapState } from 'vuex'
+// const fb = require('~/services/firebaseConfig.js')
 export default {
   name: 'Form2',
   components: { resizableTextarea },
-  // eslint-disable-next-line vue/require-prop-types
-  props: ['active', 'fragen'],
+  props: {
+    id: { type: Number, required: true },
+    fragen: { type: String, required: true },
+    active: { type: Number, default: 0 }
+  },
+  data() {
+    return {
+      name12: 'hello',
+      title: '',
+      answer: '',
+      ans: '',
+      showSuccess: false
+    }
+  },
 
-  // mounted: function(userData) {
-  //   this.message = userData
-  //   console.log(userData)
-  // },
+  computed: {
+    ...mapState(['userProfile', 'answers', 'currentUser'])
+  },
 
   methods: {
     setValue(active) {
-      this.$store.commit('setUserData', {
-        value: this.message,
-        active
+      this.$store.dispatch('updateAnswers', {
+        answer: this.answers[active],
+        id: active
       })
     },
     setFocus: function() {

@@ -1,270 +1,60 @@
 const steps = [
   {
-    id: 'f001',
-    frage: 'Wähle den Beruf?',
+    id: 1,
+    frage: 'Wähle ID 1?',
     component: 'Form0',
     options: []
   },
   {
-    id: 'f002',
+    id: 2,
     frage: 'Wähle den Beruf?',
     component: 'Form1',
     options: ['hello12', 'naturlich', 'weiterso', 'wow']
   },
   {
-    id: 'f003',
+    id: 3,
     frage: 'Wie geht es weiter?',
     component: 'Form2',
     options: []
   },
   {
-    id: 'f004',
+    id: 4,
     frage: 'Und dann?',
     component: 'Form1',
     options: ['huuuuuuu', 'naturlich', 'weiterso', 'wow']
   },
   {
-    id: 'f005',
+    id: 5,
     frage: 'Ja aber warum?',
     component: 'Form2',
     options: []
   },
   {
-    id: 'f006',
-    frage: 'Wie geht es weiter?',
+    id: 6,
+    frage: 'Wie geht ID 6 ?',
     component: 'Form2',
     options: []
   },
   {
-    id: 'f007',
+    id: 7,
     frage: 'Why so happy?',
     component: 'Form1',
     options: ['huuuuuuu', 'naturlich', 'weiterso', 'wow']
   },
   {
-    id: 'f008',
+    id: 8,
+    frage: 'Wie geht  ID 8?',
+    component: 'Form2',
+    options: []
+  },
+  {
+    id: 9,
     frage: 'Wie geht es weiter?',
     component: 'Form2',
     options: []
   },
   {
-    id: 'f009',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f010',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
-    frage: 'Wie geht es weiter?',
-    component: 'Form2',
-    options: []
-  },
-  {
-    id: 'f001',
+    id: 10,
     frage: 'Wie geht es weiter?',
     component: 'Form2',
     options: []

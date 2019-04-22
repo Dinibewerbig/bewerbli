@@ -419,20 +419,10 @@ export default {
         .signOut()
         .then(() => {
           this.$store.dispatch('clearData')
-          this.$router.push('/user/login')
+          this.$router.push('/')
         })
         .catch(err => {
           console.log(err)
-        })
-    },
-    signOut() {
-      this.$store
-        .dispatch('signOut')
-        .then(() => {
-          console.log('signed out')
-        })
-        .catch(e => {
-          console.log(e.message)
         })
     }
   }

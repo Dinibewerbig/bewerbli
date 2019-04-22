@@ -5,114 +5,59 @@
         <div class="profile">
           <h5>{{ userProfile.name }}</h5>
           <p>{{ userProfile.title }}</p>
-          <div class="create-post">
-            <p>create a post</p>
-            <form @submit.prevent>
-              <textarea v-model.trim="post.content" />
-              <button :disabled="post.content == ''" class="button" @click="createPost">
-                post
-              </button>
-            </form>
-          </div>
         </div>
       </div>
       <div class="col2">
         <transition name="fade">
-          <div v-if="hiddenPosts.length" class="hidden-posts" @click="showNewPosts">
-            <p>
-              Click to show <span class="new-posts">
-                {{ hiddenPosts.length }}
-              </span>
-              new <span v-if="hiddenPosts.length > 1">
-                posts
-              </span><span v-else>
-                post
-              </span>
+          <div v-if="answers">
+            <div v-for="(answer, key) in answers" :key="key" class="post">
+              <div v-if="key >= 0">
+                <h5>{{ steps[key].frage }}</h5>
+              </div>
+              <h5>{{ answer }}</h5>
+                     
+         
+             
+              <ul>
+                <li>
+                  <a @click="openCommentModal(post)">
+                    comments {{ answer.comments }}
+                  </a>
+                </li>
+                <li>
+                  <a @click="likePost(post.id, post.likes)">
+                    likes {{ answer.likes }}
+                  </a>
+                </li>
+                <li>
+                  <a @click="viewPost(post)">
+                    edit Answer
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div v-else>
+            <p class="no-results">
+              There are currently no posts
             </p>
           </div>
         </transition>
-        <div v-if="posts.length">
-          <div v-for="(post, key) in posts" :key="key" class="post">
-            <h5>{{ post.userName }}</h5>
-            <span>{{ post.createdOn | formatDate }}</span>
-            <p>{{ post.content | trimLength }}</p>
-            <ul>
-              <li>
-                <a @click="openCommentModal(post)">
-                  comments {{ post.comments }}
-                </a>
-              </li>
-              <li>
-                <a @click="likePost(post.id, post.likes)">
-                  likes {{ post.likes }}
-                </a>
-              </li>
-              <li>
-                <a @click="viewPost(post)">
-                  view full post
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div v-else>
-          <p class="no-results">
-            There are currently no posts
-          </p>
-        </div>
-      </div>
+      </div></transition>
     </section>
-
-    <!-- comment modal -->
-    <transition name="fade">
-      <div v-if="showCommentModal" class="c-modal">
-        <div class="c-container">
-          <a @click="closeCommentModal">
-            X
-          </a>
-          <p>add a comment</p>
-          <form @submit.prevent>
-            <textarea v-model.trim="comment.content" />
-            <button :disabled="comment.content == ''" class="button" @click="addComment">
-              add comment
-            </button>
-          </form>
-        </div>
-      </div>
-    </transition>
-
-    <!-- post modal -->
-    <transition name="fade">
-      <div v-if="showPostModal" class="p-modal">
-        <div class="p-container">
-          <a class="close" @click="closePostModal">
-            X
-          </a>
-          <div class="post">
-            <h5>{{ fullPost.userName }}</h5>
-            <span>{{ fullPost.createdOn | formatDate }}</span>
-            <p>{{ fullPost.content }}</p>
-            <ul>
-              <li><a>comments {{ fullPost.comments }}</a></li>
-              <li><a>likes {{ fullPost.likes }}</a></li>
-            </ul>
-          </div>
-          <div v-show="postComments.length" class="comments">
-            <div v-for="(comment,key) in postComments" :key="key" class="comment">
-              <p>{{ comment.userName }}</p>
-              <span>{{ comment.createdOn | formatDate }}</span>
-              <p>{{ comment.content }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition>
+  </div>
+  </transition>
+  </section>
+  </div>
+  </transition>
+  </section>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import moment from 'moment'
+import steps from '~/assets/steps.js'
 const fb = require('~/services/firebaseConfig.js')
 
 export default {
@@ -134,6 +79,8 @@ export default {
   },
   data() {
     return {
+      steps: steps,
+      answersArray: this.answers,
       post: {
         content: ''
       },
@@ -150,9 +97,19 @@ export default {
     }
   },
   computed: {
-    ...mapState(['userProfile', 'currentUser', 'posts', 'hiddenPosts'])
+    ...mapState([
+      'userProfile',
+      'currentUser',
+      'posts',
+      'answers',
+      'hiddenPosts'
+    ])
   },
+
   methods: {
+    getSteps(key) {
+      return this.steps[key]
+    },
     createPost() {
       fb.postsCollection
         .add({

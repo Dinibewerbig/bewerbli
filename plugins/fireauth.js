@@ -7,10 +7,36 @@ export default context => {
     if (user) {
       store.commit('setCurrentUser', user)
       store.dispatch('fetchUserProfile')
+      store.dispatch('fetchAnswers')
 
       fb.usersCollection.doc(user.uid).onSnapshot(doc => {
         store.commit('setUserProfile', doc.data())
       })
+
+      // fb.usersCollection.doc(user.uid).set({
+      //   name: user.uid
+      // })
+
+      fb.answersCollection.doc(user.uid).onSnapshot(doc => {
+        store.commit('setAnswers', doc.data())
+      })
+
+      // fb.answersCollection.doc(user.uid).set({
+      //   0: user.uid
+      // })
+
+      // fb.answersCollection
+      //   .orderBy('createdOn', 'desc')
+      //   .onSnapshot(querySnapshot => {
+      //     const answersArray = []
+      //     querySnapshot.forEach(doc => {
+      //       const answer = doc.data()
+      //       answer.id = doc.id
+      //       answersArray.push(answer)
+      //     })
+
+      //     store.commit('setAnswers', answersArray)
+      //   })
 
       // realtime updates from our posts collection
       fb.postsCollection

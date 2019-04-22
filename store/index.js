@@ -7,14 +7,41 @@ const store = () => {
       currentUser: null,
       userProfile: {},
       posts: [],
-      hiddenPosts: []
+      hiddenPosts: [],
+      answers: {}
     },
     actions: {
       clearData({ commit }) {
         commit('setCurrentUser', null)
         commit('setUserProfile', {})
         commit('setPosts', null)
+        commit('setAnswers', null)
         commit('setHiddenPosts', null)
+      },
+      updateAnswers({ commit, state }, data) {
+        const answer = data.answer
+        const id = data.id
+        fb.answersCollection
+          .doc(state.currentUser.uid)
+          .update({ [id]: answer })
+          .then(user => {
+            console.log('Data to Firestore sent' + id)
+          })
+
+          .catch(err => {
+            console.log(err)
+          })
+      },
+      fetchAnswers({ commit, state }) {
+        fb.usersCollection
+          .doc(state.currentUser.uid)
+          .get()
+          .then(res => {
+            commit('setAnswers', res.data())
+          })
+          .catch(err => {
+            console.log(err)
+          })
       },
       fetchUserProfile({ commit, state }) {
         fb.usersCollection
@@ -24,40 +51,41 @@ const store = () => {
             commit('setUserProfile', res.data())
           })
           .catch(err => {
+            console.log('FetchUserProfile')
             console.log(err)
           })
       },
       updateProfile({ commit, state }, data) {
         const name = data.name
-        const title = data.title
 
         fb.usersCollection
           .doc(state.currentUser.uid)
-          .update({ name, title })
-          .then(user => {
-            // update all posts by user to reflect new name
-            fb.postsCollection
-              .where('userId', '==', state.currentUser.uid)
-              .get()
-              .then(docs => {
-                docs.forEach(doc => {
-                  fb.postsCollection.doc(doc.id).update({
-                    userName: name
-                  })
-                })
-              })
-            // update all comments by user to reflect new name
-            fb.commentsCollection
-              .where('userId', '==', state.currentUser.uid)
-              .get()
-              .then(docs => {
-                docs.forEach(doc => {
-                  fb.commentsCollection.doc(doc.id).update({
-                    userName: name
-                  })
-                })
-              })
-          })
+          .update({ name })
+          // .then(user => {
+          // update all posts by user to reflect new name
+          // fb.postsCollection
+          //   .where('userId', '==', state.currentUser.uid)
+          //   .get()
+          //   .then(docs => {
+          //     docs.forEach(doc => {
+          //       fb.postsCollection.doc(doc.id).update({
+          //         userName: name
+          //       })
+          //     })
+          //   })
+          // update all comments by user to reflect new name
+          // fb.commentsCollection
+          //   .where('userId', '==', state.currentUser.uid)
+          //   .get()
+          //   .then(docs => {
+          //     docs.forEach(doc => {
+          //       fb.commentsCollection.doc(doc.id).update({
+          //         userName: name
+          //       })
+          //     })
+          //   })
+          // })
+
           .catch(err => {
             console.log(err)
           })
@@ -65,6 +93,7 @@ const store = () => {
     },
     mutations: {
       setCurrentUser(state, val) {
+        console.log('setCurrentUser')
         state.currentUser = val
       },
       setUserProfile(state, val) {
@@ -75,6 +104,14 @@ const store = () => {
           state.posts = val
         } else {
           state.posts = []
+        }
+      },
+      setAnswers(state, val) {
+        if (val) {
+          state.answers = val
+          console.log(state.answers)
+        } else {
+          state.answers = []
         }
       },
       setHiddenPosts(state, val) {

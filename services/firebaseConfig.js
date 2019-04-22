@@ -16,10 +16,13 @@ firebase.initializeApp(config)
 const db = firebase.firestore()
 const auth = firebase.auth()
 const currentUser = auth.currentUser
+const GoogleProvider = new firebase.auth.GoogleAuthProvider()
+const FacebookProvider = new firebase.auth.FacebookAuthProvider()
 
 // firebase collections
 const usersCollection = db.collection('users')
 const postsCollection = db.collection('posts')
+const answersCollection = db.collection('answers')
 const commentsCollection = db.collection('comments')
 const likesCollection = db.collection('likes')
 
@@ -30,5 +33,8 @@ export {
   usersCollection,
   postsCollection,
   commentsCollection,
-  likesCollection
+  answersCollection,
+  likesCollection,
+  GoogleProvider,
+  FacebookProvider
 }

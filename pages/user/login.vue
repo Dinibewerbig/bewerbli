@@ -7,107 +7,115 @@
     </transition>
     <section>
       <div class="col1">
-        <h1>Vuegram</h1>
-        <p>
-          Welcome to the <a href="https://savvyapps.com/" target="_blank">
-            Savvy Apps
-          </a> sample social media web app powered by Vue.js and Firebase.
-          Build this project by checking out The Definitive Guide to Getting Started with Vue.js
-        </p>
-      </div>
-      <div class="col2" :class="{ 'signup-form': !showLoginForm && !showForgotPassword }">
-        <form v-if="showLoginForm" @submit.prevent>
-          <h1>Welcome Back</h1>
-
-          <label for="email1">
-            Email
-          </label>
-          <input id="email1" v-model.trim="loginForm.email" type="text" placeholder="you@email.com">
-
-          <label for="password1">
-            Password
-          </label>
-          <input id="password1" v-model.trim="loginForm.password" type="password" placeholder="******">
-
-          <button class="button" @click="login">
-            Log In
+        <div class="flex">
+          <h1>Social Login</h1>
+          <button class="facebook p-2 flex-1 rounded mr-8 my-3 " @click="facebookSignIn">
+            <img width="24" src="~/assets/facebook.svg" style="fill: #fff" alt="Icon github">
+            <span class="text-white font-thin">
+              Facebook
+            </span> 
           </button>
-
-          <div class="extras">
-            <a @click="togglePasswordReset">
-              Forgot Password
-            </a>
-            <a @click="toggleForm">
-              Create an Account
-            </a>
-          </div>
-        </form>
-        <form v-if="!showLoginForm && !showForgotPassword" @submit.prevent>
-          <h1>Get Started</h1>
-
-          <label for="name">
-            Name
-          </label>
-          <input id="name" v-model.trim="signupForm.name" type="text" placeholder="Savvy Apps">
-
-          <label for="title">
-            Title
-          </label>
-          <input id="title" v-model.trim="signupForm.title" type="text" placeholder="Company">
-
-          <label for="email2">
-            Email
-          </label>
-          <input id="email2" v-model.trim="signupForm.email" type="text" placeholder="you@email.com">
-
-          <label for="password2">
-            Password
-          </label>
-          <input id="password2" v-model.trim="signupForm.password" type="password" placeholder="min 6 characters">
-
-          <button class="button" @click="signup">
-            Sign Up
+          <button class="flex-grow p-2 flex-1 rounded my-3 border border-grey-light" @click="googleSignIn">
+            <img width="24" src="~/assets/icon-google.svg" alt="Icon google">
+            <span class="font-thin">
+              Google
+            </span>
           </button>
+        </div>
+        <div class="col2" :class="{ 'signup-form': !showLoginForm && !showForgotPassword }">
+          <form v-if="showLoginForm" @submit.prevent>
+            <h1>Welcome Back</h1>
 
-          <div class="extras">
-            <a @click="toggleForm">
-              Back to Log In
-            </a>
-          </div>
-        </form>
-        <form v-if="showForgotPassword" class="password-reset" @submit.prevent>
-          <div v-if="!passwordResetSuccess">
-            <h1>Reset Password</h1>
-            <p>We will send you an email to reset your password</p>
-
-            <label for="email3">
+            <label for="email1">
               Email
             </label>
-            <input id="email3" v-model.trim="passwordForm.email" type="text" placeholder="you@email.com">
+            <input id="email1" v-model.trim="loginForm.email" type="text" placeholder="you@email.com">
 
-            <button class="button" @click="resetPassword">
-              Submit
+            <label for="password1">
+              Password
+            </label>
+            <input id="password1" v-model.trim="loginForm.password" type="password" placeholder="******">
+
+            <button class="button" @click="login">
+              Log In
             </button>
 
             <div class="extras">
               <a @click="togglePasswordReset">
+                Forgot Password
+              </a>
+              <a @click="toggleForm">
+                Create an Account
+              </a>
+            </div>
+          </form>
+          <form v-if="!showLoginForm && !showForgotPassword" @submit.prevent>
+            <h1>Get Started</h1>
+
+            <label for="name">
+              Name
+            </label>
+            <input id="name" v-model.trim="signupForm.name" type="text" placeholder="Savvy Apps">
+
+            <label for="title">
+              Title
+            </label>
+            <input id="title" v-model.trim="signupForm.title" type="text" placeholder="Company">
+
+            <label for="email2">
+              Email
+            </label>
+            <input id="email2" v-model.trim="signupForm.email" type="text" placeholder="you@email.com">
+
+            <label for="password2">
+              Password
+            </label>
+            <input id="password2" v-model.trim="signupForm.password" type="password" placeholder="min 6 characters">
+
+            <button class="button" @click="signup">
+              Sign Up
+            </button>
+
+            <div class="extras">
+              <a @click="toggleForm">
                 Back to Log In
               </a>
             </div>
-          </div>
-          <div v-else>
-            <h1>Email Sent</h1>
-            <p>check your email for a link to reset your password</p>
-            <button class="button" @click="togglePasswordReset">
-              Back to login
-            </button>
-          </div>
-        </form>
-        <transition name="fade">
-          <div v-if="errorMsg !== ''" class="error-msg">
-            <p>{{ errorMsg }}</p>
-          </div>
-        </transition>
+          </form>
+          <form v-if="showForgotPassword" class="password-reset" @submit.prevent>
+            <div v-if="!passwordResetSuccess">
+              <h1>Reset Password</h1>
+              <p>We will send you an email to reset your password</p>
+
+              <label for="email3">
+                Email
+              </label>
+              <input id="email3" v-model.trim="passwordForm.email" type="text" placeholder="you@email.com">
+
+              <button class="button" @click="resetPassword">
+                Submit
+              </button>
+
+              <div class="extras">
+                <a @click="togglePasswordReset">
+                  Back to Log In
+                </a>
+              </div>
+            </div>
+            <div v-else>
+              <h1>Email Sent</h1>
+              <p>check your email for a link to reset your password</p>
+              <button class="button" @click="togglePasswordReset">
+                Back to login
+              </button>
+            </div>
+          </form>
+          <transition name="fade">
+            <div v-if="errorMsg !== ''" class="error-msg">
+              <p>{{ errorMsg }}</p>
+            </div>
+          </transition>
+        </div>
       </div>
     </section>
   </div>
@@ -117,7 +125,7 @@
 const fb = require('~/services/firebaseConfig.js')
 
 export default {
-  layout: 'container',
+  layout: 'login',
   data() {
     return {
       loginForm: {
@@ -155,6 +163,74 @@ export default {
         this.showForgotPassword = true
       }
     },
+    googleSignIn() {
+      fb.auth
+        .signInWithPopup(fb.GoogleProvider)
+        .then(({ user }) => {
+          this.$store.commit('setCurrentUser', user)
+
+          // create answer obj
+          fb.answersCollection.doc(user.uid).set({
+            0: user.displayName
+          })
+          // create user obj
+          fb.usersCollection
+            .doc(user.uid)
+            .set({
+              name: user.displayName
+            })
+            .then(() => {
+              this.$store.dispatch('fetchUserProfile')
+              this.performingRequest = false
+              this.$router.push('/user/dashboard')
+            })
+            .catch(err => {
+              console.log(err)
+              this.performingRequest = false
+              this.errorMsg = err.message
+            })
+        })
+        .catch(err => {
+          console.log(err)
+          this.performingRequest = false
+          this.errorMsg = err.message
+        })
+    },
+    facebookSignIn() {
+      fb.auth
+        .signInWithPopup(fb.FacebookProvider)
+        .then(({ user }) => {
+          this.$store.commit('setCurrentUser', user)
+          console.log('here we go: ' + user.uid)
+
+          // create answer obj
+          fb.answersCollection.doc(user.uid).set({
+            0: user.displayName
+          })
+          // create user obj
+          fb.usersCollection
+            .doc(user.uid)
+            .set({
+              name: user.displayName
+            })
+            .then(() => {
+              console.log('Inside Facebook Sign in... After Set ')
+              this.$store.dispatch('fetchUserProfile')
+              this.performingRequest = false
+              this.$router.push('/user/dashboard')
+            })
+            .catch(err => {
+              console.log(err)
+              this.performingRequest = false
+              this.errorMsg = err.message
+            })
+        })
+        .catch(err => {
+          console.log(err)
+          this.performingRequest = false
+          this.errorMsg = err.message
+        })
+    },
     login() {
       this.performingRequest = true
 
@@ -163,7 +239,7 @@ export default {
           this.loginForm.email,
           this.loginForm.password
         )
-        .then(user => {
+        .then(({ user }) => {
           this.$store.commit('setCurrentUser', user)
           this.$store.dispatch('fetchUserProfile')
           this.performingRequest = false
@@ -185,8 +261,11 @@ export default {
         )
         .then(({ user }) => {
           this.$store.commit('setCurrentUser', user)
-          console.log(user.uid)
-          console.log(user)
+
+          // create answer obj
+          fb.answersCollection.doc(user.uid).set({
+            0: user.displayName
+          })
 
           // create user obj
           fb.usersCollection

@@ -4,7 +4,14 @@
       <hooper-pagination slot="hooper-addons" mode="fraction" />
       <slide v-for="(step, i) in steps" :key="i+1" class="form__slide">
         <div>
-          <component :is="step.component" ref="childComponent" :items="step.options" :fragen="step.frage" :active="activeSlide" />
+          <component
+            :is="step.component"
+            :id="step.id"
+            ref="childComponent"
+            :items="step.options"
+            :fragen="step.frage"
+            :active="activeSlide"
+          />
         </div>
       </slide>
 
@@ -66,7 +73,11 @@ export default {
   watch: {
     activeSlide: function() {
       this.$nextTick(function() {
-        setTimeout(this.$refs.carousel.$children[this.activeSlide].setFocus, 50)
+        setTimeout(
+          this.$refs.carousel.$children[this.activeSlide].setFocus,
+          200
+        )
+        console.log('setFocus !!')
       })
     }
   },
@@ -80,6 +91,7 @@ export default {
       const passedSlide = Slide.slideFrom
       this.$refs.childComponent[passedSlide].setValue(passedSlide)
       this.activeSlide = Slide.currentSlide
+      console.log(passedSlide + '=passed Slide')
     },
     slidePrev() {
       this.$refs.carousel.slidePrev()

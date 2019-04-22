@@ -15,6 +15,12 @@
         {{ item }}
       </button>
     </div>
+    <textarea
+      ref="input"
+      spellcheck="false"
+      autofocus
+      placeholder="Antwort eingeben"
+    />
   </div>
 </template>
 <script>
@@ -42,16 +48,22 @@ export default {
       }
     },
     setValue(active) {
-      this.$store.commit('setUserData', {
-        value: this.selected,
-        active
+      this.$store.dispatch('updateAnswers', {
+        answer: this.selected,
+        id: active
       })
-      console.log(this.selected)
-    }
+      console.log(active + 'passed active in setValue Form1')
+      this.act = active
 
-    // /* eslint-disable no-console */
-    // console.log(this.active)
-    // /* eslint-enable no-console */
+      this.showSuccess = true
+
+      setTimeout(() => {
+        this.showSuccess = false
+      }, 2000)
+    },
+    setFocus: function() {
+      this.$refs.input.focus()
+    }
   }
 }
 </script>
@@ -63,5 +75,8 @@ export default {
 
 h2 {
   margin-bottom: 0px;
+}
+textarea {
+  opacity: 0;
 }
 </style>
