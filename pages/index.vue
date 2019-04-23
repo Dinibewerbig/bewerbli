@@ -62,6 +62,7 @@
     <feature4 />
     <feature2 />
     <feature5 />
+    <pingping />
     <feature6 />
     <pricing1 /> 
     <pricing2 /> 
@@ -83,6 +84,7 @@ import pricing2 from '~/components/Pricing2'
 import section1 from '~/components/section1'
 import footer1 from '~/components/Footer'
 import content1 from '~/components/content1'
+import pingping from '~/components/pingping'
 
 export default {
   layout: 'default',
@@ -98,7 +100,8 @@ export default {
     pricing1,
     pricing2,
     section1,
-    content1
+    content1,
+    pingping
   }
 }
 </script>
@@ -278,7 +281,7 @@ input {
   font-weight: 800;
   color: #ffffff;
   // font-family: Hind;
-  font-family: Myriad Pro;
+
   // font-family: Camphor;
   // font-family: system-ui;
   // letter-spacing: 0.05em;
@@ -286,17 +289,10 @@ input {
   // font-family: Montserrat;
   margin-bottom: 20px;
   line-height: 1.3em !important;
-  letter-spacing: -0.01em;
   // font-weight: 300;
 }
 
-.container1 h1 > span {
-  font-family: Avenir Next;
-}
-
 h4 {
-  color: #cacacadc;
-  font-family: Myriad Pro;
   line-height: 2.3rem !important;
   font-weight: 400;
   font-size: 1.7rem;

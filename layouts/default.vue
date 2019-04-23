@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout bg-primary-lightest">
     <Header class="table" />
     <nuxt />
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper bg-primary-lightest">
     <div class="container-lg">
       <nuxt />
     </div>
@@ -12,7 +12,10 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 0 50px;
-  max-width: 1070px;
+  max-width: 1270px;
+}
+.bg-primary-lightest {
+  background-color: #eff3f6;
 }
 
 h3 {

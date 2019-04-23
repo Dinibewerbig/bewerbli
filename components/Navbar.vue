@@ -21,7 +21,7 @@
         <li
           id="1"
           ref="btn"
-          class="btn antialiased"
+          class="button antialiased"
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
@@ -30,7 +30,7 @@
         <li
           id="2"
           ref="btn"
-          class="btn antialiased"
+          class="button antialiased"
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
@@ -39,7 +39,7 @@
         <li
           id="3"
           ref="btn"
-          class="btn antialiased"
+          class="button antialiased"
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
@@ -48,7 +48,7 @@
         <li
           id="4"
           ref="btn"
-          class="btn bord antialiased"
+          class="button bord antialiased"
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
@@ -239,39 +239,85 @@
                     </div>
                   </div>
                   <div v-show="activeTab ==3" id="div3" ref="div" key="three">
-                    <div>
-                      <ul class="m-8 w-full">
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Unser Team
-                              </h3>
-                            </nuxt-link>
+                    <div class="card">
+                      <div class="card-header">
+                        <h1>Subscribe to PingPing</h1> <!---->
+                      </div> <div class="card-body">
+                        <!----> <p class="alert alert--info mb-8">
+                          Your trial is still active until <strong>2019-04-30, 02:54</strong> (<span>Europe/Zurich</span>).
+                          When subscribing to a plan, you will be charged now.
+                        </p> <!----> <div class="flex">
+                          <div class="w-1/3 pr-10">
+                            <div class="text-black font-bold">
+                              Plan
+                            </div> <p class="mt-4 text-sm text-grey-darker">
+                              Choose a plan that fits your needs. Features are on our <a href="/#pricing" class="no-underline text-primary hover:text-primary-dark">
+                                pricing page
+                              </a>.
+                            </p>
+                          </div> <div class="w-2/3">
+                            <div class="-mx-2 flex flex-col -mb-4">
+                              <div>
+                                <div class="flex">
+                                  <label for="plan_id_1" class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2 border-primary bg-grey-lightest">
+                                    <input id="plan_id_1" type="radio" name="plan_id" class="hidden" value="1"> <div class="py-3 px-4">
+                                      <div class="flex items-center justify-between">
+                                        <div class="font-bold text-primary">
+                                          Basic
+                                        </div> <!---->
+                                      </div> <span class="font-bold text-xl align-top">
+                                        <span class="text-grey-darkest">
+                                          $
+                                        </span> <span class="text-black">
+                                          12.00
+                                        </span>
+                                      </span> <span class="text-grey-darker">
+                                        / <span>month</span>
+                                      </span>
+                                    </div>
+                                  </label><label for="plan_id_3" class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2">
+                                    <input id="plan_id_3" type="radio" name="plan_id" class="hidden" value="3"> <div class="py-3 px-4">
+                                      <div class="flex items-center justify-between">
+                                        <div class="font-bold text-primary">
+                                          Pro
+                                        </div> <!---->
+                                      </div> <span class="font-bold text-xl align-top">
+                                        <span class="text-grey-darkest">
+                                          $
+                                        </span> <span class="text-black">
+                                          15.00
+                                        </span>
+                                      </span> <span class="text-grey-darker">
+                                        / <span>month</span>
+                                      </span>
+                                    </div>
+                                  </label><label for="plan_id_5" class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2">
+                                    <input id="plan_id_5" type="radio" name="plan_id" class="hidden" value="5"> <div class="py-3 px-4">
+                                      <div class="flex items-center justify-between">
+                                        <div class="font-bold text-primary">
+                                          Enterprise
+                                        </div> <!---->
+                                      </div> <span class="font-bold text-xl align-top">
+                                        <span class="text-grey-darkest">
+                                          $
+                                        </span> <span class="text-black">
+                                          24.00
+                                        </span>
+                                      </span> <span class="text-grey-darker">
+                                        / <span>month</span>
+                                      </span>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                            </div> <!---->
                           </div>
-                        </li>
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Zusammenarbeit
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Kunden
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                      </ul>
+                        </div>
+                      </div> <div class="card-footer">
+                        <button class="btn btn--primary">
+                          <!----> <span><span>Subscribe</span></span> <!---->
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <div v-show="activeTab == 4" id="div4" ref="div" key="four">
@@ -486,7 +532,7 @@ a {
   cursor: pointer;
 }
 
-.btn {
+.button {
   padding-top: 35px;
   display: inline-block;
   font-weight: 500;
@@ -633,7 +679,7 @@ textarea {
 }
 
 div.dropdown {
-  border-radius: 3px;
+  border-radius: 0.5rem;
   position: absolute;
   background-color: #ffffff;
   height: 300px;
@@ -757,5 +803,9 @@ nav {
 }
 .v-enter-to {
   opacity: 1;
+}
+
+.text-grey-darkest {
+  color: #666875;
 }
 </style>
