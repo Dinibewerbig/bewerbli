@@ -15,6 +15,7 @@ firebase.initializeApp(config)
 // firebase utils
 const db = firebase.firestore()
 const auth = firebase.auth()
+const fb = firebase.functions()
 const currentUser = auth.currentUser
 const GoogleProvider = new firebase.auth.GoogleAuthProvider()
 const FacebookProvider = new firebase.auth.FacebookAuthProvider()
@@ -28,6 +29,7 @@ const likesCollection = db.collection('likes')
 
 export {
   db,
+  fb,
   auth,
   currentUser,
   usersCollection,

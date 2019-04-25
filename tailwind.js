@@ -125,7 +125,12 @@ const colors = {
   pink: '#f66d9b',
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef'
+  'pink-lightest': '#ffebef',
+  'navy-darker': 'hsl(210, 50%, 9%)',
+  'navy-dark': 'hsl(210, 49%, 15%)',
+  navy: 'hsl(210, 47%, 19%)',
+  'navy-light': 'hsl(210, 22%, 48%)',
+  'navy-lighter': 'hsl(210, 22%, 77%)'
 }
 
 module.exports = {

@@ -60,6 +60,7 @@
     <feature3 id="element" />
     <feature1 />
     <feature4 />
+    <bluright />
     <feature2 />
     <feature5 />
     <pingping />
@@ -85,6 +86,7 @@ import section1 from '~/components/section1'
 import footer1 from '~/components/Footer'
 import content1 from '~/components/content1'
 import pingping from '~/components/pingping'
+import bluright from '~/components/bluright'
 
 export default {
   layout: 'default',
@@ -101,7 +103,8 @@ export default {
     pricing2,
     section1,
     content1,
-    pingping
+    pingping,
+    bluright
   }
 }
 </script>
