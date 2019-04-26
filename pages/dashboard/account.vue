@@ -49,16 +49,22 @@
         <form>
           <div class="card">
             <div class="card-header">
-              <h1>Subscribe to PingPing</h1> <!---->
+              <h1>
+                Subscribe to PingPing
+              </h1> <!---->
             </div> <div class="card-body">
               <!----> <p class="alert alert--info mb-8">
                 Your trial is still active until <strong>2019-04-30, 02:54</strong> (<span>Europe/Zurich</span>).
                 When subscribing to a plan, you will be charged now.
               </p> <!----> <div class="flex">
                 <div class="w-1/3 pr-10">
-                  <div class="text-black font-bold">
+                  <div class="text-black font-bold" @click="show">
                     Plan
-                  </div> <p class="mt-4 text-sm text-grey-darker">
+                  </div> 
+               
+                 
+                  
+                  <p class="mt-4 text-sm text-grey-darker">
                     Choose a plan that fits your needs. Features are on our <a href="/#pricing" class="no-underline text-primary hover:text-primary-dark">
                       pricing page
                     </a>.
@@ -158,3 +164,10 @@
     </div>
   </main>
 </template>
+
+<script>
+export default {
+  components: {},
+  methods: {}
+}
+</script>

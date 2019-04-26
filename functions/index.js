@@ -1,6 +1,6 @@
 const functions = require('firebase-functions')
 
-const stripe = require('stripe')('pk_test_QFO9FaFcBqG8DFl41wl7tIep')
+const stripe = require('stripe')('sk_test_YeAaxhLffQmLFb4T0eAv9iVh00gnAUSM2J')
 
 exports.stripe_charge = functions.https.onCall(async (data, context) => {
   try {

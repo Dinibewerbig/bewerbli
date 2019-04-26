@@ -50,14 +50,21 @@
             </ul> 
             <div class="flex items-center ml-6 pl-6 border-l border-grey">
               <img
-                v-if="currentUser"
+                v-if="currentUser.photoURL"
                 :src="currentUser.photoURL"
                 alt="avatar"
                 width="35"
                 height="35"
                 class="rounded-full"
               > 
-              <img v-else src="https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&amp;r=g&amp;d=identicon" width="35" height="35" class="rounded-full"> 
+              <img
+                v-else
+                alt="avatar"
+                src="https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&amp;r=g&amp;d=identicon"
+                width="35"
+                height="35"
+                class="rounded-full"
+              > 
               <div class="ml-3 flex-1">
                 <div class="text-black text-sm font-bold leading-tight">
                   {{ userProfile.name }}
@@ -111,4 +118,10 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 </style>

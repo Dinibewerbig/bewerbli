@@ -1,7 +1,9 @@
 <template>
   <div class="layout bg-primary-lightest">
     <Header class="table" />
+    
     <nuxt />
+    <loginModal />
   </div>
 </template>
 
@@ -9,9 +11,11 @@
 
 <script>
 import Header from '~/components/Header.vue'
+import loginModal from '~/components/LoginModal.vue'
 export default {
   components: {
-    Header
+    Header,
+    loginModal
   }
 }
 </script>

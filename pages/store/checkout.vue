@@ -9,7 +9,7 @@
           </h3>
         </div>
     
-        <form id="payment-form" action="/" method="post" class="card-body border-b">
+        <form id="payment-form" method="post" class="card-body border-b">
           <div class="form-row">
             <div class="mb-6">
               <label class="form-label mb-4" for="card-element">

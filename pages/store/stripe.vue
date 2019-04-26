@@ -186,7 +186,7 @@ export default {
         console.log('stripe_charge')
         console.log(JSON.stringify(result))
         if (result.data.status === 'succeeded') {
-          this.receipt()
+          // this.receipt()
           nativeToast({
             message: 'Thank you for your payment',
             position: 'north',

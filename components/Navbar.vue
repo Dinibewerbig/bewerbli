@@ -25,7 +25,7 @@
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
-          Produkte
+          Kunden
         </li>
         <li
           id="2"
@@ -34,7 +34,7 @@
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
-          Kunden
+          Produkte
         </li>
         <li
           id="3"
@@ -43,7 +43,7 @@
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
-          Firma
+          Blog
         </li>
         <li
           id="4"
@@ -52,7 +52,7 @@
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
-          Fragebogen
+          Dashboard
         </li>
         <!-- </div> -->
 
@@ -69,18 +69,18 @@
         class="btn2 btn1 bg-green px-2 ml-4  antialiased cursor-pointer"
         :class="{'btn2--unpinned': scrolled}"
         tag="li"
-        to="/bestellung/bestellung"
+        to="/store/cart1"
       >
-        BESTELLEN
+        EINKAUF
       </nuxt-link>
       <nuxt-link
         v-if="!user"
         class="btn2 btn3 antialiased ml-2 cursor-pointer"
         :class="{'btn2--unpinned': scrolled}"
         tag="li"
-        to="/user/login"
+        to="/dashboard/account"
       >
-        KONTO
+        Los geht's!
       </nuxt-link>
   
     
@@ -126,235 +126,16 @@
               <div>
                 <transition-group class="group" :name="direction" mode="out-in">
                   <div v-show="activeTab == 1" id="div1" ref="div" key="one">
-                    <div>
-                      <ul class="m-8 w-full">
-                        <li class="mb-6">
-                          <div class="">
-                            <div class="w-full " />
-                            <nuxt-link to="/angebot/bewerbungsbrief" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Bewerbungsbrief
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/angebot/lebenslauf" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Lebenslauf
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/angebot/titelblatt" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Titelblatt
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Folgebriefe
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="bg-grey-lightest w-full ">
-                      <h3 class="m-8 w-full">
-                        Preise
-                      </h3> 
-                    </div>
+                    <dropdown2 />
                   </div>
                   <div v-show="activeTab == 2" id="div2" ref="div" key="two" class="w-full">
-                    <div class="pt-5 px-10 w-full">
-                      <ul class="flex -mx-2">
-                        <li class="w-1/3 px-2 ">
-                          <a href>
-                            <div class="flex ">
-                              <!-- <div class="w-8 float-left">
-                                <font-awesome-icon icon="book-reader" style="font-size: 28px" />
-                              </div> -->
-                              <div class="">
-                                <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                                  <h3 class="border-b border-grey-light pb-4">
-                                    Schüler und Schülerinnen
-                                  </h3>
-                                </nuxt-link>
-                              </div>
-                              <div>
-                                <ul>
-                                  <li />
-                                </ul>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="w-1/3  px-2 ">
-                          <a href>
-                            <div class="flex ">
-                              <div class=" float-left">
-                                <!-- <font-awesome-icon
-                                  icon="chalkboard-teacher"
-                                  style="font-size: 28px"
-                                /> -->
-                              </div>
-                              <div class="float-left w-full">
-                                <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                                  <h3 class="border-b border-grey-light pb-4">
-                                    Schulen und Lehrkräfte
-                                  </h3>
-                                </nuxt-link>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="w-1/3 px-2">
-                          <a href>
-                            <div class="flex  ">
-                              <!-- <div class="w-8 float-left">
-                                <font-awesome-icon icon="user-tie" style="font-size: 28px" />
-                              </div> -->
-                              <div class="w-full flex-column">
-                                <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                                  <h3 class="border-b border-grey-light pb-4">
-                                    Eltern
-                                  </h3>
-                                </nuxt-link>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                    <dropdown1 /> 
                   </div>
                   <div v-show="activeTab ==3" id="div3" ref="div" key="three">
-                    <div class="card">
-                      <div class="card-header">
-                        <h1>Subscribe to PingPing</h1> <!---->
-                      </div> <div class="card-body">
-                        <!----> <p class="alert alert--info mb-8">
-                          Your trial is still active until <strong>2019-04-30, 02:54</strong> (<span>Europe/Zurich</span>).
-                          When subscribing to a plan, you will be charged now.
-                        </p> <!----> <div class="flex">
-                          <div class="w-1/3 pr-10">
-                            <div class="text-black font-bold">
-                              Plan
-                            </div> <p class="mt-4 text-sm text-grey-darker">
-                              Choose a plan that fits your needs. Features are on our <a href="/#pricing" class="no-underline text-primary hover:text-primary-dark">
-                                pricing page
-                              </a>.
-                            </p>
-                          </div> <div class="w-2/3">
-                            <div class="-mx-2 flex flex-col -mb-4">
-                              <div>
-                                <div class="flex">
-                                  <label for="plan_id_1" class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2 border-primary bg-grey-lightest">
-                                    <input id="plan_id_1" type="radio" name="plan_id" class="hidden" value="1"> <div class="py-3 px-4">
-                                      <div class="flex items-center justify-between">
-                                        <div class="font-bold text-primary">
-                                          Basic
-                                        </div> <!---->
-                                      </div> <span class="font-bold text-xl align-top">
-                                        <span class="text-grey-darkest">
-                                          $
-                                        </span> <span class="text-black">
-                                          12.00
-                                        </span>
-                                      </span> <span class="text-grey-darker">
-                                        / <span>month</span>
-                                      </span>
-                                    </div>
-                                  </label><label for="plan_id_3" class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2">
-                                    <input id="plan_id_3" type="radio" name="plan_id" class="hidden" value="3"> <div class="py-3 px-4">
-                                      <div class="flex items-center justify-between">
-                                        <div class="font-bold text-primary">
-                                          Pro
-                                        </div> <!---->
-                                      </div> <span class="font-bold text-xl align-top">
-                                        <span class="text-grey-darkest">
-                                          $
-                                        </span> <span class="text-black">
-                                          15.00
-                                        </span>
-                                      </span> <span class="text-grey-darker">
-                                        / <span>month</span>
-                                      </span>
-                                    </div>
-                                  </label><label for="plan_id_5" class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2">
-                                    <input id="plan_id_5" type="radio" name="plan_id" class="hidden" value="5"> <div class="py-3 px-4">
-                                      <div class="flex items-center justify-between">
-                                        <div class="font-bold text-primary">
-                                          Enterprise
-                                        </div> <!---->
-                                      </div> <span class="font-bold text-xl align-top">
-                                        <span class="text-grey-darkest">
-                                          $
-                                        </span> <span class="text-black">
-                                          24.00
-                                        </span>
-                                      </span> <span class="text-grey-darker">
-                                        / <span>month</span>
-                                      </span>
-                                    </div>
-                                  </label>
-                                </div>
-                              </div>
-                            </div> <!---->
-                          </div>
-                        </div>
-                      </div> <div class="card-footer">
-                        <button class="btn btn--primary">
-                          <!----> <span><span>Subscribe</span></span> <!---->
-                        </button>
-                      </div>
-                    </div>
+                    <dropdown3 />
                   </div>
                   <div v-show="activeTab == 4" id="div4" ref="div" key="four">
-                    <div>
-                      <ul class="m-8 w-full">
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/fragebogen/fb_bewerbungsbrief" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Fragebogen Bewerbungsbrief
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Fragebogen Lebenslauf
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                        <li class="mb-6 ">
-                          <div class="">
-                            <div class="w-full float-left" />
-                            <nuxt-link to="/bestellung/bestellung" @click.native="navShow=false">
-                              <h3 class="border-b border-grey-light pb-4">
-                                Fragebogen Deckblatt
-                              </h3>
-                            </nuxt-link>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+                    <dropdown4 />
                   </div>
                   <div v-show="activeTab ==5" id="div5" ref="div" key="five">
                     <div>
@@ -404,17 +185,26 @@
         </div>
       </div>
     </transition>
-  </div>
+</div>
 </template>
 
 <script>
 import TastyBurgerButton from '~/components/BurgerButton'
+import dropdown4 from '~/components/Dropdown4'
+import dropdown3 from '~/components/Dropdown3'
+import dropdown2 from '~/components/Dropdown2'
+import dropdown1 from '~/components/Dropdown1'
 import { mapState } from 'vuex'
 const fb = require('~/services/firebaseConfig.js')
 
 export default {
   components: {
-    TastyBurgerButton
+    TastyBurgerButton,
+
+    dropdown4,
+    dropdown3,
+    dropdown2,
+    dropdown1
   },
   props: { scrolled: Boolean },
   data() {
@@ -437,6 +227,13 @@ export default {
     })
   },
   methods: {
+    show() {
+      this.$modal.show('hello-world')
+      console.log('helloworld')
+    },
+    hide() {
+      this.$modal.hide('hello-world')
+    },
     addProgress: function() {
       return true
     }, // todo
@@ -646,8 +443,8 @@ li {
 }
 
 #content-class1 {
-  width: 496px;
-  height: 343px;
+  // width: 296px;
+  // height: 543px;
 }
 
 #content-class2 {

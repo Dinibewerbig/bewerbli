@@ -7,13 +7,12 @@
             <div class="container1 mt-24 ">
               <div class="title text-left">
                 <h1 class="font-thin">
-                  Den passenden Bewerbungsbrief
-                  für deine Lehrstellensuche
+                  Ein professioneller Eindruck - von Anfang an
                 </h1>
               </div>
 
               <div class="mb-12">
-                <h4>für Schüler und Schülerinnen der Sekundarstufe </br> oder des 10. Schuljahres</h4>
+                <h4>mit dem passenden Bewerbungsbrief</h4>
               </div>
             </div>
           </div>

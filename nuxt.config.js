@@ -59,6 +59,10 @@ export const head = {
       rel: 'stylesheet',
       href:
         'https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i'
     }
   ]
 }
@@ -76,7 +80,8 @@ export const plugins = [
     ssr: false
   },
   { src: '~/node_modules/vue-rellax/lib/nuxt-plugin', ssr: false },
-  { src: '~/plugins/parallaxy.js', ssr: false }
+  { src: '~/plugins/parallaxy.js', ssr: false },
+  { src: '~/plugins/vue-js-modal', ssr: false }
 ]
 export const router = {
   middleware: ['router-auth']

@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+
 const fb = require('~/services/firebaseConfig.js')
 
 const store = () => {
