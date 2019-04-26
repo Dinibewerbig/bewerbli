@@ -6,7 +6,7 @@
         <div class="card mb-4 shadow-sm my-5 mx-auto">
           <div class="card-header">
             <div class="row">
-              <h5>Stripe Elementssdf sddfasdfsadf  + Vue</h5>
+              <h5>Stripe Elementssdf sdasdfdfasdfsadf  + Vue</h5>
             </div>
           </div>    
 
