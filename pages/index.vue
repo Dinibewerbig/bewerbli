@@ -7,7 +7,7 @@
             <div class="container1 mt-24 ">
               <div class="title text-left">
                 <h1 class="font-thin">
-                  Ein professioneller Eindruck - von Anfang an
+                  Ein professioneller Eindruck 
                 </h1>
               </div>
 
