@@ -58,7 +58,7 @@
                 When subscribing to a plan, you will be charged now.
               </p> <!----> <div class="flex">
                 <div class="w-1/3 pr-10">
-                  <div class="text-black font-bold" @click="show">
+                  <div class="text-black font-bold">
                     Plan
                   </div> 
                

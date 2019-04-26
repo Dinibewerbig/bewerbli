@@ -7,42 +7,69 @@
         </div>
         <plan-card
           :schedule="schedule"
-          name="Starter"
-          monthly="19"
-          yearly="190"
-          :selected="selectedPlan === 'Starter'"
+          name="Anschreiben"
+          monthly="25"
+          yearly="420"
+          :selected="selectedPlan === 'Anschreiben'"
           :features="[
             '5,000 downloads / month',
             'Unlimited shows and episodes',
             'Analytics, teams, and more…',
           ]"
-          @select="selectPlan('Starter')"
+          @select="selectPlan('Anschreiben')"
         />
         <plan-card
           :schedule="schedule"
-          name="Professional"
-          monthly="49"
-          yearly="490"
-          :selected="selectedPlan === 'Professional'"
+          name="Deckblatt"
+          monthly="12"
+          yearly="180"
+          :selected="selectedPlan === 'Deckblatt'"
           :features="[
             '15,000 downloads / month',
             'Unlimited shows and episodes',
             'Analytics, teams, and more…',
           ]"
-          @select="selectPlan('Professional')"
+          @select="selectPlan('Deckblatt')"
         />
         <plan-card
           :schedule="schedule"
-          name="Small Business"
-          monthly="99"
-          yearly="990"
-          :selected="selectedPlan === 'Small Business'"
+          name="Lebenslauf"
+          monthly="10"
+          yearly="160"
+          :selected="selectedPlan === 'Lebenslauf'"
           :features="[
             '45,000 downloads / month',
             'Unlimited shows and episodes',
             'Analytics, teams, and more…',
           ]"
-          @select="selectPlan('Small Business')"
+          @select="selectPlan('Lebenslauf')"
+        />
+         <plan-card
+          :schedule="schedule"
+          name="Club"
+          monthly="180"
+          yearly="1200"
+          :selected="selectedPlan === 'Club'"
+          :features="[
+            '45,000 downloads / month',
+            'Unlimited shows and episodes',
+            'Analytics, teams, and more…',
+          ]"
+          @select="selectPlan('Club')"
+        />
+      </div>
+       <plan-card
+          :schedule="schedule"
+          name="Folgebrief"
+          monthly="15"
+          yearly="250"
+          :selected="selectedPlan === 'Folgebrief'"
+          :features="[
+            '45,000 downloads / month',
+            'Unlimited shows and episodes',
+            'Analytics, teams, and more…',
+          ]"
+          @select="selectPlan('Club')"
         />
       </div>
  

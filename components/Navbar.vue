@@ -78,7 +78,7 @@
         class="btn2 btn3 antialiased ml-2 cursor-pointer"
         :class="{'btn2--unpinned': scrolled}"
         tag="li"
-        to="/dashboard/account"
+        to="/store/cart1"
       >
         Los geht's!
       </nuxt-link>
@@ -185,7 +185,7 @@
         </div>
       </div>
     </transition>
-</div>
+  </div>
 </template>
 
 <script>
