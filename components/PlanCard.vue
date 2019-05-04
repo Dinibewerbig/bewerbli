@@ -1,61 +1,133 @@
 <template>
-  <button
-    type="button" 
-    class="leading-tight bg-white focus:outline-none focus:shadow-outline text-left block w-full  rounded-lg px-6 py-4 mb-4 relative"
-    :class="[selected ? 'bg-grey' : 'opacity-50 hover:opacity-100 hover:shadow-outline']"
-    @click="$emit('select')"
-  >
-    <div class="flex items-center -mx-4">
-      <div class="px-4 w-2/5">
-        <h2 class="text-lg font-medium mb-2">
-          {{ name }}
-        </h2>
-        <div class="font-medium">
-          <span class="text-3xl font-bold">
-            CHF{{ price }}
-          </span>
-          <span class="mx-1">
-            /
-          </span>
-          <span>{{ schedule === 'monthly' ? 'Person' : 'Klasse' }}</span>
+  <div>
+    <div ref="card" :class="[!selected ? 'bg-grey-lightest border-primary' : '  hover:bg-grey-lightest']" class="shadow-sm  bg-white  text-left p-4  rounded-lg flex group  border border-grey-light  select-none cursor-pointer" @click="select()">
+      <div class="flex items-center w-full">
+        <div class="px-2 w-2/5">
+          <h2 class="text-xl font-bold text-primary">
+            {{ name }}
+          </h2>
+          <div class="font-medium">
+            <span class="text-2xl font-bold">
+              {{ price }} .-
+            </span>
+            <span class="mx-1 text-grey-darker">
+              /
+            </span>
+            <span class="text-grey-darker">
+              {{ schedule === 'person' ? 'Person' : 'Klasse' }}
+            </span>
+          </div>
+        </div>
+      
+        <div class=" px-2 w-3/5">
+          <ul class="list-reset text-sm text-navy-lighter font-medium -mb-1">
+            <li v-for="feature in features" :key="feature" class="mb-1">
+              {{ feature }}
+            </li>
+          </ul>
+        </div>
+      </div>     
+      <div class=" flex justify-start items-center mr-8 relative">
+        <div>
+          <svg
+            v-show="selected"
+        
+            fill="currentColor"
+            class=" block group-hover:hidden h-6 w-6 text-grey "
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <path d="M3.93,18.07 C1.33043416,15.5592553 0.287874028,11.8412211 1.20302843,8.34492676 C2.11818284,4.84863244 4.84863244,2.11818284 8.34492676,1.20302843 C11.8412211,0.287874028 15.5592553,1.33043416 18.07,3.93 C21.8597221,7.85378887 21.8055237,14.0908478 17.9481858,17.9481858 C14.0908478,21.8055237 7.85378887,21.8597221 3.93,18.07 Z M16.66,16.66 C19.7859317,13.5340683 19.7859317,8.46593168 16.66,5.34 C13.5340683,2.21406832 8.46593168,2.21406832 5.34,5.34 C2.21406832,8.46593168 2.21406832,13.5340683 5.34,16.66 C8.46593168,19.7859317 13.5340683,19.7859317 16.66,16.66 Z M12,10 L12,6 L10,6 L10,10 L6,10 L6,12 L10,12 L10,16 L12,16 L12,12 L16,12 L16,10 L12,10 Z" />
+          </svg>
+          <svg
+            v-show="selected"
+            fill="currentColor"
+            class="hidden group-hover:block h-6 w-6 text-grey"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <path d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20z" />
+          </svg>
+          <svg
+            v-show="!selected"
+            fill="currentColor"
+            class=" h-6 w-6 text-green"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <path d="M17.0786623,17.0786623 C20.9856426,13.1716821 20.9856426,6.83721547 17.0786623,2.9302352 C13.1716821,-0.976745067 6.83721547,-0.976745067 2.9302352,2.9302352 C-0.976745067,6.83721547 -0.976745067,13.1716821 2.9302352,17.0786623 C6.83721547,20.9856426 13.1716821,20.9856426 17.0786623,17.0786623 Z M4,10.8 L5.2,9.6 L8.2,12.6 L14.8,6 L16,7.2 L8.2,15 L4,10.8 Z" />
+          </svg>
         </div>
       </div>
-      <div class="px-4 w-3/5">
-        <ul class="list-reset text-sm text-navy-lighter font-medium -mb-1">
-          <li v-for="feature in features" :key="feature" class="mb-1">
-            {{ feature }}
-          </li>
-        </ul>
-      </div>
-      <!-- <div v-show="selected" class="flex pin-l pin-y flex items-center">
-        <svg class="h-8 w-8 -ml-4 bg-white rounded-full" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path d="M20.49,3.51l-9.98275e-08,-9.94815e-08c-4.69442,-4.67815 -12.2924,-4.66496 -16.9705,0.029463c-4.67815,4.69442 -4.66496,12.2924 0.029463,16.9705c4.6829,4.66667 12.2582,4.66667 16.9411,-1.98963e-07l-1.99655e-07,1.98963e-07c4.69442,-4.67815 4.70761,-12.2761 0.029463,-16.9705c-0.00980385,-0.00983795 -0.0196248,-0.0196589 -0.0294627,-0.0294627Zm-2.73,5.14l-6.61,7.71l-4.75,-3.56l-6.60367e-08,-4.95276e-08c-0.441828,-0.331371 -0.531371,-0.958172 -0.2,-1.4c0.331371,-0.441828 0.958172,-0.531371 1.4,-0.2l3.25,2.44l5.39,-6.29l-3.71146e-08,4.33955e-08c0.358985,-0.419736 0.990264,-0.468985 1.41,-0.11c0.419736,0.358985 0.468985,0.990264 0.11,1.41Z" fill="green" />
-        </svg>
-      </div> -->
-      <div v-show="selected" class="flex pin-l pin-y flex items-center">
-        <svg class="h-8 w-8 -ml-4  rounded-full" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20z" fill="#fff" />
-        </svg>
-      </div>
-      <div v-show="selected" class="flex pin-l pin-y flex items-center">
-        <svg class="h-8 w-8 -ml-4  rounded-full" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM6.7 9.29L9 11.6l4.3-4.3 1.4 1.42L9 14.4l-3.7-3.7 1.4-1.42z" />
-        </svg>
-      </div>
     </div>
-  </button>
+    <div @click="add()">
+      <svg
+        v-show="!selected"
+        fill="currentColor"
+        class=" h-6 w-6 text-grey add"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <path d="M3.93,18.07 C1.33043416,15.5592553 0.287874028,11.8412211 1.20302843,8.34492676 C2.11818284,4.84863244 4.84863244,2.11818284 8.34492676,1.20302843 C11.8412211,0.287874028 15.5592553,1.33043416 18.07,3.93 C21.8597221,7.85378887 21.8055237,14.0908478 17.9481858,17.9481858 C14.0908478,21.8055237 7.85378887,21.8597221 3.93,18.07 Z M16.66,16.66 C19.7859317,13.5340683 19.7859317,8.46593168 16.66,5.34 C13.5340683,2.21406832 8.46593168,2.21406832 5.34,5.34 C2.21406832,8.46593168 2.21406832,13.5340683 5.34,16.66 C8.46593168,19.7859317 13.5340683,19.7859317 16.66,16.66 Z M12,10 L12,6 L10,6 L10,10 L6,10 L6,12 L10,12 L10,16 L12,16 L12,12 L16,12 L16,10 L12,10 Z" />
+      </svg>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['schedule', 'name', 'monthly', 'yearly', 'selected', 'features'],
+  props: ['schedule', 'name', 'price', 'features'],
+  data() {
+    return {
+      selected: 'false',
+      styleObject: {}
+    }
+  },
   computed: {
-    price() {
-      return {
-        monthly: this.monthly,
-        yearly: this.yearly
-      }[this.schedule]
+    // positionElement() {
+    //   return this.$refs.card.getBoundingClientRect().y - 200
+    // }
+  },
+  methods: {
+    select() {
+      if (this.selected) {
+        this.$emit('select')
+        this.selected = !this.selected
+      } else {
+        this.$emit('deselect')
+        this.selected = !this.selected
+      }
+      console.log(this.positionElement)
+    },
+    add() {
+      this.$emit('select')
     }
   }
 }
 </script>
+<style lang="scss" scoped>
+.shadow-sm {
+  -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+    0 0 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.add {
+  position: absolute;
+  right: 35px;
+  transform: translateY(-57px);
+}
+.bg-grey-lightest {
+  background-color: #f3f6fa;
+}
+.hover\:bg-white-dark:hover {
+  background-color: #fbfcfd;
+}
+</style>

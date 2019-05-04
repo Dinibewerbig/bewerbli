@@ -7,8 +7,9 @@ exports.stripe_charge = functions.https.onCall(async (data, context) => {
     let charge = await stripe.charges.create({
       amount: data.amount,
       source: data.token,
-      currency: 'nzd',
-      description: 'STRIPE PAYMENT WTH VUE'
+      receipt_email: data.email,
+      currency: 'chf',
+      description: 'STRIPE PAYMENT FROM BEWERBLI.CH'
     })
 
     console.log(charge)

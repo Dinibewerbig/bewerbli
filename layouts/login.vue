@@ -4,7 +4,7 @@
       <nuxt />
  
       <loginModal />
-    </div>
+</div>
   </div>
 </template>
 
@@ -13,6 +13,7 @@
 
 <script>
 import loginModal from '~/components/LoginModal.vue'
+
 export default {
   components: { loginModal },
   methods: {}

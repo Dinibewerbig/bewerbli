@@ -1,5 +1,13 @@
 <template>
-  <div>
+  <modal
+    name="payment-modal"
+    transition="nice-modal-fade"
+    :delay="100"
+    :adaptive="true"
+    height="auto"
+    classes="demo-modal-class"
+    @opened="afterOpened"
+  >
     <div class="mx-auto max-w-sm w-full">
       <div class="py-10 text-center" />
       <div class="card card--simple">
@@ -35,15 +43,15 @@
             </div>
            
             <button class="button btn btn--primary w-full p-4 tracking-wider btn-success btn-block" @click.prevent="submitFormToCreateToken()">
-              PAY $ {{ card.amount }}
+              BEZAHLE  CHF {{ amount }} .00
             </button>
           </div>
         </form>
         <div class="card-footer">
-          <div class="text-center">
+          <div class="text-center h-8">
             <div
-              v-if="stripeError"
-              class="alert alert-danger"
+              v-show="stripeError"
+              class="alert alert-danger "
             >
               {{ stripeError }}
             </div>
@@ -53,9 +61,11 @@
         </div>
       </div>
     </div>
-  </div>
+  </modal>
 </template>
+
 <script>
+import { mapState } from 'vuex'
 import nativeToast from 'native-toast'
 import { fb } from '~/services/firebaseConfig.js'
 export default {
@@ -71,10 +81,14 @@ export default {
       })
     }
   },
+  props: { amount: { type: Number, required: true } },
   data() {
     return {
+      options: {
+        name: 'superman'
+      },
       card: {
-        amount: 100.0,
+        amount: this.amount,
         cc: ''
       },
       transaction: {},
@@ -90,11 +104,21 @@ export default {
       success: false
     }
   },
-  created() {},
-  mounted() {
-    this.setUpStripe()
+  computed: {
+    ...mapState([
+      'userProfile',
+      'currentUser',
+      'posts',
+      'answers',
+      'hiddenPosts'
+    ])
   },
+
   methods: {
+    afterOpened(event) {
+      this.setUpStripe()
+      console.log(this.amount)
+    },
     setUpStripe() {
       if (window.Stripe === undefined) {
       } else {
@@ -166,7 +190,7 @@ export default {
     },
 
     createToken() {
-      this.stripe.createToken(this.ccard).then(result => {
+      this.stripe.createToken(this.ccard, this.options).then(result => {
         if (result.error) {
           this.stripeError = result.error.message
         } else {
@@ -179,6 +203,7 @@ export default {
     createCharge(token) {
       const chargeData = {
         amount: this.card.amount * 100,
+        // email: 'mrmartididac@gmail.com',
         token: token
       }
       const stripeCharge = fb.httpsCallable('stripe_charge')
@@ -209,8 +234,6 @@ export default {
   }
 }
 </script>
-
-
 <style lang="scss" scoped>
 .StripeElement {
   box-sizing: border-box;

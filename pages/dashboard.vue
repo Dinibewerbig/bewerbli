@@ -58,7 +58,7 @@
                 class="rounded-full"
               > 
               <img
-                v-else
+             
                 alt="avatar"
                 src="https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&amp;r=g&amp;d=identicon"
                 width="35"

@@ -58,13 +58,6 @@ export default {
     ])
   },
   methods: {
-    show() {
-      this.$modal.show('hello-world')
-      console.log('helloworld')
-    },
-    hide() {
-      this.$modal.hide('hello-world')
-    },
     logout() {
       fb.auth
         .signOut()
