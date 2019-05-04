@@ -36,8 +36,11 @@
       </div>
     </div>
     <div class="card-footer">
-      <button class="btn btn--primary" @click="$modal.show('login-modal')">
-        <span>Login</span>
+      <nuxt-link to='/dashboard/account' v-if='currentUser' class="btn btn--primary" >
+        <span>Dashboard</span>
+      </nuxt-link>
+        <button v-else class="btn btn--primary" @click="$modal.show('login-modal')">
+        <span>Melde dich an</span>
       </button>
     </div>
   </div>
@@ -68,6 +71,9 @@ export default {
         .catch(err => {
           console.log(err)
         })
+    },
+    clicked() {
+      this.$emit('clicked')
     }
   }
 }

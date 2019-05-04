@@ -45,3 +45,12 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    clicked() {
+      this.$emit('clicked')
+    }
+  }
+}
+</script>

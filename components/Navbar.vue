@@ -125,17 +125,23 @@
             <transition name="counter">
               <div>
                 <transition-group class="group" :name="direction" mode="out-in">
-                  <div v-show="activeTab == 1" id="div1" ref="div" key="one">
-                    <dropdown2 />
+                  <div v-show="activeTab == 1" id="div1" ref="div" key="one" @clicked="clickedInDropdown">
+                    <dropdown2 @clicked="clickedInDropdown" />
                   </div>
-                  <div v-show="activeTab == 2" id="div2" ref="div" key="two" class="w-full">
-                    <dropdown1 /> 
+                  <div
+                    v-show="activeTab == 2"
+                    id="div2"
+                    ref="div"
+                    key="two"
+                    class="w-full"
+                  >
+                    <dropdown1 @clicked="clickedInDropdown" /> 
                   </div>
                   <div v-show="activeTab ==3" id="div3" ref="div" key="three">
-                    <dropdown3 />
+                    <dropdown3 @clicked="clickedInDropdown" />
                   </div>
                   <div v-show="activeTab == 4" id="div4" ref="div" key="four">
-                    <dropdown4 />
+                    <dropdown4 @clicked="clickedInDropdown" />
                   </div>
                   <div v-show="activeTab ==5" id="div5" ref="div" key="five">
                     <div>
@@ -227,6 +233,9 @@ export default {
     })
   },
   methods: {
+    clickedInDropdown() {
+      this.navShow = false
+    },
     show() {
       this.$modal.show('hello-world')
       console.log('helloworld')

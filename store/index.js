@@ -85,7 +85,7 @@ const store = () => {
       ]
     },
     getters: {
-      privatProducts: state => state.privat, // would need action/mutation if data fetched async
+      privatProducts: state => state.privat,
       schulProducts: state => state.schule,
       getNumberOfPrivatProducts: state =>
         state.privat ? state.privat.length : 0,

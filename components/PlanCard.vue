@@ -91,11 +91,7 @@ export default {
       styleObject: {}
     }
   },
-  computed: {
-    // positionElement() {
-    //   return this.$refs.card.getBoundingClientRect().y - 200
-    // }
-  },
+  computed: {},
   methods: {
     select() {
       if (this.selected) {
@@ -105,7 +101,6 @@ export default {
         this.$emit('deselect')
         this.selected = !this.selected
       }
-      console.log(this.positionElement)
     },
     add() {
       this.$emit('select')

@@ -4,7 +4,7 @@
       <nav class="hidden lg:block lg:w-1/6 mr-8">
         <ul class="list-reset mb-8">
           <div class="pb-3 font-bold uppercase text-black">
-            Dein Account
+            Mein Profil
           </div>
           <li>
             <nuxt-link
@@ -12,23 +12,24 @@
               class="flex items-center no-underline text-grey-darker group hover:text-black py-2"
             >
               <svg
-                viewBox="0 0 24 24"
+                width="24"
+                height="24"
                 xmlns="http://www.w3.org/2000/svg"
-                class="fill-current w-6 h-6 text-grey-dark mr-3 group-hover:text-primary text-primary"
+                class="fill-current w-6 h-6 mr-3 group-hover:text-primary text-grey-dark"
               >
                 <path d="M0 0h24v24H0z" fill="none" />
                 <path
-                  d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"
+                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
                 />
               </svg>
               <span class="font-bold text-black">
-                Aktuelle Bestellungen
+                Benutzerdaten
               </span>
             </nuxt-link>
           </li>
           <li>
             <a
-              href="https://pingping.io/account/notifications"
+              href
               class="flex items-center no-underline text-grey-darker group hover:text-black py-2"
             >
               <svg
@@ -41,7 +42,26 @@
                 />
                 <path d="M0 0h24v24H0z" fill="none" />
               </svg>
-              <span>Fertige Bestellungen</span>
+              <span>Credentials</span>
+            </a>
+          </li>
+          <li class="mt-6 border-t border-grey pt-4">
+            <a
+              href
+              class="flex items-center no-underline text-grey-darker group hover:text-black py-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                class="fill-current w-6 h-6 mr-3 group-hover:text-primary text-grey-dark"
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                />
+              </svg>
+              <span>Lösche deinen Account</span>
             </a>
           </li>
         </ul>

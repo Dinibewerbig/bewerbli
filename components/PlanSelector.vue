@@ -24,7 +24,7 @@
           v-for="(product, index) in schulproducts"
           v-show="schedule === 'yearly'"
           :id="product.id"
-          :key="index"
+          :key="index+'schulproducts'"
           class="mb-4"
           track-by="id"
           schedule="klasse"
