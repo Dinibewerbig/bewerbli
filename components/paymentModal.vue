@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import nativeToast from 'native-toast'
 import { fb } from '~/services/firebaseConfig.js'
 export default {
@@ -84,9 +83,6 @@ export default {
   props: { amount: { type: Number, required: true } },
   data() {
     return {
-      options: {
-        name: 'superman'
-      },
       card: {
         amount: this.amount,
         cc: ''
@@ -104,20 +100,9 @@ export default {
       success: false
     }
   },
-  computed: {
-    ...mapState([
-      'userProfile',
-      'currentUser',
-      'posts',
-      'answers',
-      'hiddenPosts'
-    ])
-  },
-
   methods: {
     afterOpened(event) {
       this.setUpStripe()
-      console.log(this.amount)
     },
     setUpStripe() {
       if (window.Stripe === undefined) {
@@ -190,7 +175,7 @@ export default {
     },
 
     createToken() {
-      this.stripe.createToken(this.ccard, this.options).then(result => {
+      this.stripe.createToken(this.ccard).then(result => {
         if (result.error) {
           this.stripeError = result.error.message
         } else {
@@ -203,7 +188,6 @@ export default {
     createCharge(token) {
       const chargeData = {
         amount: this.card.amount * 100,
-        // email: 'mrmartididac@gmail.com',
         token: token
       }
       const stripeCharge = fb.httpsCallable('stripe_charge')

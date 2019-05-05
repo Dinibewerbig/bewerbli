@@ -84,7 +84,7 @@
       </nuxt-link>
   
     
-      <div class="group mt-6 ml-4 relative ">
+      <!-- <div class="group mt-6 ml-4 relative ">
         <img v-if="user" class="avatar cursor-pointer" :src="user.photoURL" alt="avatar">
         <div class="dropdown2 rounded items-center absolute border pin-l border-t-0 mt-4 bg-white invisible group-hover:visible">
           <div class="dropdownArrow2" />
@@ -102,7 +102,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
  
       
       <li class="mobile item-mobileMenu">

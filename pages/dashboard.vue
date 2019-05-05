@@ -17,7 +17,7 @@
             <ul class="list-reset flex">
               <li>
                 <nuxt-link
-                  to="/dashboard/bestellungen"
+                  to="/dashboard/bestellungen/laufend"
                   class="flex items-center no-underline text-grey-darker group hover:text-black"
                 >
                   <svg
@@ -91,17 +91,18 @@
               </li>
             </ul>
             <div class="flex items-center ml-6 pl-6 border-l border-grey">
-              <img
-                v-if="currentUser.photoURL"
-                :src="currentUser.photoURL"
+              <!-- <img
+                v-if="!currentUser"
+                src="https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&r=g&d=identicon"
                 alt="avatar"
                 width="35"
                 height="35"
                 class="rounded-full"
-              >
+              > -->
               <img
+                v-if="currentUser"
                 alt="avatar"
-                src="https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&amp;r=g&amp;d=identicon"
+                :src="currentUser.photoURL"
                 width="35"
                 height="35"
                 class="rounded-full"

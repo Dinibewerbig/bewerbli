@@ -9,6 +9,22 @@ export default context => {
       store.dispatch('fetchUserProfile')
       store.dispatch('fetchAnswers')
 
+      // if (!user.photoURL) {
+      //   user
+      //     .updateProfile({
+      //       photoURL:
+      //         'https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&r=g&d=identicon'
+      //     })
+      //     .then(function() {
+      //       console.log(
+      //         'https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&r=g&d=identicon'
+      //       )
+      //     })
+      //     .catch(function(error) {
+      //       console.log(error)
+      //     })
+      // }
+
       fb.usersCollection.doc(user.uid).onSnapshot(doc => {
         store.commit('setUserProfile', doc.data())
       })
@@ -72,6 +88,8 @@ export default context => {
             store.commit('setPosts', postsArray)
           }
         })
+    } else {
+      console.log('no user')
     }
   })
 }

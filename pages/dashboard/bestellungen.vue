@@ -7,8 +7,8 @@
             Deine Bestellungen
           </div>
           <li>
-            <a
-              href
+            <nuxt-link
+              to="/dashboard/bestellungen/laufend"
               class="flex items-center no-underline text-grey-darker group hover:text-black py-2"
             >
               <svg
@@ -22,11 +22,12 @@
                 />
               </svg>
               <span>laufende Bestellungen</span>
-            </a>
+              </a>
+            </nuxt-link>
           </li>
           <li>
-            <a
-              href
+            <nuxt-link
+              to="/dashboard/bestellungen/bisherige"
               class="flex items-center no-underline text-grey-darker group hover:text-black py-2"
             >
               <svg
@@ -40,7 +41,7 @@
                 <path d="M0 0h24v24H0z" fill="none" />
               </svg>
               <span>bisherige Bestellungen</span>
-            </a>
+            </nuxt-link>
           </li>
           <li class="mt-6 border-t border-grey pt-4">
             <a
@@ -99,177 +100,11 @@
               <span>Rechnungen</span>
             </a>
           </li>
-          <li class="mt-6 border-t border-grey pt-4">
-            <a
-              href
-              class="flex items-center no-underline text-grey-darker group hover:text-black py-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                class="fill-current w-6 h-6 mr-3 group-hover:text-primary text-grey-dark"
-              >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path
-                  d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                />
-              </svg>
-              <span>Lösche deinen Account</span>
-            </a>
-          </li>
         </ul>
       </nav>
       <div class="flex-1">
-        <form>
-          <div class="card">
-            <div class="card-header">
-              <h1>Subscribe to PingPing</h1>
-              <!---->
-            </div>
-            <div class="card-body">
-              <!---->
-              <p class="alert alert--info mb-8">
-                Your trial is still active until
-                <strong>2019-04-30, 02:54</strong> (
-                <span>Europe/Zurich</span>).
-                When subscribing to a plan, you will be charged now.
-              </p>
-              <!---->
-              <div class="flex">
-                <div class="w-1/3 pr-10">
-                  <div class="text-black font-bold">
-                    Plan
-                  </div>
-
-                  <p class="mt-4 text-sm text-grey-darker">
-                    Choose a plan that fits your needs. Features are on our
-                    <a
-                      href="/#pricing"
-                      class="no-underline text-primary hover:text-primary-dark"
-                    >
-                      pricing page
-                    </a>.
-                  </p>
-                </div>
-                <div class="w-2/3">
-                  <div class="-mx-2 flex flex-col -mb-4">
-                    <div>
-                      <div class="flex">
-                        <label
-                          for="plan_id_1"
-                          class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2"
-                        >
-                          <input
-                            id="plan_id_1"
-                            type="radio"
-                            name="plan_id"
-                            class="hidden"
-                            value="1"
-                          >
-                          <div class="py-3 px-4">
-                            <div class="flex items-center justify-between">
-                              <div class="font-bold text-primary">
-                                Basic
-                              </div>
-                              <!---->
-                            </div>
-                            <span class="font-bold text-xl align-top">
-                              <span class="text-grey-darkest">
-                                $
-                              </span>
-                              <span class="text-black">
-                                12.00
-                              </span>
-                            </span>
-                            <span class="text-grey-darker">
-                              /
-                              <span>month</span>
-                            </span>
-                          </div>
-                        </label>
-                        <label
-                          for="plan_id_3"
-                          class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2"
-                        >
-                          <input
-                            id="plan_id_3"
-                            type="radio"
-                            name="plan_id"
-                            class="hidden"
-                            value="3"
-                          >
-                          <div class="py-3 px-4">
-                            <div class="flex items-center justify-between">
-                              <div class="font-bold text-primary">
-                                Pro
-                              </div>
-                              <!---->
-                            </div>
-                            <span class="font-bold text-xl align-top">
-                              <span class="text-grey-darkest">
-                                $
-                              </span>
-                              <span class="text-black">
-                                15.00
-                              </span>
-                            </span>
-                            <span class="text-grey-darker">
-                              /
-                              <span>month</span>
-                            </span>
-                          </div>
-                        </label>
-                        <label
-                          for="plan_id_5"
-                          class="flex-1 block card hover:bg-white-dark cursor-pointer select-none border border-grey-light shadow-sm mb-2 mx-2 border-primary bg-grey-lightest"
-                        >
-                          <input
-                            id="plan_id_5"
-                            type="radio"
-                            name="plan_id"
-                            class="hidden"
-                            value="5"
-                          >
-                          <div class="py-3 px-4">
-                            <div class="flex items-center justify-between">
-                              <div class="font-bold text-primary">
-                                Enterprise
-                              </div>
-                              <!---->
-                            </div>
-                            <span class="font-bold text-xl align-top">
-                              <span class="text-grey-darkest">
-                                $
-                              </span>
-                              <span class="text-black">
-                                24.00
-                              </span>
-                            </span>
-                            <span class="text-grey-darker">
-                              /
-                              <span>month</span>
-                            </span>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <!---->
-                </div>
-              </div>
-            </div>
-            <div class="card-footer">
-              <button class="btn btn--primary">
-                <!---->
-                <span>
-                  <span>Subscribe</span>
-                </span>
-                <!---->
-              </button>
-            </div>
-          </div>
-        </form>
+        <nuxt-child />
+     
         <footer>
           <div class="w-full max-w-screen mx-auto px-4 pb-6 pt-12 text-sm text-secondary">
             <div class="flex justify-between">
@@ -321,8 +156,8 @@
 </template>
 
 <script>
-export default {
-  components: {},
-  methods: {}
-}
 </script>
+
+
+<style lang="scss" scoped>
+</style>

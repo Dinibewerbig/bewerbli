@@ -117,12 +117,16 @@ const store = () => {
     actions: {
       clearData({ commit }) {
         commit('setCurrentUser', null)
+      },
+      deleteUser({ commit }) {
+        commit('setCurrentUser', null)
         commit('setUserProfile', {})
         commit('setPosts', null)
         commit('setAnswers', null)
         commit('setHiddenPosts', null)
         commit('selectedPlans', null)
       },
+
       addToCart({ commit }, product) {
         commit(types.ADD_TO_CART, {
           id: product.id
@@ -250,8 +254,11 @@ const store = () => {
       },
 
       setCurrentUser(state, val) {
-        console.log('setCurrentUser')
         state.currentUser = val
+        if (state.currentUser && !state.currentUser.photoURL) {
+          state.currentUser.photoURL =
+            'https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&r=g&d=identicon'
+        }
       },
       setUserProfile(state, val) {
         state.userProfile = val

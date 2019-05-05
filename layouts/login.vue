@@ -2,9 +2,8 @@
   <div class="bg-primary-lightest">
     <div class="container-lg">
       <nuxt />
- 
       <loginModal />
-</div>
+    </div>
   </div>
 </template>
 
@@ -13,7 +12,6 @@
 
 <script>
 import loginModal from '~/components/LoginModal.vue'
-
 export default {
   components: { loginModal },
   methods: {}
