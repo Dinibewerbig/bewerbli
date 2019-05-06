@@ -173,7 +173,7 @@ module.exports = {
     sm: '576px',
     md: '768px',
     lg: '992px',
-    xl: '1200px'
+    xl: '1120px'
   },
 
   /*
@@ -196,7 +196,9 @@ module.exports = {
 
   fonts: {
     sans: [
+      // 'Sophia Regular',
       'Lato',
+      'Muli',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',

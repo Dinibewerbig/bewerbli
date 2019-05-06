@@ -1,6 +1,6 @@
 <template>
-  <div class="form__container mt-10">
-    <hooper :key="componentKey" ref="carousel" :mouse-drag="false" class="form__slides" @slide="updateSlide">
+  <div >
+    <hooper :key="componentKey" ref="carousel" :mouse-drag="false" class="slides" @slide="updateSlide">
       <hooper-pagination slot="hooper-addons" mode="fraction" />
       <slide v-for="(step, i) in steps" :key="i+1" class="form__slide">
         <div>
@@ -17,20 +17,20 @@
 
       <hooper-progress slot="hooper-addons" />
     </hooper>
-    <div class="nav">
-      <button class="btn btn--alt" :class="{disabled: activeSlide === 0}" @click.prevent="slidePrev">
+    <div class="nav flex flex-row-reverse">
+     
+
+      <button class="btn" :class="{disabled: activeSlide > 16}" @click.prevent="slideNext">
+        <h3>Weiter zu Frage {{ activeSlide +1 }}</h3>
+      </button>
+       <button class="btn " :class="{disabled: activeSlide === 0}" @click.prevent="slidePrev">
         <font-awesome-icon
           :icon="['fas', 'arrow-left']"
           style="color: rgb(55, 41, 136); font-size: 20px;"
         />
-        <span class="trial__btn-hint">
-          activeSlide
-          oder drücke Enter
+        <span class="">
+          Zurück
         </span>
-      </button>
-
-      <button class="btn self-stretch" :class="{disabled: activeSlide > 16}" @click.prevent="slideNext">
-        <h2>Weiter</h2>
       </button>
     </div>
   </div>
@@ -104,13 +104,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form__container {
-  background-color: #fff;
-  display: flex;
-  min-height: 700px;
-  width: 100%;
-}
-.form__slides {
+.slides {
   padding-top: 30px;
   height: 600px;
 }
@@ -118,38 +112,9 @@ export default {
   outline: none !important;
 }
 .nav {
-  position: absolute;
-  display: flex;
-  vertical-align: baseline;
+  position: relative;
   width: 100%;
   bottom: 6rem;
-}
-.trial__btn-hint {
-  position: absolute;
-  top: 25px;
-  left: 10px;
-  display: block;
-  text-align: left;
-  margin: 20px 0 0 0px;
-  font-family: 'BrandonText-RegularItalic', sans-serif;
-  font-size: small;
-  opacity: 1;
-  color: rgb(110, 101, 190);
-}
-.btn--alt {
-  width: 120px;
-  background: 0 0;
-  border: 1px solid rgb(55, 41, 136);
-  color: rgb(31, 31, 31);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  vertical-align: top;
-  border-radius: 6px;
-  font-size: 0.88889rem;
-  line-height: 1.75;
-  padding: 0.45rem 1.8rem;
-  font-family: 'BrandonText-Medium', sans-serif;
-  outline: 0;
 }
 
 .disabled {
@@ -158,24 +123,5 @@ export default {
 
 button:disabled {
   visibility: hidden;
-}
-
-button {
-  position: relative;
-  color: #ffffff;
-  border-radius: 4px;
-  width: 400px;
-  transition-duration: 0.25s;
-  margin: 0.3em;
-  font-family: 'BrandonTextW01-Medium';
-  border: 1px solid #fff;
-  background-color: rgb(79, 68, 177);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  border-radius: 6px;
-  font-size: 0.88889rem;
-  line-height: 1.75;
-  padding: 0.45rem 1.8rem;
-  outline: 0;
 }
 </style>

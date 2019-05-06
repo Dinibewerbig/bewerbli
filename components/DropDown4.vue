@@ -1,11 +1,11 @@
 <template>
   <div class="card">
     <div class="card-header">
-      <h1>Dashboard</h1> <!---->
-    </div> 
-    
+      <h1>Dashboard</h1>
+    </div>
+
     <div class="card-body">
-      <div v-if="currentUser" class="flex items-center ml-6 pl-6 border-l border-grey">
+      <div v-if="currentUser" class="flex items-center mb-8">
         <img
           v-if="currentUser"
           :src="currentUser.photoURL"
@@ -13,12 +13,18 @@
           width="35"
           height="35"
           class="rounded-full"
-        > 
-        <img v-else src="https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&amp;r=g&amp;d=identicon" width="35" height="35" class="rounded-full"> 
+        >
+        <img
+          v-else
+          src="https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&amp;r=g&amp;d=identicon"
+          width="35"
+          height="35"
+          class="rounded-full"
+        >
         <div class="ml-3 flex-1">
           <div class="text-black text-sm font-bold leading-tight">
             {{ userProfile.name }}
-          </div> 
+          </div>
           <div
             class="text-primary hover:underline text-sm font-bold leading-tight no-underline block"
             @click="logout"
@@ -28,18 +34,20 @@
         </div>
       </div>
       <div v-else class="flex">
-        <div class=" pr-10">
-          <div class="text-black font-bold">
-            Um zu deinem Dashboard zu gelangen, solltest du dich zuerst anmelden. 
+        <div class="pr-10">
+          <div
+            class="text-black font-bold"
+          >
+            Um zu deinem Dashboard zu gelangen, solltest du dich zuerst anmelden.
           </div>
         </div>
       </div>
     </div>
     <div class="card-footer">
-      <nuxt-link to='/dashboard/account' v-if='currentUser' class="btn btn--primary" >
-        <span>Dashboard</span>
+      <nuxt-link v-if="currentUser" to="/dashboard/account" class="btn btn--primary">
+        <span>Zum Dashboard</span>
       </nuxt-link>
-        <button v-else class="btn btn--primary" @click="$modal.show('login-modal')">
+      <button v-else class="btn btn--primary" @click="$modal.show('login-modal')">
         <span>Melde dich an</span>
       </button>
     </div>

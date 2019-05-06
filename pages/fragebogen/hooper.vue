@@ -1,11 +1,13 @@
 <template>
-  <Hooper ref="HooperCall" />
+  <div class="">
+<Hooper ref="HooperCall" />
+</div>
 </template>
 <script>
 import Hooper from '~/components/Hooper.vue'
 export default {
   components: { Hooper },
-  layout: 'container'
+  layout: 'empty'
 }
 </script>
 

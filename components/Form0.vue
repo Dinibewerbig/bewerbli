@@ -1,9 +1,19 @@
 <template>
-  <div>
+  <div class='mx-4'>
     <div class="bg-image" />
-    <h1 class="mt-5">
-      Willkommen zum Fragebogen Bewerbungsbrief
-    </h1>
+    <div class="flex-1  text-xl leading-normal tracking-wide text-black mx-8">
+      <div
+        class="text-black font-bold mb-4 tracking-normal uppercase"
+      >
+        Willkommen zum Fragebogen für das Anschreiben
+      </div>
+      <p class="text-grey-darkest font-thin mb-6">
+        Die hier gemachten Angaben helfen uns für dich den perfekten Bewerbungsbrief zu formulieren. Bitte beantworte die Fragen so ausfuührlich wie möglich. Viel Spass.
+      </p>
+      <p class="text-grey-darkest">
+        Zeitaufwand: ca. 15 min
+      </p>
+    </div>
     <textarea
       ref="input"
       spellcheck="false"

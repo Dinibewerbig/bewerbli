@@ -91,6 +91,7 @@
 </template>
 <script>
 import pointerScroll from '~/pointerScroll'
+import berufe from 'assets/berufe.json'
 export default {
   mixins: [pointerScroll],
   props: {
@@ -106,7 +107,7 @@ export default {
     options: {
       type: Array,
       required: false,
-      default: () => []
+      default: () => ['haus', 'warum', 'aber']
     },
     optionLabel: {
       type: String,
@@ -238,6 +239,7 @@ export default {
   },
   data() {
     return {
+      berufe,
       searchText: null,
       selectedOption: null,
       dropdownOpen: false

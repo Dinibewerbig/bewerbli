@@ -12,34 +12,31 @@
             @click="$router.push('/')"
           >
         </div>
-       
-        <!-- </transition> -->
       </li>
 
       <span class="nav navSection hoverable" @mouseover="navShow=true" @mouseleave="navShow=false">
-        <!-- <div v-if="!scrolled"> -->
         <li
           id="1"
           ref="btn"
-          class="button antialiased"
+          class="button"
+          :class="{'headroom--unpinned': scrolled}"
+          @mouseover="select"
+        >
+          Angebot
+        </li>
+        <li
+          id="2"
+          ref="btn"
+          class="button  "
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
           Kunden
         </li>
         <li
-          id="2"
-          ref="btn"
-          class="button antialiased"
-          :class="{'headroom--unpinned': scrolled}"
-          @mouseover="select"
-        >
-          Produkte
-        </li>
-        <li
           id="3"
           ref="btn"
-          class="button antialiased"
+          class="button "
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
@@ -48,42 +45,32 @@
         <li
           id="4"
           ref="btn"
-          class="button bord antialiased"
+          class="button bord"
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
           Dashboard
         </li>
-        <!-- </div> -->
-
-        <!-- <nuxt-link
-          class="btn bord antialiased"
-          :class="{'headroom--unpinned': scrolled}"
-          to="/user/login"
-        >
-          Konto
-        </nuxt-link> -->
       </span>
-     
+
       <nuxt-link
-        class="btn2 btn1 bg-green px-2 ml-4  antialiased cursor-pointer"
+        class="btn2 btn1 bg-green px-2 ml-4 antialiased cursor-pointer"
         :class="{'btn2--unpinned': scrolled}"
         tag="li"
-        to="/store/cart1"
+        to="/store"
       >
-        EINKAUF
+        EINKAUFEN
       </nuxt-link>
       <nuxt-link
         v-if="!user"
         class="btn2 btn3 antialiased ml-2 cursor-pointer"
         :class="{'btn2--unpinned': scrolled}"
         tag="li"
-        to="/store/cart1"
+        to="/fragebogen/fb_bewerbungsbrief"
       >
-        Los geht's!
+        Fragen beantworten
       </nuxt-link>
-  
-    
+
       <!-- <div class="group mt-6 ml-4 relative ">
         <img v-if="user" class="avatar cursor-pointer" :src="user.photoURL" alt="avatar">
         <div class="dropdown2 rounded items-center absolute border pin-l border-t-0 mt-4 bg-white invisible group-hover:visible">
@@ -102,9 +89,8 @@
             </li>
           </ul>
         </div>
-      </div> -->
- 
-      
+      </div>-->
+
       <li class="mobile item-mobileMenu">
         <tasty-burger-button />
       </li>
@@ -125,43 +111,38 @@
             <transition name="counter">
               <div>
                 <transition-group class="group" :name="direction" mode="out-in">
-                  <div v-show="activeTab == 1" id="div1" ref="div" key="one" @clicked="clickedInDropdown">
+                  <div
+                    v-show="activeTab == 1"
+                    id="div1"
+                    ref="div"
+                    key="one"
+                    class="w-full"
+                    @clicked="clickedInDropdown"
+                  >
+                    <dropdown1 @clicked="clickedInDropdown" />
+                  </div>
+                  <div v-show="activeTab == 2" id="div2" ref="div" key="two" class="w-full">
                     <dropdown2 @clicked="clickedInDropdown" />
                   </div>
-                  <div
-                    v-show="activeTab == 2"
-                    id="div2"
-                    ref="div"
-                    key="two"
-                    class="w-full"
-                  >
-                    <dropdown1 @clicked="clickedInDropdown" /> 
-                  </div>
-                  <div v-show="activeTab ==3" id="div3" ref="div" key="three">
+                  <div v-show="activeTab ==3" id="div3" ref="div" key="three" class="w-full">
                     <dropdown3 @clicked="clickedInDropdown" />
                   </div>
-                  <div v-show="activeTab == 4" id="div4" ref="div" key="four">
+                  <div v-show="activeTab == 4" id="div4" ref="div" key="four" class="w-full">
                     <dropdown4 @clicked="clickedInDropdown" />
                   </div>
-                  <div v-show="activeTab ==5" id="div5" ref="div" key="five">
+                  <div v-show="activeTab ==5" id="div5" ref="div" key="five" class="w-full">
                     <div>
                       <ul>
                         <li class="container mt-8">
                           <a href>
                             <div class="flex items-stretch">
                               <div class="float-left">
-                                <p
-                                  class="mb-2"
-                                />
+                                <p class="mb-2" />
                                 <h3>
                                   <span class="w-16 float-left">
                                     <font-awesome-icon icon="sign-in-alt" style="font-size: 20px" />
                                   </span>
-                                  <nuxt-link
-                                 
-                                  
-                                    to="/user/login"
-                                  >
+                                  <nuxt-link to="/user/login">
                                     Sign Up
                                   </nuxt-link>
                                 </h3>
@@ -169,11 +150,7 @@
                                   <span class="w-16 float-left">
                                     <font-awesome-icon icon="sign-in-alt" style="font-size: 20px" />
                                   </span>
-                                  <nuxt-link
-                                 
-                                  
-                                    to="/user/login"
-                                  >
+                                  <nuxt-link to="/user/login">
                                     Login
                                   </nuxt-link>
                                 </h3>
@@ -253,10 +230,6 @@ export default {
       this.previousTab = this.activeTab
       this.activeTab = event.target.id
       this.className = 'content-class' + this.activeTab
-      // console.log(this.previousTab);
-      // console.log(this.activeTab);
-
-      // console.log(event.target.getBoundingClientRect());
       this.navbarLeft = event.target.getBoundingClientRect().left
       this.offset = this.navbarLeft - 190
 
@@ -338,17 +311,24 @@ a {
   cursor: pointer;
 }
 
+.button:hover {
+  color: #ffffff;
+}
+
+.btn2:hover {
+  color: #ffffff;
+}
+
 .button {
   padding-top: 35px;
+  font-family: Muli;
   display: inline-block;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  font-family: Avenir Next;
-  font-size: 15px;
-  color: #cccccc;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.085em;
+  color: #e2e2e2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   margin-bottom: 25px;
 }
 
@@ -364,15 +344,13 @@ a {
   height: 38px;
   line-height: 37px;
   font-family: Muli;
-  font-size: 13px;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.085em;
-  color: #fcfcfc;
+  color: #e2e2e2;
   text-decoration: none;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
-
-  // background-color: #26f3d1;
   border-radius: 3px;
   text-align: center;
 }
@@ -390,9 +368,8 @@ a {
 h3 {
   line-height: 1.1em !important;
   font-size: 1rem;
-  color: #434257;
-  font-family: Muli;
-  font-weight: 500;
+  font-family: Sofia;
+  font-weight: 600;
   padding-top: 3px;
   margin-bottom: 3px;
   // text-transform: uppercase;
@@ -403,13 +380,6 @@ h3 {
   filter: grayscale(100%); /* FF 35+ */
 }
 
-p {
-  font-family: Avenir Next;
-  letter-spacing: 0.02em;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: #3f3f3fbe;
-}
 .navbar {
   display: flex;
   flex-direction: row;
@@ -451,30 +421,28 @@ li {
   padding-left: 1.1rem;
 }
 
-#content-class1 {
-  // width: 296px;
-  // height: 543px;
-}
+// #content-class1 {
+//   width: 296px;
+//   height: 543px;
+// }
 
 #content-class2 {
-  width: 650px;
-  height: 470px;
+  width: 550px;
 }
 
-#content-class3 {
-  width: 430px;
-  height: 330px;
-}
+// #content-class3 {
+//   width: 430px;
+//   height: 330px;
+// }
 
 #content-class4 {
-  width: 430px;
-  height: 230px;
+  width: 330px;
 }
 
-#content-class5 {
-  width: 430px;
-  height: 330px;
-}
+// #content-class5 {
+//   width: 430px;
+//   height: 330px;
+// }
 
 a,
 button,
@@ -488,7 +456,6 @@ div.dropdown {
   border-radius: 0.5rem;
   position: absolute;
   background-color: #ffffff;
-  height: 300px;
   width: 400px;
   transition: width 200ms, height 200ms, left 300ms, opacity 200ms;
   margin-top: -1px;

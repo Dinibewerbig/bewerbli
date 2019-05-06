@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='mx-4'>
     <h1> {{ fragen }}</h1>
     
     <resizable-textarea>
