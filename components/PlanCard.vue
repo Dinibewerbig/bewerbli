@@ -1,13 +1,22 @@
 <template>
   <div>
-    <div ref="card" :class="[!selected ? 'bg-grey-lightest border-primary' : '  hover:bg-grey-lightest']" class="shadow-sm  bg-white  text-left p-4  rounded-lg flex group  border border-grey-light  select-none cursor-pointer" @click="select()">
+    <div :class="[!selected ? 'box-shadow' : '  hover:bg-white']" class="border-top text-left p-4  rounded-lg flex group    select-none cursor-pointer" @click="select()">
       <div class="flex items-center w-full">
-        <div class="px-2 w-2/5">
-          <h2 class="text-xl font-bold text-primary">
+        <div class="w-1/2">
+          <img :src="image" class="w-full">
+        </div>
+        <div class="w-full md:w-2/5 md:-ml-8 mb-2 mt-4 md:mt-0 text-center md:text-left">
+          <div class="w-3/5" />
+          <h2 class="font-medium text-3xl  text-primary">
             {{ name }}
           </h2>
+          <ul class="list-reset text-sm text-navy-lighter font-medium -mb-1">
+            <li v-for="feature in features" :key="feature" class="mb-1">
+              {{ feature }}
+            </li>
+          </ul>
           <div class="font-medium">
-            <span class="text-2xl font-bold">
+            <span class="text-2xl ">
               {{ price }} .-
             </span>
             <span class="mx-1 text-grey-darker">
@@ -17,14 +26,6 @@
               {{ schedule === 'person' ? 'Person' : 'Klasse' }}
             </span>
           </div>
-        </div>
-      
-        <div class=" px-2 w-3/5">
-          <ul class="list-reset text-sm text-navy-lighter font-medium -mb-1">
-            <li v-for="feature in features" :key="feature" class="mb-1">
-              {{ feature }}
-            </li>
-          </ul>
         </div>
       </div>     
       <div class=" flex justify-start items-center mr-8 relative">
@@ -55,7 +56,7 @@
           <svg
             v-show="!selected"
             fill="currentColor"
-            class=" h-6 w-6 text-green"
+            class=" h-6 w-6 text-secondary"
             version="1.1"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +85,7 @@
 
 <script>
 export default {
-  props: ['schedule', 'name', 'price', 'features'],
+  props: ['schedule', 'name', 'price', 'features', 'image'],
   data() {
     return {
       selected: 'false',
@@ -109,11 +110,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.shadow-sm {
-  -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
-    0 0 1px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 0 1px rgba(0, 0, 0, 0.08);
-}
 .add {
   position: absolute;
   right: 35px;

@@ -1,9 +1,9 @@
 <template>
   <main class="flex-1">
-    <div class="w-full max-w-screen mx-auto px-4 flex py-8">
-      <nav class="hidden lg:block lg:w-1/6 mr-8">
+    <div class="w-full max-w-screen mx-auto flex py-8">
+      <nav class="hidden mr-8">
         <ul class="list-reset mb-8">
-          <div class="pb-3 font-bold uppercase text-black">
+          <div class="pb-3  uppercase text-black">
             Mein Profil
           </div>
           <li>
@@ -22,7 +22,7 @@
                   d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
                 />
               </svg>
-              <span class="font-bold text-black">
+              <span class=" text-black">
                 Benutzerdaten
               </span>
             </nuxt-link>
@@ -67,14 +67,14 @@
         </ul>
       </nav>
       <div class="flex-1">
-        <div class="card">
+        <div class="">
           <div class="card-header">
             <h1>Update Profile</h1>
           </div>
           <div class="card-body">
             <div class="flex mb-6">
               <div class="w-1/3 pr-10">
-                <div class="text-black font-bold">
+                <div class="text-black ">
                   Name
                 </div>
                 <p class="mt-4 text-sm text-grey-darker">
@@ -96,7 +96,7 @@
             </div>
             <div class="flex">
               <div class="w-1/3 pr-10">
-                <div class="text-black font-bold">
+                <div class="text-black ">
                   Email
                 </div>
                 <p class="mt-4 text-sm text-grey-darker">
@@ -124,52 +124,18 @@
             </button>
           </div>
         </div>
-        <footer>
-          <div class="w-full max-w-screen mx-auto px-4 pb-6 pt-12 text-sm text-secondary">
-            <div class="flex justify-between">
-              <div>
-                Built by
-                <a
-                  href="https://twitter.com/stefanbauerme"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="no-underline text-primary hover:text-primary-dark hover:underline"
-                >
-                  @stefanbauerme
-                </a>
-              </div>
-              <div>
-                <ul class="list-reset flex">
-                  <li class="mr-4">
-                    <a
-                      href="https://pingping.io/help"
-                      class="no-underline text-primary hover:text-primary-dark hover:underline"
-                    >
-                      Support/Help
-                    </a>
-                  </li>
-                  <li class="mr-4">
-                    <a
-                      href="https://pingping.io/privacy-policy"
-                      class="no-underline text-primary hover:text-primary-dark hover:underline"
-                    >
-                      Privacy Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://pingping.io/imprint"
-                      class="no-underline text-primary hover:text-primary-dark hover:underline"
-                    >
-                      Imprint
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
+    <footer1 />
   </main>
 </template>
+<script>
+// import Zondicon from 'vue-zondicons'
+import footer1 from '~/components/footerdashboard'
+
+export default {
+  components: {
+    footer1
+  }
+}
+</script>

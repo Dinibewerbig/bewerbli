@@ -1,0 +1,513 @@
+<template>
+  <div class="w-full max-w-2xl mx-auto px-10 md:px-4">
+    <div class="flex flex-col flex-col-reverse md:flex-row">
+      <div class="flex-1 md:w-1/3 text-xl leading-normal tracking-wide text-black mx-8">
+        <div class>
+          <div
+            class="tracking-normal text-4xl mb-12 font-light"
+          >
+            Willkommen zum Fragebogen Anschreiben. 
+          </div>
+          <p class="text-grey-darkest font-thin mb-6">
+            Die hier gemachten Angaben helfen uns für dich den perfekten Bewerbungsbrief zu verfassen. Bitte beantworte die Fragen so ausführlich wie möglich. 
+          </p>
+         
+          
+
+      
+          <div class :class="{ 'signup-form': !showLoginForm && !showForgotPassword }">
+            <form v-if="showLoginForm" @submit.prevent>
+              <p class="text-grey-darkest font-thin mb-6">
+                Melde dich an mit
+              </p>
+              <div class="flex flex-row flex-wrap">
+                <div class="w-1/2 pr-8">
+                  <div class="mb-6">
+                    <input
+                      id="email1"
+                      v-model.trim="loginForm.email"
+                      class="form-input"
+                      type="text"
+                      placeholder="E-Mail-Adresse"
+                    >
+                  </div>
+                  <div class="mb-6">
+                    <input
+                      id="password1"
+                      v-model.trim="loginForm.password"
+                      class="form-input"
+                      type="password"
+                      placeholder="Passwort"
+                    >
+                  </div>
+                  <button class="button btn btn--primary tracking-wider" @click="login">
+                    Anmelden
+                  </button>
+                </div>
+                <div class="w-1/2">
+                  <div class="flex mx-8">
+                    <div class="mb-4 self-center tracking-normal text-2xl font-light">
+                      oder
+                    </div>
+                    <div class="w-full">
+                      <div class="ml-4 w-full select-none content-center flex btn--grey" @click="googleSignIn">
+                        <svg
+                          class
+                          width="52"
+                          height="52"
+                          viewBox="0 0 52 52"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <title>Google</title>
+                          <g fill="none" fill-rule="evenodd">
+                            <!-- <circle cx="26" cy="26" r="25.5" fill="#FFF" stroke="#E6E6E6" /> -->
+                            <path
+                              d="M34.64 26.205c0-.639-.057-1.252-.164-1.841H26v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"
+                              fill="#4285F4"
+                            />
+                            <path
+                              d="M26 35c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711h-3.007v2.332A8.997 8.997 0 0 0 26 35z"
+                              fill="#34A853"
+                            />
+                            <path
+                              d="M20.964 27.71a5.41 5.41 0 0 1-.282-1.71c0-.593.102-1.17.282-1.71v-2.332h-3.007A8.996 8.996 0 0 0 17 26c0 1.452.348 2.827.957 4.042l3.007-2.332z"
+                              fill="#FBBC05"
+                            />
+                            <path
+                              d="M26 20.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C30.463 17.891 28.426 17 26 17a8.997 8.997 0 0 0-8.043 4.958l3.007 2.332c.708-2.127 2.692-3.71 5.036-3.71z"
+                              fill="#EA4335"
+                            />
+                          </g>
+                        </svg>
+                        <div class="self-center">
+                          Google
+                        </div>
+                      </div>
+
+                      <div class="ml-4 w-full select-none content-center mt-6 btn--grey flex" @click="facebookSignIn">
+                        <svg
+                          class
+                          width="52"
+                          height="52"
+                          viewBox="0 0 52 52"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                        >
+                          <title>Facebook</title>
+                          <defs>
+                            <path id="id-6a" d="M5.5 20H11V0H0v20z" />
+                          </defs>
+                          <g fill="none" fill-rule="evenodd">
+                            <!-- <circle stroke="#E6E6E6" fill="#FFF" cx="26" cy="26" r="25.5" /> -->
+                            <g transform="translate(20 17)">
+                              <mask id="id-7b" fill="#fff">
+                                <use xlink:href="#id-6a" />
+                              </mask>
+                              <path
+                                d="M7.14 20v-9.123h3.243l.486-3.555h-3.73v-2.27c0-1.03.304-1.731 1.867-1.731L11 3.32V.14A28.246 28.246 0 0 0 8.094 0C5.22 0 3.251 1.657 3.251 4.7v2.622H0v3.555h3.251V20H7.14z"
+                                fill="#3B5998"
+                                mask="url(#id-7b)"
+                              />
+                            </g>
+                          </g>
+                        </svg>
+                        <div class="self-center">
+                          Facebook
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-12">
+                <div class="flex">
+                  <a
+                    class="mr-2 text-base hover:text-primary-dark no-underline"
+                    @click="toggleForm"
+                  >
+                    Neues Konto erstellen
+                  </a>
+                  <a
+                    class="ml-2 text-base text-sm hover:text-primary-dark no-underline"
+                    @click="togglePasswordReset"
+                  >
+                    Passwort vergessen?
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <form v-if="!showLoginForm && !showForgotPassword" @submit.prevent>
+            <div class="flex flex-col">
+              <p class="text-grey-darkest font-thin mb-6">
+                Eröffne ein neues Konto
+              </p>
+              <div class="mb-6">
+                <input
+                  id="name"
+                  v-model.trim="signupForm.name"
+                  class="form-input"
+                  type="text"
+                  placeholder="Benutzername"
+                >
+              </div>
+              <div class="flex flex-row">
+                <div class="w-full">
+                  <input
+                    id="email2"
+                    v-model.trim="signupForm.email"
+                    class="form-input"
+                    type="text"
+                    placeholder="E-Mail-Adresse"
+                  >
+                </div>
+                <div class="w-full ml-4">
+                  <input
+                    id="password2"
+                    v-model.trim="signupForm.password"
+                    class="form-input"
+                    type="password"
+                    placeholder="Password"
+                  >
+                </div>
+                 
+               
+                <button class="w-1/3 ml-4 h-12 btn btn--primary tracking-wider" @click="signup">
+                  Konto erstellen
+                </button>
+              </div>
+              <p class="mt-8 text-grey-darkest font-thin mb-6">
+                oder
+              </p>
+              <div class="flex flex-row">
+                <div class="flex cursor-pointer select-none btn--grey pr-8" @click="googleSignIn">
+                  <svg
+                    width="52"
+                    height="52"
+                    viewBox="0 0 52 52"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Google</title>
+                    <g fill="none" fill-rule="evenodd">
+                      <!-- <circle cx="26" cy="26" r="25.5" fill="#FFF" stroke="#E6E6E6" /> -->
+                      <path
+                        d="M34.64 26.205c0-.639-.057-1.252-.164-1.841H26v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"
+                        fill="#4285F4"
+                      />
+                      <path
+                        d="M26 35c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711h-3.007v2.332A8.997 8.997 0 0 0 26 35z"
+                        fill="#34A853"
+                      />
+                      <path
+                        d="M20.964 27.71a5.41 5.41 0 0 1-.282-1.71c0-.593.102-1.17.282-1.71v-2.332h-3.007A8.996 8.996 0 0 0 17 26c0 1.452.348 2.827.957 4.042l3.007-2.332z"
+                        fill="#FBBC05"
+                      />
+                      <path
+                        d="M26 20.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C30.463 17.891 28.426 17 26 17a8.997 8.997 0 0 0-8.043 4.958l3.007 2.332c.708-2.127 2.692-3.71 5.036-3.71z"
+                        fill="#EA4335"
+                      />
+                    </g>
+                  </svg>
+                  <div class="self-center">
+                    Google
+                  </div>
+                </div>
+
+                <div class="flex cursor-pointer select-none btn--grey ml-8 pr-8" @click="facebookSignIn">
+                  <svg
+                    width="52"
+                    height="52"
+                    viewBox="0 0 52 52"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <title>Facebook</title>
+                    <defs>
+                      <path id="id-6a" d="M5.5 20H11V0H0v20z" />
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                      <!-- <circle stroke="#E6E6E6" fill="#FFF" cx="26" cy="26" r="25.5" /> -->
+                      <g transform="translate(20 17)">
+                        <mask id="id-7b" fill="#fff">
+                          <use xlink:href="#id-6a" />
+                        </mask>
+                        <path
+                          d="M7.14 20v-9.123h3.243l.486-3.555h-3.73v-2.27c0-1.03.304-1.731 1.867-1.731L11 3.32V.14A28.246 28.246 0 0 0 8.094 0C5.22 0 3.251 1.657 3.251 4.7v2.622H0v3.555h3.251V20H7.14z"
+                          fill="#3B5998"
+                          mask="url(#id-7b)"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                  <div class="self-center">
+                    Facebook
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-16">
+              <div class>
+                <a
+                  class="text-base hover:text-primary-dark no-underline"
+                  @click="toggleForm"
+                >
+                  Hast du bereits ein Konto?
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <form v-if="showForgotPassword" class="password-reset" @submit.prevent>
+      <div v-if="!passwordResetSuccess">
+        <div class="card-header">
+          <h1>Reset Password</h1>
+          <p>We will send you an email to reset your password</p>
+        </div>
+        <div class="card-body border-b">
+          <div class="mb-6">
+            <label class="form-label" for="email3">
+              Email
+            </label>
+            <input
+              id="email3"
+              v-model.trim="passwordForm.email"
+              class="form-input"
+              type="text"
+              placeholder="you@email.com"
+            >
+          </div>
+          <button
+            class="button btn btn--primary w-full p-4 tracking-wider"
+            @click="resetPassword"
+          >
+            Submit
+          </button>
+        </div>
+        <div class="card-footer">
+          <div class="text-center">
+            <a
+              class="font-bold text-primary hover:text-primary-dark no-underline"
+              @click="togglePasswordReset"
+            >
+              Back to Log In
+            </a>
+          </div>
+        </div>
+      </div>
+      <div v-else>
+        <h1>Email Sent</h1>
+        <p>check your email for a link to reset your password</p>
+        <button class="button" @click="togglePasswordReset">
+          Back to login
+        </button>
+      </div>
+    </form>
+    <transition name="fade">
+      <div v-if="errorMsg !== ''" class="error-msg">
+        <p>{{ errorMsg }}</p>
+      </div>
+    </transition>
+  </div>
+  </div>
+</template>
+
+  <script>
+const fb = require('~/services/firebaseConfig.js')
+
+export default {
+  name: 'Login',
+  layout: 'login',
+  data() {
+    return {
+      loginForm: {
+        email: '',
+        password: ''
+      },
+      signupForm: {
+        name: '',
+        title: '',
+        email: '',
+        password: ''
+      },
+      passwordForm: {
+        email: ''
+      },
+      showLoginForm: true,
+      showForgotPassword: false,
+      passwordResetSuccess: false,
+      performingRequest: false,
+      errorMsg: ''
+    }
+  },
+  methods: {
+    toggleForm() {
+      this.errorMsg = ''
+      this.showLoginForm = !this.showLoginForm
+    },
+    togglePasswordReset() {
+      if (this.showForgotPassword) {
+        this.showLoginForm = true
+        this.showForgotPassword = false
+        this.passwordResetSuccess = false
+      } else {
+        this.showLoginForm = false
+        this.showForgotPassword = true
+      }
+    },
+    googleSignIn() {
+      fb.auth
+        .signInWithPopup(fb.GoogleProvider)
+        .then(({ user }) => {
+          this.$store.commit('setCurrentUser', user)
+
+          // create answer obj
+          fb.answersCollection.doc(user.uid).set({
+            0: user.displayName
+          })
+          // create user obj
+          fb.usersCollection
+            .doc(user.uid)
+            .set({
+              name: user.displayName
+            })
+            .then(() => {
+              this.$store.dispatch('fetchUserProfile')
+              this.performingRequest = false
+              this.$router.push('/fragebogen/start')
+            })
+            .catch(err => {
+              console.log(err)
+              this.performingRequest = false
+              this.errorMsg = err.message
+            })
+        })
+        .catch(err => {
+          console.log(err)
+          this.performingRequest = false
+          this.errorMsg = err.message
+        })
+    },
+    facebookSignIn() {
+      fb.auth
+        .signInWithPopup(fb.FacebookProvider)
+        .then(({ user }) => {
+          this.$store.commit('setCurrentUser', user)
+          console.log('here we go: ' + user.uid)
+
+          // create answer obj
+          fb.answersCollection.doc(user.uid).set({
+            0: user.displayName
+          })
+          // create user obj
+          fb.usersCollection
+            .doc(user.uid)
+            .set({
+              name: user.displayName
+            })
+            .then(() => {
+              console.log('Inside Facebook Sign in... After Set ')
+              this.$store.dispatch('fetchUserProfile')
+              this.performingRequest = false
+              this.$router.push('/fragebogen/start')
+            })
+            .catch(err => {
+              console.log(err)
+              this.performingRequest = false
+              this.errorMsg = err.message
+            })
+        })
+        .catch(err => {
+          console.log(err)
+          this.performingRequest = false
+          this.errorMsg = err.message
+        })
+    },
+    login() {
+      this.performingRequest = true
+
+      fb.auth
+        .signInWithEmailAndPassword(
+          this.loginForm.email,
+          this.loginForm.password
+        )
+        .then(({ user }) => {
+          this.$store.commit('setCurrentUser', user)
+          this.$store.dispatch('fetchUserProfile')
+          this.performingRequest = false
+          this.$router.push('/fragebogen/start')
+        })
+        .catch(err => {
+          console.log(err)
+          this.performingRequest = false
+          this.errorMsg = err.message
+        })
+    },
+    signup() {
+      this.performingRequest = true
+
+      fb.auth
+        .createUserWithEmailAndPassword(
+          this.signupForm.email,
+          this.signupForm.password
+        )
+        .then(({ user }) => {
+          this.$store.commit('setCurrentUser', user)
+
+          // create answer obj
+          fb.answersCollection.doc(user.uid).set({
+            0: user.displayName
+          })
+
+          // create user obj
+          fb.usersCollection
+            .doc(user.uid)
+            .set({
+              name: this.signupForm.name
+            })
+            .then(() => {
+              this.$store.dispatch('fetchUserProfile')
+              this.performingRequest = false
+              this.$router.push('/fragebogen/start')
+            })
+            .catch(err => {
+              console.log(err)
+              this.performingRequest = false
+              this.errorMsg = err.message
+            })
+        })
+        .catch(err => {
+          console.log(err)
+          this.performingRequest = false
+          this.errorMsg = err.message
+        })
+    },
+    resetPassword() {
+      this.performingRequest = true
+
+      fb.auth
+        .sendPasswordResetEmail(this.passwordForm.email)
+        .then(() => {
+          this.performingRequest = false
+          this.passwordResetSuccess = true
+          this.passwordForm.email = ''
+        })
+        .catch(err => {
+          console.log(err)
+          this.performingRequest = false
+          this.errorMsg = err.message
+        })
+    }
+  }
+}
+</script>
+
+  <style lang="scss" scoped>
+.social:hover {
+  stroke: '#E6E6E6';
+  fill: '#FFF';
+}
+</style>

@@ -1,20 +1,52 @@
 <template>
   <div class="bg-white">
-    <div class="w-full max-w-2xl mx-auto py-20 px-10 md:px-4">
-      <div class="flex flex-col md:flex-row">
-        <div class="flex-1 md:w-1/3 text-xl leading-normal tracking-wide text-black mx-8">
-          <div class="text-black font-bold mb-4 tracking-normal uppercase">
-            30 second interval frequency
-          </div> <p class="text-grey-darkest font-thin mb-6">
-            Unlike other monitoring platforms that check every 5 minutes, your website can be checked
-            every 30 seconds, depending on your plan.
-          </p> <p class="text-grey-darkest">
-            Know within seconds when there's a problem so you can take immediate action.
+    <div class="w-full relative max-w-2xl mx-auto py-20 px-10 md:px-4">
+      <div class="flex  flex-row">
+        <div class="w-1/2 h-screen mx-8 mt-8 ">
+          <div class="render">
+            <video class="w-full" muted="" autoplay="" loop="" playsinline="">
+              <source src="https://cdn.clearbit.com/assets/videos/cb-home-hero-render-n2918.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+        <div class="z-10 flex-1 w-1/3 text-xl tracking-wide text-black mx-8">
+          <div
+            class=" text-6xl font-medium mb-4 tracking-normal"
+          >
+            Deine Daten sind wichtig
+          </div>
+          <p class="text-grey-darkest font-thin mb-6">
+            Um das Anschreiben auf dich abzustimmen und zu personalieren haben wir den bewerbli Datensammler kreieert.
           </p>
-        </div> <div class="flex-1 md:w-2/3 mx-8 mt-8 md:mt-0">
-          <img src="https://pingping.io/images/marketing/usps/check_interval.jpg" class="shadow-lg rounded-lg">
+          <p
+            class="text-grey"
+          >
+            Probiere den Bewerbli Datensammler jetzt aus. 
+          </p>
+          <button class="mt-12 bg-black btn font-medium text-white uppercase   rounded">
+            Los geht's
+          </button>
         </div>
       </div>
     </div>
+    <funnel />
+    <timeline />
   </div>
 </template>
+<script>
+import funnel from '~/components/funnel'
+import timeline from '~/components/timeline'
+export default {
+  components: {
+    funnel,
+    timeline
+  }
+}
+</script>
+<style lang="scss" scoped>
+.render {
+  position: absolute;
+  left: -26.25rem;
+  width: 110%;
+}
+</style>

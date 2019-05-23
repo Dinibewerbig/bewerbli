@@ -15,7 +15,7 @@
               {{ p.quantity }}
             </span><span>{{ p.name }}</span>
           </td>
-          <td class="font-bold">
+          <td class="">
             CHF {{ p.quantity * p.price }}
           </td>
         </tr>
@@ -29,13 +29,13 @@
               {{ p.quantity }}
             </span><span>{{ p.name }}</span>
           </td>
-          <td class="font-bold">
+          <td class="">
             CHF {{ p.quantity * p.price }}
           </td>
         </tr>
       </tbody>
     </table>
-    <div class="w-full flex justify-between font-bold text-black mt-6 border-t border-grey pt-8">
+    <div class="w-full flex justify-between  text-black mt-6 border-t border-grey pt-8">
       <span>
         Total
       </span>
@@ -44,7 +44,7 @@
       </span>
     </div>
     <div class="mt-8 flex justify-end">
-      <button type="submit" class="btn btn--primary" @click="$modal.show('payment-modal')">
+      <button type="submit" class="btn bg-primary text-white " @click="$modal.show('payment-modal')">
         Bestellen
       </button>
     </div>

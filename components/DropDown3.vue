@@ -1,52 +1,45 @@
 <template>
-  <div class="card">
-    <div class="card-header">
-      <h1>Blog</h1>
-    </div> 
-    <div class="card-body">
+  <div class="">
+    <div class="border-bottom pb-6 mb-6">
+      <h2 class="font-normal text-white">
+        Blog
+      </h2>
+    </div>
+    <div class="">
       <!-- <p class="alert alert--info mb-8">
         Hier geht es zum Blog. Viel Spass.
       </p>  -->
       <div class="">
         <div class=" pr-10">
-          <li class="mb-4 w-full list-reset">
-            <time class="mb-0 text-grey-darkest font-bold uppercase text-sm font-sans tracking-wide">
+          <li class="mb-4 w-full text-white list-reset">
+            <time class="mb-0 text-grey-light font-bold uppercase text-sm font-sans tracking-wide">
               February 2019
               |
-              <a href="https://christoph-rumpel.com/category/design" class="text-orange">
-                design
-              </a>
-              <a href="https://christoph-rumpel.com/category/%20performance" class="text-orange">
-                performance
-              </a>
-              <a href="https://christoph-rumpel.com/category/%20laravel" class="text-orange">
-                laravel
-              </a>
             </time>
 
             <a class="no-underline" href="https://christoph-rumpel.com/2019/02/how-i-built-laravel-core-adventures">
-              <h2 class="mt-0 mb-2 text-grey-darkest text-lg lg:text-xl">
-                How I Built Laravel Core Adventures
+              <h2 class="mt-4 mb-2 text-white text-lg lg:text-xl">
+                Das richtige Anschreiben - einfach erklärt
               </h2>
             </a>
-            <p class="blogsummary hidden  text-base md:block">
+            <p class="blogsummary hidden text-white text-base md:block">
               Most interesting about a new product, except the product itself, are the little details and decisions that shaped it to what it became. T...
             </p>
-            <a class="text-blue-light text-sm" href="https://christoph-rumpel.com/2019/02/how-i-built-laravel-core-adventures">
-              Read more
-            </a>
           </li>
         </div>
-      </div> <div class="card-footer">
-        <button class="btn btn--primary">
-          <!----> <span><span>Weitere Artikel</span></span> <!---->
+      </div> <div class="">
+        <button class=" text-info ">
+          <span>Blog Artikel</span>
+          <ArrowRightIcon />
         </button>
       </div>
     </div>
   </div>
 </template>
 <script>
+import { ArrowRightIcon } from 'vue-feather-icons'
 export default {
+  components: { ArrowRightIcon },
   methods: {
     clicked() {
       this.$emit('clicked')

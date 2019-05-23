@@ -63,6 +63,11 @@ export const head = {
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i'
+    },
+    {
+      rel: 'stylesheet',
+      href:
+        'https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900 '
     }
   ]
 }
@@ -72,7 +77,20 @@ export const loading = {
 export const css = [
   '~/assets/css/tailwind.css',
   '~/assets/css/app.styl',
-  '~/assets/css/main.css'
+  '~/node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-base/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-buttons/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-dropdowns/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-inputs/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-navigations/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-popups/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-splitbuttons/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-vue-pdfviewer/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-vue-calendars/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-vue-gantt/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-grids/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-layouts/styles/material.css',
+  '~/node_modules/@syncfusion/ej2-lists/styles/material.css'
 ]
 export const plugins = [
   {
@@ -80,8 +98,17 @@ export const plugins = [
     ssr: false
   },
   { src: '~/node_modules/vue-rellax/lib/nuxt-plugin', ssr: false },
-  { src: '~/plugins/parallaxy.js', ssr: false },
-  { src: '~/plugins/vue-js-modal', ssr: false }
+  { src: '~/plugins/vue-js-modal', ssr: false },
+  { src: '~/plugins/vue-inview', ssr: false },
+  { src: '~/plugins/vue-scroll-reveal', ssr: false },
+  { src: '~/plugins/vue-typed', ssr: false },
+  { src: '~/plugins/editor', ssr: false },
+  { src: '~/plugins/pdfviewer', ssr: false },
+  { src: '~/plugins/button', ssr: false },
+  { src: '~/plugins/gantt', ssr: false },
+  { src: '~/plugins/calendar', ssr: false },
+  { src: '~/plugins/dropdownbutton', ssr: false },
+  { src: '~/plugins/listview', ssr: false }
 ]
 export const router = {
   middleware: ['router-auth']

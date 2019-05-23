@@ -1,0 +1,54 @@
+
+<svg width="80px" height="108px" viewBox="0 0 80 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="45.5694169%" y1="-2.47490941%" x2="51.7803013%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#ACC7FF" offset="0%"></stop>
+            <stop stop-color="#90B2F8" offset="9.46983382%"></stop>
+            <stop stop-color="#9D80C5" offset="95.0460621%"></stop>
+            <stop stop-color="#8E70B9" offset="100%"></stop>
+        </linearGradient>
+        <path d="M436.079827,4.2015334 L473.146349,89.0025557 C473.942204,90.823318 475.74071,92 477.727809,92 L497.163131,92 C498.819985,92 500.163131,90.6568542 500.163131,89 C500.163131,88.6019262 500.083907,88.2078328 499.930076,87.8406833 L464.411259,3.06780551 C463.63262,1.20942467 461.814593,2.28116061e-15 459.799684,4.4408921e-15 L438.828703,0 C437.171849,3.04359188e-16 435.828703,1.34314575 435.828703,3 C435.828703,3.41353858 435.9142,3.82261135 436.079827,4.2015334 Z" id="path-2"></path>
+        <filter x="-23.4%" y="-13.0%" width="140.6%" height="128.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="-2" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.235489238   0 0 0 0 0.176807193   0 0 0 0 0.429873512  0 0 0 0.146314538 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="33.5136667%" y1="-25.700535%" x2="78.5656798%" y2="117.979372%" id="linearGradient-4">
+            <stop stop-color="#96BBFF" offset="0%"></stop>
+            <stop stop-color="#B890C8" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-5" cx="21.5" cy="21.5" r="21.5"></circle>
+        <filter x="-30.2%" y="-25.6%" width="160.5%" height="160.5%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0941176471   0 0 0 0 0.125490196   0 0 0 0 0.180392157  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fin" transform="translate(-862.000000, -473.000000)">
+            <g id="Top" transform="translate(-80.000000, -1.000000)">
+                <g id="Field" transform="translate(80.000000, 0.000000)">
+                    <g id="Field-Copy-3" transform="translate(436.000000, 481.000000)">
+                        <g id="Path-7">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        </g>
+                        <g id="Icon-Copy-2" transform="translate(447.954006, 23.553000)">
+                            <g id="Oval-6">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                                <use fill="url(#linearGradient-4)" fill-rule="evenodd" xlink:href="#path-5"></use>
+                            </g>
+                            <g id="icon-dark" transform="translate(12.000000, 12.000000)" fill="#5C61A2" fill-rule="nonzero">
+                                <path d="M6.53125,8.3125 L19,8.3125 L19,15.6131162 C19,17.4836405 17.504701,19 15.6601563,19 L6.53125,19 L6.53125,8.3125 Z" id="Rectangle-Copy-2" opacity="0.219999999"></path>
+                                <path d="M6.53125,0 L15.6601563,0 C17.504701,-3.17660041e-16 19,1.4018428 19,3.13110352 L19,8.90625 L6.53125,8.90625 L6.53125,0 Z" id="Rectangle-Copy" opacity="0.699999988"></path>
+                                <path d="M3.33984375,0 L9.5,0 L9.5,19 L3.33984375,19 C1.49529898,19 2.25891585e-16,17.504701 0,15.6601562 L0,3.33984375 C-2.25891585e-16,1.49529898 1.49529898,3.38837377e-16 3.33984375,0 Z" id="Rectangle"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

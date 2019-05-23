@@ -1,10 +1,11 @@
 <template>
-  <div class="bg-primary-lightest">
-    <div class="container-lg">
+ 
+    <div class=" ">
       <nuxt />
+     
       <loginModal />
     </div>
-  </div>
+
 </template>
 
 <style scoped>
@@ -17,3 +18,15 @@ export default {
   methods: {}
 }
 </script>
+
+<style lang="scss">
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.iso {
+}
+</style>

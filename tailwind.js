@@ -43,9 +43,21 @@ View the full documentation at https://tailwindcss.com.
 */
 
 const colors = {
+  info1: '#34a6ba',
+  info2: '#41c197',
+  info3: '#db60cc',
+  info4: '#6aa4f8',
+  primary: '#7273CC',
+  secondary: '#927DEB',
+  tertiary: '#C1B4F3',
+  neutral: '#9FC0F3',
+  positive: '#81A2D0',
+  negative: '#F2F4F8',
+  info: '#82C0Ef',
+  warning: '#BCC3D1',
+  nav: '#232f41',
   transparent: 'transparent',
-
-  black: '#22292f',
+  black: '#000000',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
@@ -262,7 +274,9 @@ module.exports = {
     '2xl': '1.5rem', // 24px
     '3xl': '1.875rem', // 30px
     '4xl': '2.25rem', // 36px
-    '5xl': '3rem' // 48px
+    '5xl': '3rem', // 48px
+    '6xl': '3.4rem',
+    '7xl': '4rem' // 48px
   },
 
   /*
@@ -593,6 +607,7 @@ module.exports = {
     '3xl': '80rem',
     '4xl': '90rem',
     '5xl': '100rem',
+    '6xl': '110rem',
     full: '100%'
   },
 
@@ -866,7 +881,7 @@ module.exports = {
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    opacity: ['responsive'],
+    opacity: ['responsive', 'hover'],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive'],

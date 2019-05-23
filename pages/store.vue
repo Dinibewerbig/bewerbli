@@ -1,20 +1,22 @@
 <template>
-  <div id="app" class="min-h-screen  font-sans antialiased leading-tight">
-    <div class="container mx-auto px-6">
-      <header class="flex justify-between items-center py-8">
-        <div>
-          <img class="block h-12" src="~/assets/newlogo2.svg" alt="Transistor">
-        </div>
-      </header>
-      <div class="pb-12">
-        <h1 class="text-2xl sm:text-3xl  font-medium text-center pt-12 pb-16">
-          Wähle jetzt deinen Service
+  <div class="bg-4">
+    <div class="mx-auto w-1/2 relative">
+      <div class="pt-32">
+        <h1 class="fade-in-up text-center text-5xl font-normal no-delay  ">
+          Willkommen zu deinem Warenkorb
         </h1>
-        <div class="flex flex-wrap -mx-4">
-          <div class="w-full md:w-3/5 mb-6 md:mb-0 ">
+        <p class="mb-8 fade-in-up  text-2xl text-center mt-8 long td2 ">
+          Wähle den passenden Service 
+        </p>
+      </div>
+    </div>
+    <div class="container-lg  leading-tight">
+      <div class="pb-12 w-full">
+        <div class="flex">
+          <div class="w-3/5 mb-6 ">
             <plan-selector :schedule="schedule" @change-schedule="schedule = $event" />
           </div>
-          <div class=" md:w-2/5 px-12  md:pt-10">
+          <div class="w-2/5 px-12 pt-10">
             <invoice />
           </div>
         </div>
@@ -28,7 +30,7 @@ import PlanSelector from '~/components/PlanSelector'
 import Invoice from '~/components/Invoice'
 
 export default {
-  layout: 'login',
+  layout: 'default3',
   components: {
     PlanSelector,
     Invoice
@@ -40,3 +42,5 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+</style>

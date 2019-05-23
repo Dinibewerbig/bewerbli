@@ -3,16 +3,17 @@
     <div class="w-full mb-6 md:mb-0">
       <div class="px-4 pt-10 relative">
         <div class="absolute pin-x pin-t">
-          <schedule-toggle :value="schedule" @input="$emit('change-schedule', $event)" />
+          <schedule-toggle class="w-64" :value="schedule" @input="$emit('change-schedule', $event)" />
         </div>
         <plan-card
           v-for="(product, index) in products"
           v-show="schedule === 'monthly'"
           :id="product.id "
           :key="index"
-          class="mb-4"
+          class=""
           track-by="id"
           schedule="person"
+          :image="product.image"
           :name="product.name"
           :price="product.price"
           :selected="selectedPlan === 'Anschreiben'"
@@ -25,9 +26,10 @@
           v-show="schedule === 'yearly'"
           :id="product.id"
           :key="index+'schulproducts'"
-          class="mb-4"
+          class=""
           track-by="id"
           schedule="klasse"
+          :image="product.image"
           :name="product.name"
           :price="product.price"
           :selected="selectedPlan === 'Anschreiben'"

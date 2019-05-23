@@ -1,17 +1,17 @@
 <template>
-  <div class="select-none w-40  mx-auto flex rounded mb-4">
+  <div class="select-none w-40 px-8 py-4 mx-auto flex rounded mb-4">
     <button
       type="button"
-      class="focus:outline-none focus:shadow-outline rounded py-1 uppercase text-center w-1/2 text-xs font-bold tracking-wide"
-      :class="[isMonthly ? 'bg-white text-navy-darker ' : 'text-navy-light hover:text-white hover:']"
+      class="border rounded py-1 uppercase text-center w-1/2  font-medium tracking-wide"
+      :class="[isMonthly ? 'hidden ' : 'text-navy-light ']"
       @click="select('monthly')"
     >
-      Einzelperson
+      Privatpersonen
     </button>
     <button
       type="button"
-      class="focus:outline-none focus:shadow-outline rounded py-1 uppercase text-center w-1/2 text-xs font-bold tracking-wide"
-      :class="[isYearly ? 'bg-white text-navy-darker ' : 'text-navy-light hover:text-white hover:']"
+      class="border rounded py-1 uppercase text-center w-1/2  font-medium tracking-wide"
+      :class="[isYearly ? ' hidden ' : 'text-navy-light ']"
       @click="select('yearly')"
     >
       Schulen

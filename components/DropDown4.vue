@@ -1,10 +1,12 @@
 <template>
-  <div class="card">
-    <div class="card-header">
-      <h1>Dashboard</h1>
+  <div class="">
+    <div class="border-bottom pb-6 mb-6">
+      <h2 class="font-normal text-white">
+        Dashboard
+      </h2>
     </div>
 
-    <div class="card-body">
+    <div class="">
       <div v-if="currentUser" class="flex items-center mb-8">
         <img
           v-if="currentUser"
@@ -22,11 +24,11 @@
           class="rounded-full"
         >
         <div class="ml-3 flex-1">
-          <div class="text-black text-sm font-bold leading-tight">
+          <div class="text-info1 text-sm text-white  leading-tight">
             {{ userProfile.name }}
           </div>
           <div
-            class="text-primary hover:underline text-sm font-bold leading-tight no-underline block"
+            class="text-info4 text-sm no-underline light leading-tight no-underline block"
             @click="logout"
           >
             Log out
@@ -36,28 +38,46 @@
       <div v-else class="flex">
         <div class="pr-10">
           <div
-            class="text-black font-bold"
+            class="text-white"
           >
             Um zu deinem Dashboard zu gelangen, solltest du dich zuerst anmelden.
           </div>
         </div>
       </div>
     </div>
-    <div class="card-footer">
-      <nuxt-link v-if="currentUser" to="/dashboard/account" class="btn btn--primary">
+    <div class="flex flex-col">
+      <nuxt-link v-if="currentUser" to="/dashboard/account" class=" p-3 rounded light no-underline text-info3 ">
+        <TrelloIcon />
         <span>Zum Dashboard</span>
+        <ArrowRightIcon />
       </nuxt-link>
-      <button v-else class="btn btn--primary" @click="$modal.show('login-modal')">
+      <nuxt-link v-if="currentUser" to="/fragebogen/anmeldung" class="p-3 rounded light no-underline text-info4 ">
+        <ClipboardIcon />
+        <span>Zum Fragebogen</span>
+        <ArrowRightIcon />
+      </nuxt-link>
+      <nuxt-link v-if="currentUser" to="/editor" class="p-3 rounded light no-underline text-info4 ">
+        <FeatherIcon />
+        <span>Zum Editor</span>
+        <ArrowRightIcon />
+      </nuxt-link>
+      <button v-else class="p-3 rounded light no-underline text-info4 " @click="$modal.show('login-modal', { route: '/dashboard/account' })">
         <span>Melde dich an</span>
+        <ArrowRightIcon />
       </button>
     </div>
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
+import { ArrowRightIcon } from 'vue-feather-icons'
+import { FeatherIcon } from 'vue-feather-icons'
+import { ClipboardIcon } from 'vue-feather-icons'
+import { TrelloIcon } from 'vue-feather-icons'
 
 const fb = require('~/services/firebaseConfig.js')
 export default {
+  components: { ArrowRightIcon, FeatherIcon, ClipboardIcon, TrelloIcon },
   layout: 'login',
   computed: {
     ...mapState([

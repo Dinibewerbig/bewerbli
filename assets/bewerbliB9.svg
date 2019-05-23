@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="18" viewBox="0 0 96 18">
+  <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+    <text fill="#FFF" font-family="CoreSansC-55Medium, Core Sans C" font-size="16.08" font-weight="500" letter-spacing=".57">
+      <tspan x="22" y="15">be</tspan> <tspan x="43.465" y="15" letter-spacing=".77">w</tspan> <tspan x="56.745" y="15" letter-spacing=".87">erbl</tspan> <tspan x="91.469" y="15">i</tspan>
+    </text>
+    <g stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+      <path stroke="#919DFF" d="M14.4,10.128 L14.4,14.4 C14.4,15.2836556 13.6836556,16 12.8,16 L1.6,16 C0.7163444,16 0,15.2836556 0,14.4 L0,3.2 C-1.77635684e-16,2.3163444 0.7163444,1.6 1.6,1.6 L5.872,1.6"/>
+      <polygon stroke="#D290F4" points="12.8 0 16 3.2 8 11.2 4.8 11.2 4.8 8"/>
+    </g>
+  </g>
+</svg>

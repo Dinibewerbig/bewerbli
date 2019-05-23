@@ -1,20 +1,32 @@
 
 <template>
   <div class="perspective">
-    <div :class="{scrolledNavbarHeight: scrolled}" class="navbar px-24">
+    <div :class="{scrolledNavbarHeight: scrolled}" class="navbar  px-24">
       <li class="logo">
         <!-- <transition mode="out-in"> -->
         <div>
           <img
             class="logoImg"
             :class="{scrolledLogo : scrolled}"
-            src="~/assets/newlogo2.svg"
-            @click="$router.push('/')"
+            src="~/assets/bewerbliC16.svg"
+         
+            @click="$router.push('/')" 
           >
         </div>
       </li>
 
       <span class="nav navSection hoverable" @mouseover="navShow=true" @mouseleave="navShow=false">
+        <li
+          id="0"
+          ref="btn"
+          class="button"
+          :class="{'headroom--unpinned': scrolled}"
+          @mouseover="select"
+        >
+          Wie funktioniert's
+          <img src="~/assets/nav-chevron-down.svg" class="select-none icon-nav-chevron">
+        </li>
+        
         <li
           id="1"
           ref="btn"
@@ -23,6 +35,7 @@
           @mouseover="select"
         >
           Angebot
+          <img src="~/assets/nav-chevron-down.svg" class="select-none icon-nav-chevron">
         </li>
         <li
           id="2"
@@ -32,6 +45,7 @@
           @mouseover="select"
         >
           Kunden
+          <img src="~/assets/nav-chevron-down.svg" class="select-none icon-nav-chevron">
         </li>
         <li
           id="3"
@@ -40,7 +54,8 @@
           :class="{'headroom--unpinned': scrolled}"
           @mouseover="select"
         >
-          Blog
+          Store
+          <img src="~/assets/nav-chevron-down.svg" class="select-none icon-nav-chevron">
         </li>
         <li
           id="4"
@@ -50,46 +65,49 @@
           @mouseover="select"
         >
           Dashboard
+          <img src="~/assets/nav-chevron-down.svg" class="select-none icon-nav-chevron">
         </li>
       </span>
 
+      <div class="group relative">
+        <div :class="{'btn2--unpinned': scrolled}" class=" btn2 btn1 border px-2 ml-4 antialiased cursor-pointer" @click="$modal.show('login-modal', { route: '/' })">
+          <UnlockIcon /> <span v-if="currentUser">
+            {{ userProfile.name }}
+          </span>
+
+          <span v-else>
+            Melde dich an
+          </span>
+          <ChevronDownIcon />
+        </div>
+        <div v-if="currentUser" class="rounded items-end ml-8 absolute border pin-l border-t-0 mt-1 invisible bg-white hover:visible group-hover:visible">
+          <ul class="list-reset">
+            <div class="px-4 py-2 block text-black hover:bg-grey-light" @click.prevent="logout">
+              Logout
+            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class=" mt-6 ml-4 relative " />
+
+
+
+     
+     
+      <!-- 
       <nuxt-link
-        class="btn2 btn1 bg-green px-2 ml-4 antialiased cursor-pointer"
+        class="btn2 btn1 border px-2 ml-4 antialiased cursor-pointer"
         :class="{'btn2--unpinned': scrolled}"
         tag="li"
         to="/store"
       >
-        EINKAUFEN
+        Anmelden
       </nuxt-link>
-      <nuxt-link
-        v-if="!user"
-        class="btn2 btn3 antialiased ml-2 cursor-pointer"
-        :class="{'btn2--unpinned': scrolled}"
-        tag="li"
-        to="/fragebogen/fb_bewerbungsbrief"
-      >
-        Fragen beantworten
-      </nuxt-link>
+     -->
 
-      <!-- <div class="group mt-6 ml-4 relative ">
-        <img v-if="user" class="avatar cursor-pointer" :src="user.photoURL" alt="avatar">
-        <div class="dropdown2 rounded items-center absolute border pin-l border-t-0 mt-4 bg-white invisible group-hover:visible">
-          <div class="dropdownArrow2" />
-          <ul class="list-reset">
-            <li>
-              <nuxt-link to="/user/dashboard" />Dashboard</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/user/settings" />Settings</nuxt-link>
-            </li>
-            <li>
-              <div class="px-4 py-2 block text-black hover:bg-grey-light" @click="logout">
-                Logout
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>-->
+    
 
       <li class="mobile item-mobileMenu">
         <tasty-burger-button />
@@ -112,6 +130,16 @@
               <div>
                 <transition-group class="group" :name="direction" mode="out-in">
                   <div
+                    v-show="activeTab == 0"
+                    id="div0"
+                    ref="div"
+                    key="cero"
+                    class="w-full"
+                    @clicked="clickedInDropdown"
+                  >
+                    <dropdown0 @clicked="clickedInDropdown" />
+                  </div>
+                  <div
                     v-show="activeTab == 1"
                     id="div1"
                     ref="div"
@@ -130,64 +158,44 @@
                   <div v-show="activeTab == 4" id="div4" ref="div" key="four" class="w-full">
                     <dropdown4 @clicked="clickedInDropdown" />
                   </div>
-                  <div v-show="activeTab ==5" id="div5" ref="div" key="five" class="w-full">
-                    <div>
-                      <ul>
-                        <li class="container mt-8">
-                          <a href>
-                            <div class="flex items-stretch">
-                              <div class="float-left">
-                                <p class="mb-2" />
-                                <h3>
-                                  <span class="w-16 float-left">
-                                    <font-awesome-icon icon="sign-in-alt" style="font-size: 20px" />
-                                  </span>
-                                  <nuxt-link to="/user/login">
-                                    Sign Up
-                                  </nuxt-link>
-                                </h3>
-                                <h3>
-                                  <span class="w-16 float-left">
-                                    <font-awesome-icon icon="sign-in-alt" style="font-size: 20px" />
-                                  </span>
-                                  <nuxt-link to="/user/login">
-                                    Login
-                                  </nuxt-link>
-                                </h3>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </transition-group>
               </div>
+              </transition-group>
             </transition>
           </div>
         </div>
       </div>
     </transition>
   </div>
+  </div>
+  </div>
+  </transition>
+  </div>
 </template>
 
 <script>
 import TastyBurgerButton from '~/components/BurgerButton'
 import dropdown4 from '~/components/Dropdown4'
-import dropdown3 from '~/components/Dropdown3'
+import dropdown3 from '~/components/Dropdown3a'
 import dropdown2 from '~/components/Dropdown2'
 import dropdown1 from '~/components/Dropdown1'
+import dropdown0 from '~/components/Dropdown0'
+// import { ArrowRightIcon } from 'vue-feather-icons'
+import { ChevronDownIcon } from 'vue-feather-icons'
+import { UnlockIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 const fb = require('~/services/firebaseConfig.js')
 
 export default {
   components: {
     TastyBurgerButton,
-
     dropdown4,
     dropdown3,
     dropdown2,
-    dropdown1
+    dropdown1,
+    dropdown0,
+    ChevronDownIcon,
+    UnlockIcon
   },
   props: { scrolled: Boolean },
   data() {
@@ -205,9 +213,13 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      user: state => state.currentUser
-    })
+    ...mapState([
+      'userProfile',
+      'currentUser',
+      {
+        user: state => state.currentUser
+      }
+    ])
   },
   methods: {
     clickedInDropdown() {
@@ -215,7 +227,6 @@ export default {
     },
     show() {
       this.$modal.show('hello-world')
-      console.log('helloworld')
     },
     hide() {
       this.$modal.hide('hello-world')
@@ -255,6 +266,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.dropdown2 {
+  left: -100px;
+}
+li:hover .icon-nav-chevron {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.icon-nav-chevron {
+  filter: brightness(5);
+  vertical-align: top;
+  position: relative;
+  z-index: -1;
+  top: 3px;
+  left: 5px;
+  width: 0.58rem;
+}
 .avatar {
   border-radius: 50%;
   height: 35px;
@@ -280,12 +311,13 @@ export default {
 }
 
 .scrolledLogo {
-  width: 140px !important;
+  width: 124px !important;
 }
 .logoImg {
-  padding-top: 32px;
-  width: 145px;
-  transition: width 0.3s;
+  padding-top: 25px;
+  width: 140px;
+  transition: width 500ms;
+  filter: none;
 }
 
 ul {
@@ -301,13 +333,14 @@ a {
 }
 
 .btn2--unpinned:hover {
-  background-color: #fff !important;
-  color: #4d5270 !important;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
   cursor: pointer;
 }
 
 .btn:hover {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
 }
 
@@ -320,29 +353,29 @@ a {
 }
 
 .button {
+  height: 100%;
   padding-top: 35px;
-  font-family: Muli;
   display: inline-block;
   font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.085em;
-  color: #e2e2e2;
+  letter-spacing: 0.06em;
+  color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 .btn3 {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  // border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .btn3:hover {
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  // border: 1px solid rgba(255, 255, 255, 0.9);
   background-color: none;
 }
 .btn2 {
-  margin-top: 25px;
-  height: 38px;
-  line-height: 37px;
+  margin-top: 24px;
+  height: 35px;
+  line-height: 33px;
   font-family: Muli;
   font-size: 0.9rem;
   font-weight: 600;
@@ -351,15 +384,17 @@ a {
   text-decoration: none;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
-  border-radius: 3px;
+  border-radius: 5px;
   text-align: center;
 }
 
 .btn1:hover {
-  background-color: #0dbe42;
+  background-color: rgba(255, 255, 255, 0.311);
+  border-color: rgba(255, 255, 255, 0.411);
   color: #fff;
 }
-.headroom--unpinned {
+.headroom--unpinned img {
+  // filter: brightness(5);
 }
 .headroom--unpinned:hover {
   color: rgb(230, 230, 230) !important;
@@ -367,8 +402,8 @@ a {
 
 h3 {
   line-height: 1.1em !important;
-  font-size: 1rem;
-  font-family: Sofia;
+  font-size: 1.1rem;
+  font-family: Avenir;
   font-weight: 600;
   padding-top: 3px;
   margin-bottom: 3px;
@@ -386,18 +421,17 @@ h3 {
   justify-content: flex-end;
   padding: 0 20px;
   margin: 0 auto;
-  max-width: 1070px;
-  height: 80px;
+  max-width: 1170px;
+  height: 70px;
 }
 
 .scrolledNavbarHeight {
-  height: 72px;
+  height: 70px;
 }
 
 .navSection {
   position: relative;
 }
-
 .logo {
   margin-right: auto;
 }
@@ -420,29 +454,28 @@ li {
   padding-right: 1.1rem;
   padding-left: 1.1rem;
 }
-
-// #content-class1 {
-//   width: 296px;
-//   height: 543px;
-// }
+#content-class0 {
+  width: 550px;
+  height: 400px;
+}
+#content-class1 {
+  width: 550px;
+  height: 400px;
+}
 
 #content-class2 {
   width: 550px;
+  height: 320px;
 }
 
-// #content-class3 {
-//   width: 430px;
-//   height: 330px;
-// }
-
-#content-class4 {
+#content-class3 {
   width: 330px;
+  height: 400px;
 }
-
-// #content-class5 {
-//   width: 430px;
-//   height: 330px;
-// }
+#content-class4 {
+  width: 270px;
+  height: 400px;
+}
 
 a,
 button,
@@ -452,13 +485,15 @@ textarea {
   -webkit-tap-highlight-color: transparent;
 }
 
-div.dropdown {
+.dropdown {
   border-radius: 0.5rem;
   position: absolute;
-  background-color: #ffffff;
+  background-color: #232f41;
   width: 400px;
+  padding: 2rem;
+  top: 67px;
   transition: width 200ms, height 200ms, left 300ms, opacity 200ms;
-  margin-top: -1px;
+
   overflow: visible;
   opacity: 1;
   box-shadow: rgba(82, 95, 127, 0.1);
@@ -484,7 +519,7 @@ nav {
   width: 12px;
   transform: rotate(45deg);
   box-shadow: -3px -3px 5px rgba(82, 95, 127, 0.04);
-  background-color: rgb(255, 255, 255);
+  background-color: #232f41;
   will-change: transform, opacity;
 }
 .dropdownArrow2 {
@@ -497,14 +532,20 @@ nav {
   width: 12px;
   transform: rotate(45deg);
   box-shadow: -3px -3px 5px rgba(82, 95, 127, 0.04);
-  background-color: rgb(255, 255, 255);
+  background-color: #232f41;
   will-change: transform, opacity;
+}
+
+.nav-overlay {
+  animation: nav-active 280ms cubic-bezier(0.17, 0.67, 0.48, 1.76);
+  animation-fill-mode: forwards;
 }
 
 .dropdown2 {
   left: -100px;
 }
 
+#div0,
 #div1,
 #div2,
 #div3,

@@ -1,17 +1,24 @@
 <template>
-  <div class='mx-4'>
-    <h1> {{ fragen }}</h1>
+  <div class="mx-4">
+    <div class="flex-1  text-xl leading-normal tracking-wide text-black mx-8">
+      <div
+        class="tracking-normal text-4xl mb-12 font-light"
+      >
+        {{ fragen }}
+      </div>
+      <h1 />
     
-    <resizable-textarea>
-      <form>
-        <textarea  
-          ref="input"
-          v-model="answers[active]"
-          spellcheck="false"
-          autofocus
-        />  
-      </form>
-    </resizable-textarea>
+      <resizable-textarea>
+        <form>
+          <textarea  
+            ref="input"
+            v-model="answers[active]"
+            spellcheck="false"
+            autofocus
+          />  
+        </form>
+      </resizable-textarea>
+    </div>
   </div>
 </template>
 
@@ -60,17 +67,15 @@ textarea {
   padding: 10px;
   margin-top: 10px;
   background: 0 0;
-  border: 0;
-  border: 1px solid #cae0e3;
-  border-radius: 0;
-  font-family: 'Avenir Roman';
+  // border: 0;
+  // border: 1px solid #cae0e3;
+  // border-radius: 0;
   resize: none;
   line-height: 1.7em;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-weight: 300;
   width: 100%;
-  color: rgb(56, 56, 56);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: rgb(27, 30, 65);
 }
 
 h1 {

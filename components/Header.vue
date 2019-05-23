@@ -55,28 +55,22 @@ export default {
 
 .header {
   width: 100%;
-  height: 85px;
+  height: 75px;
   position: fixed;
-  z-index: 1;
+  z-index: 10000;
 }
 
 .headroom {
   will-change: transform;
-  transition: all 250ms linear;
-  // background-color: #ffffff6c;
-  // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+  transition: all 450ms linear;
 }
 .headroom--pinned {
   transform: translateY(0%);
-  // background-image: 0;
   background-color: #ffffff;
 }
 .headroom--unpinned {
   padding-top: 8px;
-  transform: translateY(-25%);
-  // background-color: #455de4;
-  background-color: #2c3061;
-
-  // background-image: linear-gradient(45deg, #9d6cf7 0%, #260466 100%);
+  transform: translateY(-32%);
+  background-color: #4a3f7c;
 }
 </style>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="95" height="18" viewBox="0 0 95 18">
+  <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+    <text fill="#FFF" font-family="GalanoGrotesqueAlt-Medium" font-size="16.08" font-weight="500" letter-spacing=".57">
+      <tspan x="22" y="15">bewer</tspan> <tspan x="72.913" y="15" letter-spacing="1.27">b</tspan> <tspan x="84.555" y="15" letter-spacing="1.07">l</tspan> <tspan x="90.77" y="15" letter-spacing="1.27">i</tspan>
+    </text>
+    <g stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+      <path stroke="#919DFF" d="M14.4,10.128 L14.4,14.4 C14.4,15.2836556 13.6836556,16 12.8,16 L1.6,16 C0.7163444,16 0,15.2836556 0,14.4 L0,3.2 C-1.77635684e-16,2.3163444 0.7163444,1.6 1.6,1.6 L5.872,1.6"/>
+      <polygon stroke="#D290F4" points="12.8 0 16 3.2 8 11.2 4.8 11.2 4.8 8"/>
+    </g>
+  </g>
+</svg>

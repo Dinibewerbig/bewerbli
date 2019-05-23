@@ -1,5 +1,7 @@
 <template>
-  <nuxt />
+  <div class="">
+    <nuxt />
+  </div>
 </template>
 
 <style scoped>

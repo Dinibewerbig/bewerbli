@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="12px" viewBox="0 0 21 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 2 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-0.0%" y="-0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fin" transform="translate(-473.000000, -518.000000)" fill="#5C61A2">
+            <g id="Top" transform="translate(-80.000000, -1.000000)">
+                <g id="Field" transform="translate(80.000000, 0.000000)">
+                    <g id="Field-Copy-3" transform="translate(436.000000, 481.000000)">
+                        <g id="Envelope" transform="translate(33.000000, 34.000000)">
+                            <path d="M14.5539267,11.2882209 L22.1057813,4.52514075 C22.8501471,3.85852229 23.936317,3.99362255 24.5318097,4.82689562 C25.1273023,5.66016869 25.0066168,6.87607102 24.262251,7.54268947 L15.6321616,15.2713852 C15.0017876,15.835918 14.1060658,15.835918 13.4756919,15.2713852 L4.84560253,7.54268947 C4.10123672,6.87607102 3.98055118,5.66016869 4.57604383,4.82689562 C5.17153647,3.99362255 6.25770636,3.85852229 7.00207217,4.52514075 L14.5539267,11.2882209 Z" id="Path-2-Copy" filter="url(#filter-1)"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

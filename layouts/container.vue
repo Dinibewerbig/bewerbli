@@ -15,9 +15,4 @@ export default {}
 
 
 <style scoped>
-.container-lg {
-  margin: 0 auto;
-  padding: 0 50px;
-  max-width: 1070px;
-}
 </style>

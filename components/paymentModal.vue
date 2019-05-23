@@ -84,7 +84,7 @@ export default {
   data() {
     return {
       card: {
-        amount: this.amount,
+        amount: 100.0,
         cc: ''
       },
       transaction: {},
@@ -100,6 +100,8 @@ export default {
       success: false
     }
   },
+  created() {},
+  mounted() {},
   methods: {
     afterOpened(event) {
       this.setUpStripe()

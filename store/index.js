@@ -17,7 +17,9 @@ const store = () => {
         {
           id: 'cc91i8f4',
           name: 'Anschreiben',
-          price: '24',
+          image: require('~/static/turnitin3.png'),
+
+          price: '25',
           features: [
             '5,000 downloads / month',
             'Unlimited shows and episodes',
@@ -27,7 +29,8 @@ const store = () => {
         {
           id: 'bcd776vr',
           name: 'Deckblatt',
-          price: '10',
+          image: require('~/static/turnitin3.png'),
+          price: '15',
           features: [
             '5,000 downloads / month',
             'Unlimited shows and episodes',
@@ -37,7 +40,8 @@ const store = () => {
         {
           id: '727034dw',
           name: 'Lebenslauf',
-          price: '12',
+          image: require('~/static/turnitin3.png'),
+          price: '10',
           features: [
             '5,000 downloads / month',
             'Unlimited shows and episodes',
@@ -47,6 +51,7 @@ const store = () => {
         {
           id: '727026e3',
           name: 'Club',
+          image: require('~/static/turnitin3.png'),
           price: '280',
           features: ['5 Anschreiben', '10 Folgebriefe', '2 Deckblätter']
         }
@@ -55,6 +60,7 @@ const store = () => {
         {
           id: 'cc919e21',
           name: 'Anschreiben ',
+          image: require('~/static/turnitin3.png'),
           price: '250',
           features: [
             '5,000 downloads / month',
@@ -65,6 +71,7 @@ const store = () => {
         {
           id: 'bcd745a6',
           name: 'Deckblatt',
+          image: require('~/static/turnitin3.png'),
           price: '120',
           features: [
             '5,000 downloads / month',
@@ -75,6 +82,7 @@ const store = () => {
         {
           id: '467026b7',
           name: 'Lebenslauf',
+          image: require('~/static/turnitin3.png'),
           price: '100',
           features: [
             '5,000 downloads / month',
@@ -154,15 +162,17 @@ const store = () => {
           .doc(state.currentUser.uid)
           .update({ [id]: answer })
           .then(user => {
+            console.log('super' + state.currentUser.uid)
             console.log('Data to Firestore sent' + id)
           })
 
           .catch(err => {
             console.log(err)
+            console.log('super' + state.currentUser.uid)
           })
       },
       fetchAnswers({ commit, state }) {
-        fb.usersCollection
+        fb.answersCollection
           .doc(state.currentUser.uid)
           .get()
           .then(res => {

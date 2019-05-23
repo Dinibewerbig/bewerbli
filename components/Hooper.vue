@@ -1,7 +1,13 @@
 <template>
-  <div >
-    <hooper :key="componentKey" ref="carousel" :mouse-drag="false" class="slides" @slide="updateSlide">
-      <hooper-pagination slot="hooper-addons" mode="fraction" />
+  <div>
+    <hooper
+      :key="componentKey"
+      ref="carousel"
+      :mouse-drag="false"
+      class="slides"
+      @slide="updateSlide"
+    >
+      <!-- <hooper-pagination slot="hooper-addons" mode="fraction" /> -->
       <slide v-for="(step, i) in steps" :key="i+1" class="form__slide">
         <div>
           <component
@@ -14,21 +20,20 @@
           />
         </div>
       </slide>
-
+      <hooper-pagination slot="hooper-addons" />
+      <hooper-pagination slot="hooper-addons" />
       <hooper-progress slot="hooper-addons" />
     </hooper>
     <div class="nav flex flex-row-reverse">
-     
-
       <button class="btn" :class="{disabled: activeSlide > 16}" @click.prevent="slideNext">
         <h3>Weiter zu Frage {{ activeSlide +1 }}</h3>
       </button>
-       <button class="btn " :class="{disabled: activeSlide === 0}" @click.prevent="slidePrev">
+      <button class="btn" :class="{disabled: activeSlide === 0}" @click.prevent="slidePrev">
         <font-awesome-icon
           :icon="['fas', 'arrow-left']"
           style="color: rgb(55, 41, 136); font-size: 20px;"
         />
-        <span class="">
+        <span class>
           Zurück
         </span>
       </button>

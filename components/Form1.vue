@@ -1,26 +1,30 @@
 <template>
-  <div class='mx-4'>
-    <h1 class="mb-12 font-light">
-      {{ fragen }}
-    </h1>
-    <div>
-      <button
-        v-for="(item, index) in items"
-        :id="'btn'+index"
-        :key="index"
-        :ref="index"
-        class="animated faster w-48 mr-4 bg-transparent hover:bg-blue-lighter text-blue-dark py-2 px-4 border border-blue rounded"
-        @click="clicked($event)"
+  <div class="mx-4">
+    <div class="flex-1  text-xl leading-normal tracking-wide text-black mx-8">
+      <div
+        class="tracking-normal text-4xl mb-12 font-light"
       >
-        {{ item }}
-      </button>
+        {{ fragen }}
+      </div>
+      <div>
+        <button
+          v-for="(item, index) in items"
+          :id="'btn'+index"
+          :key="index"
+          :ref="index"
+          class="animated faster w-48 mr-4 bg-transparent hover:bg-blue-lighter text-blue-dark py-2 px-4 border border-blue rounded"
+          @click="clicked($event)"
+        >
+          {{ item }}
+        </button>
+      </div>
+      <textarea
+        ref="input"
+        spellcheck="false"
+        autofocus
+        placeholder="Antwort eingeben"
+      />
     </div>
-    <textarea
-      ref="input"
-      spellcheck="false"
-      autofocus
-      placeholder="Antwort eingeben"
-    />
   </div>
 </template>
 <script>

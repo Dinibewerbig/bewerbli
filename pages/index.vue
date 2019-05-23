@@ -1,39 +1,62 @@
 <template>
   <div>
-    <div style="position: relative; z-index: 0; ">
-      <parallax :speed-factor="0.3">
-        <div class="hero">
-          <div style=" z-index: 0;" class="container-lg flex relative h-full align-center justify-center">
-            <div class="container1 mt-24 ">
-              <div class="title text-left">
-                <h1 class="font-thin">
-                  Ein professioneller Eindruck 
+    <div
+      v-rellax="{
+        speed: -10,
+      }"
+    >
+      <div class="hero">
+        <div class="container-lg">
+          <div class="flex flex-row h-full items-center w-full">
+            <div class="w-3/5 mt-32 pt-32">
+              <div class="pb-32">
+                <h1 class="text-5xl font-medium pb-4">
+                  Sich bewerben mit System
                 </h1>
-              </div>
-
-              <div class="mb-12">
-                <h4>mit dem passenden Bewerbungsbrief</h4>
+                <div class="w-12 h-2 bg-white -ml-4" />
+                <div class="text-2xl font-normal w-5/6 pb-12 leading-normal mt-8">
+                  Dein perfektes
+                  Bewerbungsdossier dank dem intelligenten Fragebogen
+                  von bewerbli.ch 
+                  <span class="font-medium">
+                    Schneller, einfacher
+                    und 
+                    günstiger.
+                  </span>
+                </div>
+                <button class="btn-white flex items-center ">
+                  <svg class="w-4 h-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="21" height="38" viewBox="0 0 21 38">
+                    <polygon fill-rule="evenodd" points="21 19 0 0 0 38" />
+                  </svg>
+                  <span class="ml-2 -mb-1">
+                    Schau das Video
+                  </span>
+                </button>
+           
+                <!-- <div class="vorteile  w-full">
+                  <ul class="flex flex-row justify-between ">
+                    <li class="text-base">
+                      <img src="~/assets/small-wall-clock.svg" style=" width:20px;">schnell
+                    </li>
+                    <li class="text-sm">
+                      <img src="~/assets/price-tag.svg" style=" width:20px;">preisgünstig
+                    </li>
+                    
+                    <li class="text-sm">
+                      <img src="~/assets/mans-silhouette.svg" style=" width:20px;">persönlich
+                    </li>
+                    <li class="text-sm">
+                      <img src="~/assets/loop-arrow.svg" style=" width:20px;">anpassbar
+                    </li>
+                  </ul>
+                </div>-->
               </div>
             </div>
           </div>
-          <div class="vorteile container-lg w-full">
-            <ul class="flex flex-row justify-between ">
-              <li><img src="~/assets/small-wall-clock.svg" style=" width:20px;">schnell</li>
-              <li><img src="~/assets/price-tag.svg" style=" width:20px;">preisgünstig</li>
-              <li>&nbsp; </li>
-              <li>
-                <img src="~/assets/mans-silhouette.svg" style=" width:20px;">persönlich
-              </li>
-              <li><img src="~/assets/loop-arrow.svg" style=" width:20px;">anpassbar</li>
-            </ul>
-          </div>
-          <div style="" class="vorteile w-full " />
         </div>
-      </parallax>
-    </div>
-    
-    <section style="top: 0px; left: 0px;  position: absolute; height: 100%; width: 100%; " class="">
-      <div class="w-full text-center  m-b:10px; ">
+      </div>
+
+      <!-- <div class="w-full text-center">
         <a
           v-scroll-to="{
             el: '#element',             
@@ -42,68 +65,63 @@
             offset: -62,
             force: true,
             cancelable: true,
-
             x: false,
             y: true
           }"
           class="floating-arrow"
           href="#"
         >
-          <img src="~/assets/scroll-arrow-to-down.svg" style=" width:35px;" alt="very cool bg">
+          <img src="~/assets/scroll-arrow-to-down.svg" style="width:35px; z-index: 100000;">
         </a>
-      </div>
-    </section>
+      </div>-->
+    </div>
 
-
-    <content1 />
-    <feature3 id="element" />
-    <feature1 />
-    <feature4 />
-    <bluright />
-    <feature2 />
-    <feature5 />
-    <pingping />
-    <feature6 />
-    <pricing1 /> 
-    <pricing2 /> 
-    <section1 /> 
-    <footer1 />
+    <div class="bg-primary-lightest2 relative">
+      <viaduct />
+      <feature6 class="pt-32 mb-32" />
+      <pingping>
+        <collage class="bg-batch-gradient" />
+        <content1 />
+        <feature3 />
+        <div v-inview:animate="'fadeInLeft'">
+          <feature6 />
+        </div>
+      </pingping>
+      <clearbit />
+      <clearbit3 />
+      <choices />
+      <footer1 />
+    </div>
   </div>
 </template>
 
 <script>
-import Parallax from 'vue-parallaxy'
-import feature1 from '~/components/Feature1'
-import feature2 from '~/components/Feature2'
-import feature3 from '~/components/Feature3'
-import feature4 from '~/components/feature4'
-import feature5 from '~/components/Feature5'
+// import Zondicon from 'vue-zondicons'
 import feature6 from '~/components/Feature6'
-import pricing1 from '~/components/Pricing'
-import pricing2 from '~/components/Pricing2'
-import section1 from '~/components/section1'
-import footer1 from '~/components/Footer'
-import content1 from '~/components/content1'
 import pingping from '~/components/pingping'
-import bluright from '~/components/bluright'
+import choices from '~/components/choices'
+import clearbit from '~/components/clearbit2'
+import clearbit3 from '~/components/clearbit3'
+import viaduct from '~/components/viaduct'
+
+import feature3 from '~/components/Feature3'
+
+import collage from '~/components/collage'
+
+import footer1 from '~/components/footer'
 
 export default {
   layout: 'default',
   components: {
-    Parallax,
-    feature1,
-    feature2,
-    feature3,
-    feature4,
-    feature5,
     feature6,
-    footer1,
-    pricing1,
-    pricing2,
-    section1,
-    content1,
+    feature3,
     pingping,
-    bluright
+    collage,
+    footer1,
+    choices,
+    clearbit,
+    clearbit3,
+    viaduct
   }
 }
 </script>
@@ -121,6 +139,39 @@ export default {
   }
 }
 
+.btn-white {
+  transition: 0.2s background-color, 0.2s transform, 0.2s opacity;
+  @apply bg-transparent text-white font-semibold text-base py-4 px-6 border border-white  rounded;
+}
+
+.btn-white:hover {
+  opacity: 0.8;
+  -webkit-transform: translateY(-0.188rem);
+  -moz-transform: translateY(-0.188rem);
+  -o-transform: translateY(-0.188rem);
+  -ms-transform: translateY(-0.188rem);
+  transform: translateY(-0.188rem);
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+// .title {
+//   padding-left: 9px;
+//   width: 35rem;
+//   font-size: 2.9rem;
+//   letter-spacing: 0.08rem;
+//   // font-family: Graphik;
+//   font-weight: 600;
+//   line-height: 1.2em;
+//   color: white;
+//   // text-transform: uppercase;
+//   color: rgb(74, 39, 114);
+//   background-color: white;
+// }
+.wave {
+  margin-top: -12rem;
+}
+
 .vorteile {
   position: relative;
   bottom: 3vh;
@@ -135,6 +186,9 @@ export default {
   text-decoration: none;
   list-style-type: none;
 }
+.color {
+  color: #00fff9;
+}
 
 img {
   position: relative;
@@ -146,32 +200,46 @@ img {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  padding: 1em;
   box-sizing: border-box;
   color: white;
-  background: url(~assets/header86.png) center center no-repeat;
-  background-size: cover;
+  background: url(~assets/girlH9.png), url(~assets/headerE2.png);
+  padding: 40px;
+  background-size: 150vh, cover;
+  background-position: 30vw 18vh, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
-// .bg {
-//   background-image: radial-gradient(
-//     ellipse at center -50%,
-//     #18334f 0%,
-//     #18334f 18%,
-//     #192532 57%,
-//     #192532 100%
+// .content {
+//   background: url(~assets/overlay.svg);
+
+//   background-position: top -40px center;
+//   background-repeat: no-repeat;
+// }
+
+// .bg-near-white-fade-up {
+//   position: absolute;
+//   bottom: 0;
+//   height: 300px;
+//   width: 100%;
+//   background-image: linear-gradient(
+//     to top,
+//     #ececec 5%,
+//     rgba(255, 255, 255, 0) 50%
 //   );
 // }
 
+.bg-batch-gradient {
+  background-image: linear-gradient(336deg, #9684bf, #415f92);
+}
+
 .floating-arrow {
+  z-index: 100000;
   left: 0;
   line-height: 1px;
   padding: 0 20px;
   position: absolute;
-  bottom: 5vh;
+  bottom: 15vh;
   width: 100%;
-  z-index: 0;
-  color: #fff;
   animation: floating-arrow 1.6s infinite ease-in-out 0s;
   -webkit-animation: floating-arrow 1.6s infinite ease-in-out 0s;
 }
@@ -271,41 +339,9 @@ input {
 .btn:hover {
   color: #6a7197;
 }
-
-.container1 {
-  width: 60%;
-}
-
-.container1 h1 {
-  font-size: 40px;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-put;
-  font-weight: 800;
-  color: #ffffff;
-  // font-family: Hind;
-
-  // font-family: Camphor;
-  // font-family: system-ui;
-  // letter-spacing: 0.05em;
-  // font-family: Avenir;
-  // font-family: Montserrat;
-  margin-bottom: 20px;
-  line-height: 1.3em !important;
-  // font-weight: 300;
-}
-
-h4 {
-  line-height: 2.3rem !important;
-  font-weight: 400;
-  font-size: 1.7rem;
-  // -webkit-font-smoothing: antialiased;
-}
-
 .container-lg {
-  display: flex;
-  flex-direction: column;
-  padding: 0 30px;
+  padding: 0 20px;
   margin: 0 auto;
-  max-width: 1070px;
+  max-width: 1170px;
 }
 </style>
