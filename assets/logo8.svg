@@ -1,14 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="155px" height="27px" viewBox="0 0 155 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>bewerbl copy 5</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="UniSansRegular, Uni Sans" font-size="36.28" font-weight="normal" letter-spacing="6.57490683">
-        <g id="bewerbl-copy-5" transform="translate(-2.000000, -1.000000)" fill="#665772">
-            <text>
-                <tspan x="0" y="27">bewerb</tspan>
-                <tspan x="148.652241" y="27" letter-spacing="6.76127052">l</tspan>
-            </text>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="523" height="101" viewBox="0 0 523 101">
+  <g fill="none" fill-rule="evenodd">
+    <text fill="#FFF" font-family="Gilroy-Semibold, Gilroy" font-size="87.28" font-weight="500" letter-spacing="1.669" transform="translate(169 9)">
+      <tspan x="0" y="68">bewerbli</tspan>
+    </text>
+    <polygon fill="#1A92F3" points="0 61.204 134 0 54.79 101 38.635 65.532"/>
+    <polygon fill="#0F72DF" points="35 65.532 134 0 51.771 101"/>
+    <polygon fill="#1557B2" points="48 73 53.15 101 70 83.69"/>
+    <polygon fill="#20ADFD" points="130 0 97.264 101 48 71.355"/>
+  </g>
 </svg>

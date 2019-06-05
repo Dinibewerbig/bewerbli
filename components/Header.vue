@@ -55,22 +55,23 @@ export default {
 
 .header {
   width: 100%;
-  height: 75px;
+  height: 70px;
   position: fixed;
   z-index: 10000;
 }
 
 .headroom {
   will-change: transform;
-  transition: all 450ms linear;
+  transition: all 100ms linear;
+  // background-color: #fafafd;
 }
 .headroom--pinned {
-  transform: translateY(0%);
-  background-color: #ffffff;
+  background-color: #fafafdbb;
 }
 .headroom--unpinned {
-  padding-top: 8px;
+  padding-top: 10px;
   transform: translateY(-32%);
-  background-color: #4a3f7c;
+  background-color: #fafafd;
+  border-bottom: #cbd0d3bb solid 0.5px;
 }
 </style>

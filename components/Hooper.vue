@@ -8,7 +8,7 @@
       @slide="updateSlide"
     >
       <!-- <hooper-pagination slot="hooper-addons" mode="fraction" /> -->
-      <slide v-for="(step, i) in steps" :key="i+1" class="form__slide">
+      <slide v-for="(step, i) in steps" :key="i+1" class="form__slide ">
         <div>
           <component
             :is="step.component"

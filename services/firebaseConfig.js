@@ -29,6 +29,7 @@ const answersCollection = db.collection('answers')
 const blobsCollection = db.collection('blobs')
 const commentsCollection = db.collection('comments')
 const likesCollection = db.collection('likes')
+const documentsCollection = db.collection('documents')
 
 export {
   db,
@@ -44,5 +45,6 @@ export {
   blobsCollection,
   likesCollection,
   GoogleProvider,
-  FacebookProvider
+  FacebookProvider,
+  documentsCollection
 }

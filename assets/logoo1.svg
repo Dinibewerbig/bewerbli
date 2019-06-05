@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="35" viewBox="0 0 180 35">
+  <g fill="none" fill-rule="evenodd" transform="translate(0 -3)">
+    <text fill="#EEF1F3" font-family="Effra-Bold, Effra" font-size="32.773" font-weight="bold" letter-spacing=".5">
+      <tspan x="52.25" y="31.06">bewerbl</tspan> <tspan x="172.879" y="31.06">i</tspan>
+    </text>
+    <g transform="translate(0 3.25)">
+      <polygon fill="#76B4EF" points="0 20.679 44.688 0 18.272 34.125 12.884 22.142"/>
+      <polygon fill="#1C82E3" points="12.188 22.142 44.688 0 17.693 34.125"/>
+      <polygon fill="#274660" points="16.25 24.375 17.962 34.125 23.563 28.097"/>
+      <polygon fill="#D1E6F9" points="43.875 0 32.847 34.125 16.25 24.109"/>
+    </g>
+  </g>
+</svg>

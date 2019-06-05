@@ -52,6 +52,7 @@ export default {
       }
     },
     setValue(active) {
+      console.log('inside setValue')
       this.$store.dispatch('updateAnswers', {
         answer: this.selected,
         id: active

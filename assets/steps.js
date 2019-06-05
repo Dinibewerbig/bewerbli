@@ -6,7 +6,7 @@ const steps = [
     thematik: 'Einstiegsfragen',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const steps = [
     thematik: 'Einstiegsfragen',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const steps = [
     thematik: 'Einstiegsfragen',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 6,
@@ -48,7 +48,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 7,
@@ -56,7 +56,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 8,
@@ -65,7 +65,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 9,
@@ -74,7 +74,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 10,
@@ -82,7 +82,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 11,
@@ -90,7 +90,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 12,
@@ -98,7 +98,7 @@ const steps = [
     thematik: 'Firmenbezug',
     shown: 'Yes',
     component: 'Form2',
-    options: '[‚hello‘,’zwei’,’drei’'
+    options: ['hello', 'zwei', 'drei']
   },
   {
     id: 13,

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="mx-auto relative bg-batch-gradient">
-      <div class="text-4xl text-center text-white">
-        Bringe wertvolle Informationen
+    <div class="mx-auto relative bg-batch-gradient pt-32">
+      <div class="text-4xl text-center text-white  pt-12 ">
+        Unsere intelligenten Fragebögen helfen dir beim Schreiben
       </div>
-      <div class="text-xl text-center text-white">
+      <div class="text-xl text-center pb-12 text-white">
         Erkläre uns Lorem ipsum dolor, sit amet cons
       </div>
       <div class="mw8 mx-auto relative">

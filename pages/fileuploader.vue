@@ -21,7 +21,7 @@
       :multiple="false"
       @change="detectFiles($event)"
     >
-    <!-- <v-progress-circular
+    <v-progress-circular
       v-if="uploading && !uploadEnd"
       :size="100"
       :width="15"
@@ -30,7 +30,7 @@
       color="primary"
     >
       {{ progressUpload }}%
-    </v-progress-circular> -->
+    </v-progress-circular>
     <img
       v-if="uploadEnd"
       :src="downloadURL"

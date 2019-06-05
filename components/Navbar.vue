@@ -1,18 +1,37 @@
 
 <template>
   <div class="perspective">
-    <div :class="{scrolledNavbarHeight: scrolled}" class="navbar  px-24">
+    <div :class="{scrolledNavbarHeight: scrolled}" class="navbar">
       <li class="logo">
-        <!-- <transition mode="out-in"> -->
-        <div>
-          <img
-            class="logoImg"
-            :class="{scrolledLogo : scrolled}"
-            src="~/assets/bewerbliC16.svg"
+        <transition mode="out-in">
+          <div v-if="!scrolled && index">
+            <img
+              class="logoImg"
+              :class="{scrolledLogo : scrolled }"
+              src="~/assets/logo2w.svg"
          
-            @click="$router.push('/')" 
-          >
-        </div>
+              @click="$router.push('/')" 
+            >
+          </div>
+          <div v-if="scrolled && index">
+            <img
+              class="logoImg"
+              :class="{scrolledLogo : scrolled }"
+              src="~/assets/logo2.svg"
+         
+              @click="$router.push('/')" 
+            >
+          </div>
+          <div v-else>
+            <img
+              class="logoImg"
+              :class="{scrolledLogo : scrolled }"
+              src="~/assets/logo2b.svg"
+         
+              @click="$router.push('/')" 
+            >
+          </div>
+        </transition>
       </li>
 
       <span class="nav navSection hoverable" @mouseover="navShow=true" @mouseleave="navShow=false">
@@ -20,10 +39,10 @@
           id="0"
           ref="btn"
           class="button"
-          :class="{'headroom--unpinned': scrolled}"
+          :class="{'headroom--unpinned': scrolled, 'isIndex':index}"
           @mouseover="select"
         >
-          Wie funktioniert's
+          So funktioniert's
           <img src="~/assets/nav-chevron-down.svg" class="select-none icon-nav-chevron">
         </li>
         
@@ -31,7 +50,7 @@
           id="1"
           ref="btn"
           class="button"
-          :class="{'headroom--unpinned': scrolled}"
+          :class="{'headroom--unpinned': scrolled , 'isIndex':index}"
           @mouseover="select"
         >
           Angebot
@@ -41,7 +60,7 @@
           id="2"
           ref="btn"
           class="button  "
-          :class="{'headroom--unpinned': scrolled}"
+          :class="{'headroom--unpinned': scrolled, 'isIndex':index}"
           @mouseover="select"
         >
           Kunden
@@ -51,7 +70,7 @@
           id="3"
           ref="btn"
           class="button "
-          :class="{'headroom--unpinned': scrolled}"
+          :class="{'headroom--unpinned': scrolled, 'isIndex':index}"
           @mouseover="select"
         >
           Store
@@ -60,8 +79,8 @@
         <li
           id="4"
           ref="btn"
-          class="button bord"
-          :class="{'headroom--unpinned': scrolled}"
+          class="button"
+          :class="{'headroom--unpinned': scrolled, 'isIndex':index}"
           @mouseover="select"
         >
           Dashboard
@@ -70,8 +89,9 @@
       </span>
 
       <div class="group relative">
-        <div :class="{'btn2--unpinned': scrolled}" class=" btn2 btn1 border px-2 ml-4 antialiased cursor-pointer" @click="$modal.show('login-modal', { route: '/' })">
-          <UnlockIcon /> <span v-if="currentUser">
+        <div :class="{'btn2--unpinned': scrolled, 'isIndex':index}" class=" btn2 btn1 border px-2 ml-4 antialiased cursor-pointer" @click="$modal.show('login-modal', { route: '/' })">
+          <UnlockIcon /> 
+          <span v-if="currentUser">
             {{ userProfile.name }}
           </span>
 
@@ -82,9 +102,10 @@
         </div>
         <div v-if="currentUser" class="rounded items-end ml-8 absolute border pin-l border-t-0 mt-1 invisible bg-white hover:visible group-hover:visible">
           <ul class="list-reset">
-            <div class="px-4 py-2 block text-black hover:bg-grey-light" @click.prevent="logout">
-              Logout
-            </div>
+            <li>
+              <div class="px-4 py-2 block text-black hover:bg-grey-light" @click.prevent="logout">
+                Logout
+              </div>
             </li>
           </ul>
         </div>
@@ -160,7 +181,6 @@
                   </div>
                 </transition-group>
               </div>
-              </transition-group>
             </transition>
           </div>
         </div>
@@ -209,8 +229,31 @@ export default {
       navbarLeft: null,
       navbarLeft1: null,
       hamburgers: '',
-      offset: ''
+      offset: '',
+      index: true
     }
+  },
+  watch: {
+    $route: function() {
+      console.log(this.$nuxt.$route.name)
+      console.log(this.index)
+      if (this.$nuxt.$route.name === 'index') {
+        this.index = true
+      } else {
+        this.index = false
+      }
+    }
+  },
+  mounted: function() {
+    this.$nextTick(function() {
+      console.log(this.$nuxt.$route.name)
+      console.log(this.index)
+      if (this.$nuxt.$route.name === 'index') {
+        this.index = true
+      } else {
+        this.index = false
+      }
+    })
   },
   computed: {
     ...mapState([
@@ -311,12 +354,12 @@ li:hover .icon-nav-chevron {
 }
 
 .scrolledLogo {
-  width: 124px !important;
+  width: 125px !important;
 }
 .logoImg {
   padding-top: 25px;
-  width: 140px;
-  transition: width 500ms;
+  width: 150px;
+  transition: width 300ms;
   filter: none;
 }
 
@@ -327,60 +370,33 @@ ul {
 a {
   text-decoration: none;
 }
-
+.isIndex {
+  color: #e2e2e2 !important;
+}
 .btn2--unpinned {
+  // background-color: rgb(12, 12, 12);
+  border: none;
   cursor: pointer;
+  color: black !important;
 }
 
 .btn2--unpinned:hover {
   background-color: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
+  color: #1a1a1a;
   cursor: pointer;
 }
 
-.btn:hover {
-  color: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-}
-
-.button:hover {
-  color: #ffffff;
-}
-
-.btn2:hover {
-  color: #ffffff;
-}
-
-.button {
-  height: 100%;
-  padding-top: 35px;
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-bottom: 25px;
-}
-
-.btn3 {
-  // border: 1px solid rgba(255, 255, 255, 0.5);
-}
-.btn3:hover {
-  // border: 1px solid rgba(255, 255, 255, 0.9);
-  background-color: none;
-}
 .btn2 {
-  margin-top: 24px;
+  min-width: 155px;
+  margin-top: 20px;
   height: 35px;
   line-height: 33px;
   font-family: Muli;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.085em;
-  color: #e2e2e2;
+  color: #111111;
   text-decoration: none;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
@@ -388,16 +404,23 @@ a {
   text-align: center;
 }
 
-.btn1:hover {
-  background-color: rgba(255, 255, 255, 0.311);
-  border-color: rgba(255, 255, 255, 0.411);
-  color: #fff;
+.button {
+  height: 100%;
+  padding-top: 32px;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #161616;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 25px;
 }
-.headroom--unpinned img {
-  // filter: brightness(5);
+
+.headroom--unpinned {
+  color: black !important;
 }
 .headroom--unpinned:hover {
-  color: rgb(230, 230, 230) !important;
 }
 
 h3 {
@@ -419,7 +442,7 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 0 20px;
+  padding: 0 5px;
   margin: 0 auto;
   max-width: 1170px;
   height: 70px;
@@ -559,66 +582,6 @@ nav {
   perspective: 700px;
   z-index: 10000;
 }
-.slide-fade-enter-active {
-  transition: all 0.1s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter,
-.slide-fade-leave-to {
-  opacity: 0;
-}
-
-.tabNext-enter,
-.tabNext-leave-to {
-  opacity: 0;
-}
-.tabNext-enter-active {
-  transition: opacity 0.3s;
-}
-.tabNext-leave-active {
-  transition: opacity 0.3s;
-}
-.tabNext-leave,
-.tabNext-enter-to {
-  opacity: 1;
-}
-
-.tabPrev-enter,
-.tabPrev-leave-to {
-  opacity: 0;
-}
-.tabPrev-enter-active {
-  transition: opacity 0.25s ease-in-out;
-}
-.tabPrev-leave-active {
-  transition: opacity 0.25s ease-in-out;
-}
-.tabPrev-leave,
-.tabPrev-enter-to {
-  opacity: 1;
-}
-
-.v-leave {
-  opacity: 1;
-}
-.v-leave-active {
-  transition: opacity 0.3s;
-}
-.v-leave-to {
-  opacity: 0;
-}
-.v-enter {
-  opacity: 0;
-}
-.v-enter-active {
-  transition: opacity 0.3s;
-}
-.v-enter-to {
-  opacity: 1;
-}
-
 .text-grey-darkest {
   color: #666875;
 }

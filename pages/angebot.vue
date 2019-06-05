@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-  layout: 'default3',
+  layout: 'default',
   components: {}
 }
 </script>

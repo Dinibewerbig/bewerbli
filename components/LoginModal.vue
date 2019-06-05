@@ -9,6 +9,7 @@
     height="auto"
     :width="370"
     @before-open="beforeOpen"
+    @before-close="beforeClose"
   >
     <div class="card card--simple">
       <div class :class="{ 'signup-form': !showLoginForm && !showForgotPassword }">
@@ -47,6 +48,8 @@
               <div class="mt-8 w-full text-center text-primary">
                 oder
               </div>
+        
+
               <div class="mt-8 mb-8 w-full justify-center flex">
                 <div class="ml-4" @click="googleSignIn">
                   <svg
@@ -285,7 +288,14 @@ export default {
   },
   methods: {
     beforeOpen(event) {
-      this.route = event.params.route
+      if (event) {
+        this.route = event.params.route
+      } else {
+        this.route = null
+      }
+    },
+    beforeClose(event) {
+      this.$bus.$emit('saveInput', null)
     },
     toggleForm() {
       this.errorMsg = ''
@@ -309,9 +319,9 @@ export default {
           this.$store.commit('setCurrentUser', user)
 
           // create answer obj
-          fb.answersCollection.doc(user.uid).set({
-            0: user.displayName
-          })
+          // fb.answersCollection.doc(user.uid).set({
+          //   0: user.displayName
+          // })
           // create user obj
           fb.usersCollection
             .doc(user.uid)
@@ -321,7 +331,9 @@ export default {
             .then(() => {
               this.$store.dispatch('fetchUserProfile')
               this.performingRequest = false
-              this.$router.push(this.route)
+              if (this.route) {
+                this.$router.push(this.route)
+              }
             })
             .catch(err => {
               console.log(err)
@@ -344,9 +356,7 @@ export default {
           console.log('here we go: ' + user.uid)
 
           // create answer obj
-          fb.answersCollection.doc(user.uid).set({
-            0: user.displayName
-          })
+
           // create user obj
           fb.usersCollection
             .doc(user.uid)
@@ -357,7 +367,9 @@ export default {
               console.log('Inside Facebook Sign in... After Set ')
               this.$store.dispatch('fetchUserProfile')
               this.performingRequest = false
-              this.$router.push(this.route)
+              if (this.route) {
+                this.$router.push(this.route)
+              }
             })
             .catch(err => {
               console.log(err)
@@ -384,7 +396,9 @@ export default {
           this.$store.commit('setCurrentUser', user)
           this.$store.dispatch('fetchUserProfile')
           this.performingRequest = false
-          this.$router.push(this.route)
+          if (this.route) {
+            this.$router.push(this.route)
+          }
         })
         .catch(err => {
           console.log(err)
@@ -405,9 +419,9 @@ export default {
           this.$store.commit('setCurrentUser', user)
 
           // create answer obj
-          fb.answersCollection.doc(user.uid).set({
-            0: user.displayName
-          })
+          // fb.answersCollection.doc(user.uid).set({
+          //   0: user.displayName
+          // })
 
           // create user obj
           fb.usersCollection
@@ -418,7 +432,9 @@ export default {
             .then(() => {
               this.$store.dispatch('fetchUserProfile')
               this.performingRequest = false
-              this.$router.push(this.route)
+              if (this.route) {
+                this.$router.push(this.route)
+              }
             })
             .catch(err => {
               console.log(err)

@@ -11,7 +11,7 @@
           <div class="-mx-2 flex flex-col -mb-4">
             <div>
               <nuxt-link
-                to="/howto"
+                to="/howto/ersteSchritte"
                 for="plan_id_1"
                 class=" flex-1 cursor-pointer select-none  shadow-sm mb-2 mx-2  no-underline"
                 @click.native="clicked"

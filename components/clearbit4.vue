@@ -68,9 +68,6 @@
   transition: 0.2s background, 0.2s box-shadow, 0.3s transform;
   text-shadow: 0px -1px 0px rgba(84, 52, 112, 0.3);
 }
-.forms-hero {
-  margin-top: -100px;
-}
 
 .bg-purple {
   background-color: #334274;

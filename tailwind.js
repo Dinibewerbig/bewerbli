@@ -43,6 +43,20 @@ View the full documentation at https://tailwindcss.com.
 */
 
 const colors = {
+  link: '#5457FF',
+  bluegrey: '#353B4E',
+  scrollthumb: '#4247A8',
+  elasidebar: '#323260',
+  grey1: '#546b81',
+  superlightgrey: '#f4f5f7',
+  elahighlight: '#5457ff',
+  icon: '#b1b1e9',
+  icon2: '#d2d2ed',
+  elabackground: '#f3f5f8',
+  lightbackground: '#f3f5ff',
+  headline: '#32325c',
+  lead: '#677389',
+  elahover: '#edeeff',
   info1: '#34a6ba',
   info2: '#41c197',
   info3: '#db60cc',
@@ -55,6 +69,9 @@ const colors = {
   negative: '#F2F4F8',
   info: '#82C0Ef',
   warning: '#BCC3D1',
+  cool1: '#F1F2FA',
+  cool2: '#4A6EDF',
+  cool3: '#F9FAFF',
   nav: '#232f41',
   transparent: 'transparent',
   black: '#000000',
@@ -274,7 +291,7 @@ module.exports = {
     '2xl': '1.5rem', // 24px
     '3xl': '1.875rem', // 30px
     '4xl': '2.25rem', // 36px
-    '5xl': '3rem', // 48px
+    '5xl': '2.55rem', // 48px
     '6xl': '3.4rem',
     '7xl': '4rem' // 48px
   },

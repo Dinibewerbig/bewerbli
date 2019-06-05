@@ -12,7 +12,7 @@
         <div class="form-row">
           <div class="mb-6">
             <label class="form-label mb-4" for="card-element">
-              <h2>{{ steps[key1].frage }} </h2> 
+              <h2>{{ steps[data.key].frage }} </h2> 
             </label>
        
               
@@ -20,7 +20,7 @@
               <form>
                 <textarea  
                   ref="input"
-                  v-model.lazy="answers[key1]"
+                  v-model.lazy="answers[data.key]"
                   spellcheck="false"
                   autofocus
                 />  
@@ -37,7 +37,7 @@
         <div class="text-center h-8" />
       </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -47,7 +47,7 @@ import steps from '~/assets/steps.js'
 export default {
   layout: 'login',
   components: { resizableTextarea },
-  props: ['key1'],
+  props: ['data'],
   data() {
     return {
       steps: steps
@@ -63,10 +63,12 @@ export default {
   },
 
   methods: {
-    submitAnswer(key1) {
+    submitAnswer() {
+      console.log(this.data.fragebogen)
+      this.$store.commit('setFirma', this.data.fragebogen)
       this.$store.dispatch('updateAnswers', {
-        answer: this.answers[this.key1],
-        id: this.key1
+        answer: this.answers[this.data.key],
+        id: this.data.key
       })
       this.$emit('close')
     }

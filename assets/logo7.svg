@@ -1,16 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="285px" height="32px" viewBox="0 0 285 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>Slice 1</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="UniSansRegular, Uni Sans" font-size="32.28" font-weight="normal" letter-spacing="5.8499999">
-        <g id="Group-7-Copy-2">
-            <text id="BEWERBIG" fill="#665772">
-                <tspan x="82" y="24">BEWERBIG</tspan>
-            </text>
-            <text id="DINI" fill="#B6B3B9">
-                <tspan x="0" y="24">DINI</tspan>
-            </text>
-        </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="502" height="102" viewBox="0 0 502 102">
+  <defs>
+    <path id="logo7-a" d="M0.00946263444,39.952344 C0.0034539026,38.4297846 1.41153624,36.4846327 4.31131518,34.3643016 L49.7222156,1.15965057 C51.8371347,-0.386787622 55.2709543,-0.386947098 57.3887757,1.16155433 L102.656053,34.2599289 C105.619316,36.4265972 107.024642,38.4121408 106.955599,39.952344 L107,39.952344 L107,44.9777248 L0,44.9777248 L0,39.952344 L0.00946263444,39.952344 L0.00946263444,39.952344 Z"/>
+    <filter id="logo7-b" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+      <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.282269022 0"/>
+    </filter>
+    <path id="logo7-d" d="M0,41 L0,97.2467313 C0,99.3196044 1.67144084,101 3.74291844,101 L94,101 L0,41 Z"/>
+    <filter id="logo7-c" width="103.2%" height="105%" x="-1.6%" y="-2.5%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.181283504   0 0 0 0 0.347530335   0 0 0 0 0.727242827  0 0 0 0.4 0"/>
+    </filter>
+    <path id="logo7-f" d="M5,41 L5,97.2467313 C5,99.3196044 6.68529925,101 8.75120279,101 L107,101 L5,41 Z"/>
+    <filter id="logo7-e" width="102.9%" height="105%" x="-1.5%" y="-2.5%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.181283504   0 0 0 0 0.347530335   0 0 0 0 0.727242827  0 0 0 0.1 0"/>
+    </filter>
+    <filter id="logo7-g" width="102%" height="103.3%" x="-1%" y="-1.7%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+      <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.129840353 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(1)">
+    <use fill="#1557B2" xlink:href="#logo7-a"/>
+    <use fill="#000" filter="url(#logo7-b)" xlink:href="#logo7-a"/>
+    <path fill="#0F72DF" d="M0,41 L107,41 L107,69.5895854 L107,89.6411682 C107,92.0485337 104.489744,94 101.393186,94 L5.60681351,94 C2.51009964,94 0,92.0484845 0,89.6411682 L0,69.5895854 L0,41 Z"/>
+    <use fill="#000" filter="url(#logo7-c)" xlink:href="#logo7-d"/>
+    <use fill="#20ADFD" xlink:href="#logo7-d"/>
+    <g transform="matrix(-1 0 0 1 112 0)">
+      <use fill="#000" filter="url(#logo7-e)" xlink:href="#logo7-f"/>
+      <use fill="#1A92F3" xlink:href="#logo7-f"/>
+      <use fill="#000" filter="url(#logo7-g)" xlink:href="#logo7-f"/>
     </g>
+    <text fill="#FFF" font-family="Gilroy-Semibold, Gilroy" font-size="87.28" font-weight="500" letter-spacing="1.669">
+      <tspan x="147" y="86">bewerbli</tspan>
+    </text>
+  </g>
 </svg>

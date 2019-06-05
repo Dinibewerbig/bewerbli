@@ -45,6 +45,56 @@
 
 
 @font-face {
+  font-family: Gilroy;
+   font-weight: 100;
+  src: url('~static/gilroy/Gilroy-Ultralight.otf');
+}
+
+
+@font-face {
+  font-family: Gilroy;
+   font-weight: 200;
+  src: url('~static/gilroy/Gilroy-Thin.otf');
+}
+
+@font-face {
+  font-family: Gilroy;
+   font-weight: 300;
+  src: url('~static/gilroy/Gilroy-Light.otf');
+}
+
+@font-face {
+  font-family: Gilroy;
+   font-weight: 400;
+  src: url('~static/gilroy/Gilroy-Regular.otf');
+}
+
+
+@font-face {
+  font-family: Gilroy;
+   font-weight: 500;
+  src: url('~static/gilroy/Gilroy-Medium.otf');
+}
+
+@font-face {
+  font-family: Gilroy;
+   font-weight: 600;
+  src: url('~static/gilroy/Gilroy-Bold.otf');
+}
+
+@font-face {
+  font-family: Gilroy;
+   font-weight: 700;
+  src: url('~static/gilroy/Gilroy-Heavy.otf');
+}
+@font-face {
+  font-family: Gilroy;
+   font-weight: 800;
+  src: url('~static/gilroy/Gilroy-Black.otf');
+}
+
+
+@font-face {
   font-family: Graphik;
    font-weight: 700;
   src: url('~static/Graphik/Graphik-700-Bold.otf');
@@ -71,27 +121,80 @@
   src: url('~static/Graphik/Graphik-300-Light.otf');
 }
 
+@font-face {
+  font-family: Colfax;
+   font-weight: 700;
+  src: url('~static/Colfax/Colfax-Black.otf');
+}
+@font-face {
+  font-family: Colfax;
+   font-weight: 600;
+  src: url('~static/Colfax/Colfax-Bold.otf');
+}
+@font-face {
+  font-family: Colfax;
+   font-weight: 500;
+  src: url('~static/Colfax/Colfax-Medium.otf');
+}
+@font-face {
+  font-family: Colfax;
+   font-weight: 400;
+  src: url('~static/Colfax/Colfax-Regular.otf');
+}
+
+@font-face {
+  font-family: Colfax;
+   font-weight: 300;
+  src: url('~static/Colfax/Colfax-Light.otf');
+}
+
 // Fonts
 
 body {
 // font-family: 'Open Sans', sans-serif;
-//font-family: 'Poppins', sans-serif;
+// font-family: 'Poppins', sans-serif;
 // font-family: 'Source Sans Pro', sans-serif;
 // font-family: 'Work Sans', sans-serif;
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Hind', sans-serif;
 // font-family: 'Montserrat', sans-serif;
-// font-family: 'Muli', sans-serif;
-// font-family: 'Lato', sans-serif;
-font-family: 'Avenir', sans-serif;
+
+
+// font-family: 'Avenir', sans-serif;
 // font-family: 'Futura', sans-serif;
-// font-family: 'Source-Sans', sans-serif;
+font-family: 'Gilroy', sans-serif;
+// font-family: 'Colfax', sans-serif;
+// font-family: 'Lato', sans-serif;
+// font-family: 'Muli', sans-serif;
+// font-family: 'San Francisco', sans-serif;
 
 }
 
 html, body {
     overscroll-behavior: none;
 }
+
+.muli{
+    font-family: Muli;
+}
+
+.montserrat {
+   font-family: Montserrat ;
+  }
+.graphik{
+    font-family: Graphik;
+}
+.avenir{
+    font-family: Avenir;
+}
+
+.gilroy{
+    font-family: Gilroy;
+}
+
+.colfax {
+  font-family: Colfax;
+  }
 
 // Line Height
 
@@ -107,6 +210,14 @@ button:focus {
     outline: none;
 }
 
+.border-top {
+  border-top: 1px solid rgb(224, 224, 224);
+}
+
+
+.borderbottom {
+  border-bottom: #cfd6db solid 0.05rem;
+}
 
 .clicked {
   animation: hue 0.25s linear normal none running;
@@ -124,20 +235,37 @@ button:focus {
   }
 }
 
-/* .page-enter-active, .page-leave-active {
-    transition: opacity ease-out 0.05s;
+.arrow:after {
+    content: ' →';
 }
 
-.page-enter, .page-leave-active {
-    opacity: 0;
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
 }
 
-.layout-enter-active, .layout-leave-active {
-    transition: opacity ease-in-out .25s
-  }
-  .layout-enter, .layout-leave-active {
-    opacity: 0
-  } */
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+// .v--modal-overlay {
+//   background: black;
+// }
+
+
+
+// .layout-enter-active, .layout-leave-active {
+//   transition-property: opacity;
+//   transition-timing-function: ease-in-out;
+//   transition-duration: 500ms;
+//   }
+
+// .layout-enter, .layout-leave-to {
+//   opacity: 0.5;
+// } 
 
   html {
 
@@ -161,12 +289,15 @@ button:focus {
   p {
       font-weight: 300;
   }
-  .container-lg {
-    display: flex;
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: 1170px;
-  }
+
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 1250px;
+}
 
 .bg-1 {
   background-image: linear-gradient(336deg, #9684bf, #415f92);
@@ -250,7 +381,7 @@ button:focus {
 }
 
 .border-top{
-    border-top: thin solid #efeff1;
+    border-top: thin solid #d4dadf;
 }
 .text-xl {
   font-size: 1.25rem;
@@ -420,6 +551,8 @@ button:focus {
 }
 
 svg.feather {  
+  z-index : 400;
+  position relative;
     height: 1em;
     margin-top: -4px;
     pointer-events: none;
@@ -458,3 +591,33 @@ svg.feather {
         border-bottom-style: solid;
     border-bottom-width: 1px;
 }
+.ps__thumb-y {
+  background-color: #42478a  !important;
+  border-radius: 1px !important;
+  transition: background-color .2s linear, width .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+  width: 10px !important;
+  /* there must be 'right' for ps__thumb-y */
+  right: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+
+.ps:hover > .ps__rail-x,
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-x,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-x > .ps__rail-x,
+.ps--scrolling-y > .ps__rail-y {
+  opacity: 1 !important;
+}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #42478a !important;
+  width: 11px;
+}
+
+

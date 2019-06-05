@@ -7,12 +7,15 @@ const store = () => {
   return new Vuex.Store({
     state: {
       currentUser: null,
+      firma: '',
       userProfile: {},
       posts: [],
       hiddenPosts: [],
-      answers: {},
+      answers: [],
       added: [],
       addedSchule: [],
+      documentsList: [],
+      fragebogenList: [],
       privat: [
         {
           id: 'cc91i8f4',
@@ -155,25 +158,35 @@ const store = () => {
           id: schulproduct.id
         })
       },
-      updateAnswers({ commit, state }, data) {
-        const answer = data.answer
-        const id = data.id
-        fb.answersCollection
-          .doc(state.currentUser.uid)
-          .update({ [id]: answer })
-          .then(user => {
-            console.log('super' + state.currentUser.uid)
-            console.log('Data to Firestore sent' + id)
-          })
+      updateAnswers({ state }, data) {
+        if (data.answer) {
+          const answer = data.answer
+          const id = data.id
+          setTimeout(() => {
+            fb.usersCollection
+              .doc(state.currentUser.uid)
+              .collection('fragebogen')
+              .doc(state.firma)
+              .set({}, { merge: true })
 
-          .catch(err => {
-            console.log(err)
-            console.log('super' + state.currentUser.uid)
-          })
+            fb.usersCollection
+              .doc(state.currentUser.uid)
+              .collection('fragebogen')
+              .doc(state.firma)
+              .update({ [id]: answer })
+              .then(user => {})
+
+              .catch(err => {
+                console.log(err)
+              })
+          }, 200)
+        }
       },
       fetchAnswers({ commit, state }) {
-        fb.answersCollection
+        fb.usersCollection
           .doc(state.currentUser.uid)
+          .collection('fragebogen')
+          .doc(state.firma)
           .get()
           .then(res => {
             commit('setAnswers', res.data())
@@ -183,14 +196,53 @@ const store = () => {
           })
       },
       fetchUserProfile({ commit, state }) {
+        if (state.firma) {
+          fb.usersCollection
+            .doc(state.currentUser.uid)
+            .collection('fragebogen')
+            .doc(state.firma)
+            .get()
+            .then(res => {
+              commit('setUserProfile', res.data())
+            })
+            .catch(err => {
+              console.log('FetchUserProfile')
+              console.log(err)
+            })
+        }
+      },
+
+      fetchDocumentsList({ commit, state }) {
         fb.usersCollection
           .doc(state.currentUser.uid)
+          .collection('dokumente')
           .get()
-          .then(res => {
-            commit('setUserProfile', res.data())
+          .then(querySnapshot => {
+            const documentNames = []
+            querySnapshot.forEach(doc => {
+              documentNames.push(doc.id)
+
+              commit('setDocumentsList', documentNames)
+            })
           })
           .catch(err => {
-            console.log('FetchUserProfile')
+            console.log(err)
+          })
+      },
+      fetchFragebogenList({ commit, state }) {
+        fb.usersCollection
+          .doc(state.currentUser.uid)
+          .collection('fragebogen')
+          .get()
+          .then(querySnapshot => {
+            const fragebogenNames = []
+            querySnapshot.forEach(doc => {
+              fragebogenNames.push(doc.id)
+
+              commit('setFragebogenList', fragebogenNames)
+            })
+          })
+          .catch(err => {
             console.log(err)
           })
       },
@@ -288,7 +340,15 @@ const store = () => {
           state.answers = []
         }
       },
-
+      setDocumentsList(state, val) {
+        state.documentsList = val
+      },
+      setFragebogenList(state, val) {
+        state.fragebogenList = val
+      },
+      setFirma(state, val) {
+        state.firma = val
+      },
       setHiddenPosts(state, val) {
         if (val) {
           // make sure not to add duplicates

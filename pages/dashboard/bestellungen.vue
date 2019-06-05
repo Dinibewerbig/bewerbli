@@ -1,8 +1,8 @@
 <template>
-  <main class="flex-1">
-    <div class="flex-1 ">
-      <div class=" ">
-        <div class="card-header">
+  <main class="">
+    <div class=" ">
+      <div class=" flex flex-row flex-wrap">
+        <div class="card-header w-full">
           <h1>Deine Bestellungen</h1>
           <div
             class="italic text-grey-dark text-sm"
@@ -10,11 +10,11 @@
             Dieser Fragebogen hilft uns, den Bewerbungsbrief individuell anzupassen.
           </div>
         </div>
-        <div class="card-body p-0">
+        <div class="card-body w-full p-0">
           <div>
             <!---->
             <table class="table w-full">
-              <thead>
+              <thead class="w-full">
                 <tr>
                   <th class="pl-6 text-left">
                     ID
@@ -29,7 +29,7 @@
 
               <tbody v-for="(answer, key) in answers" :key="key" class="post">
                 <tr class="monitor group hover:bg-white-dark">
-                  <td class="py-4 pl-6 w-auto align-top">
+                  <td class="py-4 pl-6  align-top">
                     {{ key }}
                   </td>
                   <td class="py-4 pl-6 text-left w-min">
@@ -64,7 +64,7 @@
             </table>
           </div>
         </div>
-        <div class="card-footer ">
+        <div class="card-footer">
           <form action="https://pingping.io/monitors" method="post">
             <input type="hidden" name="_token" value="NWXqEwhsVj0rHDgESr6XBXfcjGwfazxGBCF2mrGU">
             <div class="flex">

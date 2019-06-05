@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import {
   DocumentEditorContainerPlugin,
-  DocumentEditorContainerComponent
+  DocumentEditorContainerComponent,
+  Toolbar
 } from '@syncfusion/ej2-vue-documenteditor'
 
-Vue.use(DocumentEditorContainerPlugin, DocumentEditorContainerComponent)
+Vue.use(
+  DocumentEditorContainerPlugin,
+  DocumentEditorContainerComponent,
+  Toolbar
+)

@@ -7,7 +7,9 @@ export default context => {
     if (user) {
       store.commit('setCurrentUser', user)
       store.dispatch('fetchUserProfile')
-      store.dispatch('fetchAnswers')
+
+      store.dispatch('fetchDocumentsList')
+      store.dispatch('fetchFragebogenList')
 
       // if (!user.photoURL) {
       //   user

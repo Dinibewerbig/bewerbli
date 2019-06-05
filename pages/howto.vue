@@ -1,20 +1,16 @@
 <template>
   <div>
-    <zoho1 />
-    <!-- <know /> -->
+    <nuxt-child class="" />
     <footer1 />
   </div>
 </template>
 
 <script>
-import zoho1 from '~/components/zoho1'
-// import know from '~/components/gettoknow'
 import footer1 from '~/components/footer'
 
 export default {
-  layout: 'default',
+  layout: 'default2',
   components: {
-    zoho1,
     footer1
   }
 }

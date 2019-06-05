@@ -1,62 +1,60 @@
 <template>
   <div>
-    <div
-      v-rellax="{
-        speed: -10,
-      }"
-    >
-      <div class="hero">
-        <div class="container-lg">
-          <div class="flex flex-row h-full items-center w-full">
-            <div class="w-3/5 mt-32 pt-32">
-              <div class="pb-32">
-                <h1 class="text-5xl font-medium pb-4">
-                  Sich bewerben mit System
-                </h1>
-                <div class="w-12 h-2 bg-white -ml-4" />
-                <div class="text-2xl font-normal w-5/6 pb-12 leading-normal mt-8">
-                  Dein perfektes
-                  Bewerbungsdossier dank dem intelligenten Fragebogen
-                  von bewerbli.ch 
-                  <span class="font-medium">
-                    Schneller, einfacher
-                    und 
-                    günstiger.
-                  </span>
+    <div class="forms-hero bg-purple h-screen">
+      <div class="bg-batch-gradient h-screen">
+        <div class="container">
+          <div class=" h-full items-center text-center w-full">
+            <div class=" pt-24">
+              <div class=" text-center ">
+                <div class=" mt-8 relative text-center z-50 ">
+                  <div class="w-5/5 header mx-auto fade-in-up text-7xl text-white font-semibold gilroy leading-tight  ">
+                    Der intelligente Schreibservice
+                  </div>
+                  
+                
+                  <div class="text-3xl mx-auto  w-full text-white avenir font-medium  leading-normal mt-12">
+                    Erstelle dein Bewerbungsdossier in Minuten 
+                  </div>
+                  <!-- <div class="text-3xl mx-auto  w-5/6 text-white avenir font-medium  leading-normal ">
+                    für die nächste Generation
+                  </div> -->
                 </div>
-                <button class="btn-white flex items-center ">
-                  <svg class="w-4 h-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="21" height="38" viewBox="0 0 21 38">
-                    <polygon fill-rule="evenodd" points="21 19 0 0 0 38" />
-                  </svg>
-                  <span class="ml-2 -mb-1">
-                    Schau das Video
-                  </span>
-                </button>
-           
-                <!-- <div class="vorteile  w-full">
-                  <ul class="flex flex-row justify-between ">
-                    <li class="text-base">
-                      <img src="~/assets/small-wall-clock.svg" style=" width:20px;">schnell
-                    </li>
-                    <li class="text-sm">
-                      <img src="~/assets/price-tag.svg" style=" width:20px;">preisgünstig
-                    </li>
-                    
-                    <li class="text-sm">
-                      <img src="~/assets/mans-silhouette.svg" style=" width:20px;">persönlich
-                    </li>
-                    <li class="text-sm">
-                      <img src="~/assets/loop-arrow.svg" style=" width:20px;">anpassbar
-                    </li>
-                  </ul>
-                </div>-->
+                 
+                 
+                <div class="w-full   ">
+                  <div class=" mx-auto  relative">
+                    <div class=" mt-4 -ml-16 pr-4">
+                      <img src="~/assets/heroimage.svg" class="hero">
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+              <!-- <div class=" relative  ">
+                <div class="hero-input items-center flex fade-in-up ">
+                  <div class="hero-input-email-icon">
+                    <img src="~/assets/envelope-chevron.svg">
+                  </div>
+                  <div class="hero-input-text">
+                    bewerbli.ch
+                  </div>
+                  <div class="hero-input-cursor blink" />
+                  <img src="~/assets/ribbon.svg" class="icon-ribbon">
+                </div>
+              </div> -->
+              <!-- <div class=" fade-in-up mt-12">
+                <nuxt-link to="/fragebogen/anmeldung" class="big-purple-button">
+                  Jetzt ausprobieren
+                </nuxt-link>
+              </div> -->
+            </div> 
           </div>
         </div>
       </div>
+    </div>
+   
 
-      <!-- <div class="w-full text-center">
+
+    <!-- <div class="w-full text-center">
         <a
           v-scroll-to="{
             el: '#element',             
@@ -74,162 +72,269 @@
           <img src="~/assets/scroll-arrow-to-down.svg" style="width:35px; z-index: 100000;">
         </a>
       </div>-->
-    </div>
+    
+  
+    <div class="bg-primary-lightest2  ">
+      <!-- <clearbit4 class="pt-32 " /> -->
+      
+      <titelblatt class="margin" />
+      <anschreiben />
+    
+      <costumized />
+      <machine />
 
-    <div class="bg-primary-lightest2 relative">
-      <viaduct />
-      <feature6 class="pt-32 mb-32" />
-      <pingping>
-        <collage class="bg-batch-gradient" />
-        <content1 />
-        <feature3 />
-        <div v-inview:animate="'fadeInLeft'">
-          <feature6 />
-        </div>
-      </pingping>
-      <clearbit />
-      <clearbit3 />
-      <choices />
+      <editored />
+      <personalized />
+   
+      <!-- <content1 class="border-top" /> -->
+      <!-- <feature3 /> -->
+      <!-- <feature6 class="mb-32 border-top" /> -->
+      <!-- <pingping /> -->
+      <!-- <collage class="bg-batch-gradient border-top" />
+    
+    
+     
+ 
+     
+     
+      <choices class="border-top" /> -->
+      <featured />
+      <!-- <prefooter /> -->
       <footer1 />
     </div>
+  </div>
+  </div>
   </div>
 </template>
 
 <script>
 // import Zondicon from 'vue-zondicons'
-import feature6 from '~/components/Feature6'
-import pingping from '~/components/pingping'
-import choices from '~/components/choices'
-import clearbit from '~/components/clearbit2'
-import clearbit3 from '~/components/clearbit3'
-import viaduct from '~/components/viaduct'
+// import clearbit4 from '~/components/clearbit4'
+// import feature6 from '~/components/Feature6'
+// import pingping from '~/components/pingping'
+// import choices from '~/components/choices'
+// import prefooter from '~/components/prefooter'
 
-import feature3 from '~/components/Feature3'
+import editored from '~/components/editored'
+import featured from '~/components/featured'
+// import feature3 from '~/components/Feature3'
+import anschreiben from '~/components/anschreiben'
+import titelblatt from '~/components/Titelblatt'
 
-import collage from '~/components/collage'
+import costumized from '~/components/costumized'
+import machine from '~/components/machine'
+import personalized from '~/components/personalized'
+
+// import collage from '~/components/collage'
 
 import footer1 from '~/components/footer'
 
 export default {
   layout: 'default',
   components: {
-    feature6,
-    feature3,
-    pingping,
-    collage,
+    featured,
+    titelblatt,
+    personalized,
+    // feature6,
+    // feature3,
+    anschreiben,
+    costumized,
+    machine,
+    // pingping,
+    // collage,
     footer1,
-    choices,
-    clearbit,
-    clearbit3,
-    viaduct
+    // prefooter,
+    // choices,
+    editored
+    // clearbit4,
   }
 }
 </script>
 
 <style scoped lang="scss">
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.header {
+  font-size: 3.4rem;
+}
+.hero {
+  width: 94%;
+}
+.margin {
+  margin-top: 320px;
 }
 
-@media screen and (max-height: 550px) {
-  .vorteile {
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
+.btn-hero {
+  transition: 0.2s background-color, 0.2s transform, 0.2s opacity;
 }
-
 .btn-white {
+  border-color: rgb(255, 255, 255);
   transition: 0.2s background-color, 0.2s transform, 0.2s opacity;
   @apply bg-transparent text-white font-semibold text-base py-4 px-6 border border-white  rounded;
 }
 
-.btn-white:hover {
+.btn-hero:hover {
   opacity: 0.8;
   -webkit-transform: translateY(-0.188rem);
-  -moz-transform: translateY(-0.188rem);
-  -o-transform: translateY(-0.188rem);
-  -ms-transform: translateY(-0.188rem);
+  // -moz-transform: translateY(-0.188rem);
+  // -o-transform: translateY(-0.188rem);
+  // -ms-transform: translateY(-0.188rem);
   transform: translateY(-0.188rem);
-  border-color: rgb(255, 255, 255);
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
-// .title {
-//   padding-left: 9px;
-//   width: 35rem;
-//   font-size: 2.9rem;
-//   letter-spacing: 0.08rem;
-//   // font-family: Graphik;
-//   font-weight: 600;
-//   line-height: 1.2em;
-//   color: white;
-//   // text-transform: uppercase;
-//   color: rgb(74, 39, 114);
-//   background-color: white;
-// }
-.wave {
-  margin-top: -12rem;
-}
-
-.vorteile {
-  position: relative;
-  bottom: 3vh;
-}
-
-.vorteile > ul {
-  padding-inline-start: 0 !important;
-}
-.vorteile > ul > li {
-  color: rgb(255, 255, 255);
-  align-content: space-between;
-  text-decoration: none;
-  list-style-type: none;
-}
-.color {
-  color: #00fff9;
-}
-
-img {
-  position: relative;
-  bottom: -4px;
-  margin-right: 10px;
-}
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  box-sizing: border-box;
-  color: white;
-  background: url(~assets/girlH9.png), url(~assets/headerE2.png);
-  padding: 40px;
-  background-size: 150vh, cover;
-  background-position: 30vw 18vh, center;
-  background-repeat: no-repeat, no-repeat;
-}
-
-// .content {
-//   background: url(~assets/overlay.svg);
-
-//   background-position: top -40px center;
-//   background-repeat: no-repeat;
-// }
-
-// .bg-near-white-fade-up {
-//   position: absolute;
-//   bottom: 0;
-//   height: 300px;
-//   width: 100%;
+// .purple-gradient {
+//   background-image: -webkit-linear-gradient(
+//     150deg,
+//     rgba(103, 77, 153, 0) 30%,
+//     #924ea9 65%,
+//     #844b98
+//   );
+//   background-image: -moz-linear-gradient(
+//     150deg,
+//     rgba(103, 77, 153, 0) 30%,
+//     #924ea9 65%,
+//     #844b98
+//   );
+//   background-image: -ms-linear-gradient(
+//     150deg,
+//     rgba(103, 77, 153, 0) 30%,
+//     #924ea9 65%,
+//     #844b98
+//   );
+//   background-image: -o-linear-gradient(
+//     150deg,
+//     rgba(103, 77, 153, 0) 30%,
+//     #924ea9 65%,
+//     #844b98
+//   );
 //   background-image: linear-gradient(
-//     to top,
-//     #ececec 5%,
-//     rgba(255, 255, 255, 0) 50%
+//     150deg,
+//     rgba(103, 77, 153, 0) 30%,
+//     #924ea9 65%,
+//     #844b98
 //   );
 // }
 
 .bg-batch-gradient {
-  background-image: linear-gradient(336deg, #9684bf, #415f92);
+  background: url(~assets/bgimage2.jpg) center center no-repeat;
+  background-size: cover;
+
+  // background-image: linear-gradient(336deg, #9684bf, #415f92);
+}
+
+// .bg-purple {
+//   height: 100vh;
+//   background-color: #334274;
+// }
+
+.fade-in-up.td1,
+.fade-in-down.td1 {
+  transition-delay: 0.2s;
+}
+
+.no-delay .fade-in-up,
+.no-delay .fade-in-down {
+  transition-delay: 0s;
+}
+
+.fade-in-up.long,
+.fade-in-down.long {
+  transition: 1s opacity, 1s transform;
+}
+
+.loaded .fade-in-up,
+.loaded .fade-in-down {
+  opacity: 1;
+  transform: none;
+}
+.fade-in-up {
+  transform: translateY(40px);
+}
+.fade-in-up,
+.fade-in-down {
+  opacity: 1;
+  transition: 1s opacity, 1s transform;
+}
+
+.fade-in-up.td4,
+.fade-in-down.td4 {
+  transition-delay: 0.8s;
+}
+.fade-in-up.long,
+.fade-in-down.long {
+  transition: 1s opacity, 1s transform;
+}
+
+.fade-in-up.long,
+.fade-in-down.long {
+  transition: 1s opacity, 1s transform;
+}
+.hero-input {
+  z-index: 3;
+  position: relative;
+  text-align: left;
+  max-width: 400px;
+  padding: 8px 20px;
+  border-radius: 11px;
+  box-shadow: 0 14px 26px 0 rgba(30, 38, 60, 0.26),
+    0 7px 19px 0 rgba(51, 43, 77, 0.52);
+  background-color: #fff;
+  border: solid 3px #eae9ff;
+  color: #6d728a;
+  font-weight: 500;
+  font-size: 26px;
+}
+.blink {
+  animation: 1s blink-animation step-end infinite;
+}
+.hero-input-cursor {
+  position: relative;
+  top: 1px;
+  margin-left: 3px;
+  width: 3px;
+  border-radius: 3px;
+  background-color: #3386ee;
+  height: 30px;
+}
+.hero-input .icon-ribbon {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  height: 72px;
+}
+.big-purple-button {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.1px;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #9f80d5;
+  box-shadow: 0 -1px 0px rgba(255, 255, 255, 0.5),
+    0 7px 13px 0 rgba(84, 52, 112, 0.85);
+  display: inline-block;
+  transition: 0.2s background, 0.2s box-shadow, 0.3s transform;
+  text-shadow: 0px -1px 0px rgba(84, 52, 112, 0.3);
+}
+
+.hero-data-points {
+  z-index: 1;
+  display: inline-flex;
+  margin-top: -10px;
+}
+
+.hero-input-email-icon {
+  padding: 6px 4px 4px 4px;
+}
+.hero-input-email-icon {
+  height: 24px;
+  margin-right: 20px;
+  margin-left: -10px;
+  border-radius: 4px;
+  padding: 4px;
+  background-image: linear-gradient(160deg, #8eb6ff, #b890c8);
+  box-shadow: 0 2px 6px 0 rgba(27, 24, 46, 0.16);
 }
 
 .floating-arrow {
@@ -338,10 +443,5 @@ input {
 
 .btn:hover {
   color: #6a7197;
-}
-.container-lg {
-  padding: 0 20px;
-  margin: 0 auto;
-  max-width: 1170px;
 }
 </style>

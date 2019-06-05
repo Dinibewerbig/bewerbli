@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="503" height="86" viewBox="0 0 503 86">
+  <g fill="none" fill-rule="evenodd">
+    <polygon fill="#1A92F3" points="0 52.114 114 0 46.612 86 32.868 55.8"/>
+    <polygon fill="#0F72DF" points="30 55.8 114 0 44.23 86"/>
+    <polygon fill="#1557B2" points="41 62 45.447 86 60 71.162"/>
+    <polygon fill="#20ADFD" points="111 0 83.055 86 41 60.758"/>
+    <text fill="#414142" font-family="Gilroy-Extrabold, Gilroy" font-size="87.28" font-weight="600" letter-spacing="1.669">
+      <tspan x="143" y="77">bewerbli</tspan>
+    </text>
+  </g>
+</svg>
