@@ -330,7 +330,7 @@ export default {
             })
             .then(() => {
               this.$store.dispatch('fetchUserProfile')
-              this.performingRequest = false
+              console.log('Name' + user.displayName)
               if (this.route) {
                 this.$router.push(this.route)
               }
@@ -340,124 +340,6 @@ export default {
               this.performingRequest = false
               this.errorMsg = err.message
             })
-        })
-        .catch(err => {
-          console.log(err)
-          this.performingRequest = false
-          this.errorMsg = err.message
-        })
-    },
-    facebookSignIn() {
-      fb.auth
-        .signInWithPopup(fb.FacebookProvider)
-        .then(({ user }) => {
-          this.$modal.hide('login-modal')
-          this.$store.commit('setCurrentUser', user)
-          console.log('here we go: ' + user.uid)
-
-          // create answer obj
-
-          // create user obj
-          fb.usersCollection
-            .doc(user.uid)
-            .set({
-              name: user.displayName
-            })
-            .then(() => {
-              console.log('Inside Facebook Sign in... After Set ')
-              this.$store.dispatch('fetchUserProfile')
-              this.performingRequest = false
-              if (this.route) {
-                this.$router.push(this.route)
-              }
-            })
-            .catch(err => {
-              console.log(err)
-              this.performingRequest = false
-              this.errorMsg = err.message
-            })
-        })
-        .catch(err => {
-          console.log(err)
-          this.performingRequest = false
-          this.errorMsg = err.message
-        })
-    },
-    login() {
-      this.performingRequest = true
-
-      fb.auth
-        .signInWithEmailAndPassword(
-          this.loginForm.email,
-          this.loginForm.password
-        )
-        .then(({ user }) => {
-          this.$modal.hide('login-modal')
-          this.$store.commit('setCurrentUser', user)
-          this.$store.dispatch('fetchUserProfile')
-          this.performingRequest = false
-          if (this.route) {
-            this.$router.push(this.route)
-          }
-        })
-        .catch(err => {
-          console.log(err)
-          this.performingRequest = false
-          this.errorMsg = err.message
-        })
-    },
-    signup() {
-      this.performingRequest = true
-
-      fb.auth
-        .createUserWithEmailAndPassword(
-          this.signupForm.email,
-          this.signupForm.password
-        )
-        .then(({ user }) => {
-          this.$modal.hide('login-modal')
-          this.$store.commit('setCurrentUser', user)
-
-          // create answer obj
-          // fb.answersCollection.doc(user.uid).set({
-          //   0: user.displayName
-          // })
-
-          // create user obj
-          fb.usersCollection
-            .doc(user.uid)
-            .set({
-              name: this.signupForm.name
-            })
-            .then(() => {
-              this.$store.dispatch('fetchUserProfile')
-              this.performingRequest = false
-              if (this.route) {
-                this.$router.push(this.route)
-              }
-            })
-            .catch(err => {
-              console.log(err)
-              this.performingRequest = false
-              this.errorMsg = err.message
-            })
-        })
-        .catch(err => {
-          console.log(err)
-          this.performingRequest = false
-          this.errorMsg = err.message
-        })
-    },
-    resetPassword() {
-      this.performingRequest = true
-
-      fb.auth
-        .sendPasswordResetEmail(this.passwordForm.email)
-        .then(() => {
-          this.$modal.hide('login-modal')
-          this.performingRequest = false
-          this.passwordResetSuccess = true
-          this.passwordForm.email = ''
         })
         .catch(err => {
           console.log(err)

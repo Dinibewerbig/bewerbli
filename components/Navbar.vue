@@ -89,7 +89,7 @@
       </span>
 
       <div class="group relative">
-        <div :class="{'btn2--unpinned': scrolled, 'isIndex':index}" class=" btn2 btn1 border px-2 ml-4 antialiased cursor-pointer" @click="$modal.show('login-modal', { route: '/' })">
+        <div :class="{'btn2--unpinned': scrolled, 'isIndex':index}" class=" btn2 btn1 border px-2 ml-4 antialiased cursor-pointer" @click="$modal.show('login-modal', { route: '/dashboard/dashboard' })">
           <UnlockIcon /> 
           <span v-if="currentUser">
             {{ userProfile.name }}
@@ -201,8 +201,7 @@ import dropdown2 from '~/components/Dropdown2'
 import dropdown1 from '~/components/Dropdown1'
 import dropdown0 from '~/components/Dropdown0'
 // import { ArrowRightIcon } from 'vue-feather-icons'
-import { ChevronDownIcon } from 'vue-feather-icons'
-import { UnlockIcon } from 'vue-feather-icons'
+import { ChevronDownIcon, UnlockIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 const fb = require('~/services/firebaseConfig.js')
 
@@ -233,6 +232,15 @@ export default {
       index: true
     }
   },
+  computed: {
+    ...mapState([
+      'userProfile',
+      'currentUser',
+      {
+        user: state => state.currentUser
+      }
+    ])
+  },
   watch: {
     $route: function() {
       console.log(this.$nuxt.$route.name)
@@ -255,15 +263,7 @@ export default {
       }
     })
   },
-  computed: {
-    ...mapState([
-      'userProfile',
-      'currentUser',
-      {
-        user: state => state.currentUser
-      }
-    ])
-  },
+
   methods: {
     clickedInDropdown() {
       this.navShow = false

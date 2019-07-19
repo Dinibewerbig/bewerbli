@@ -4,7 +4,7 @@
     <div>
       <div class="py-3 px-4 border-b border-grey-light">
         <h1 class="mb-24">
-          Fragbögen
+          Fragbögen 
         </h1>
         <div class="text-info1 w-1/5 text-xl mb-8 ">
           <FileTextIcon class="mr-2 ml-4 text-2xl" />Anschreiben
@@ -75,6 +75,7 @@
             </div>
             <button
               class="ml-auto border-info3 border text-info3 font-normal py-2 px-2 mr-4 rounded"
+              @click.stop="$modal.show('new-lebenslauf-modal', {documentName: item}, { route: '/dashboard/fragebogen/dokumente' })"
             >
               Neu
             </button>
@@ -83,6 +84,7 @@
       </nuxt-link>
     </div>
     <NewdocumentModal />
+    <NewLebenslaufModal />
     <EditdocumentModal />
   </div>
 </template>
@@ -90,10 +92,13 @@
 <script>
 // import Zondicon from 'vue-zondicons'
 import { mapState } from 'vuex'
-import { Edit3Icon } from 'vue-feather-icons'
-import { FileTextIcon } from 'vue-feather-icons'
-import { BookIcon } from 'vue-feather-icons'
-import { UserCheckIcon } from 'vue-feather-icons'
+import {
+  Edit3Icon,
+  UserCheckIcon,
+  BookIcon,
+  FileTextIcon
+} from 'vue-feather-icons'
+import NewLebenslaufModal from '~/components/newLebenslaufModal.vue'
 import NewdocumentModal from '~/components/NewdocumentModal.vue'
 import EditdocumentModal from '~/components/editDocumentModal.vue'
 
@@ -103,6 +108,7 @@ export default {
     BookIcon,
     UserCheckIcon,
     NewdocumentModal,
+    NewLebenslaufModal,
     Edit3Icon,
     EditdocumentModal
   },

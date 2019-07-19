@@ -1,7 +1,7 @@
 <template>
-  <div class="">
-    <div class="">
-      <div class=" ">
+  <div>
+    <div :class="{editor1Toggle : sidebar }" class="editor1 ">
+      <div class="">
         <div
           id="documenteditor_titlebar"
           ref="de_titlebar"
@@ -31,13 +31,21 @@
 
            
          
-            <!-- <ejs-button
+            <ejs-button
               id="de-print"
               :style="iconStyle"
               title="Save this document."
               @click.native="saveAsDocx"
             >
               SaveDoc
+            </ejs-button>
+            <ejs-button
+              id="de-print"
+              :style="iconStyle"
+              title="Save this document."
+              @click.native="createLebenslauf()"
+            >
+              CreateLebenslauf
             </ejs-button>
             <input
               ref="fileUpload"
@@ -55,9 +63,9 @@
               @click.native="insertImageButtonClickHandler"
             >
               Import
-            </ejs-button> -->
+            </ejs-button> 
 
-            <!-- <ejs-button
+            <ejs-button
               id="de-print"
               :style="iconStyle"
               :icon-css="exportIconCss"
@@ -66,10 +74,10 @@
             >
               Save
             </ejs-button>
-            <ejs-button id="de-print" :style="iconStyle" @click.native="showDialog">
+            <!-- <ejs-button id="de-print" :style="iconStyle" @click.native="insertContent">
               insbookm
-            </ejs-button> -->
-            <!-- <ejs-button
+            </ejs-button>  -->
+            <ejs-button
               id="de-print"
               :style="iconStyle"
               :icon-css="printIconCss"
@@ -77,7 +85,34 @@
               @click.native="printBtnClick"
             >
               Print
-            </ejs-button> -->
+            </ejs-button> 
+            <ejs-button
+              id="de-print"
+              :style="iconStyle"
+              :icon-css="printIconCss"
+              title="Print this document (Ctrl+P)."
+              @click.native="skipBookmark"
+            >
+              Skip 
+            </ejs-button> 
+            <ejs-button
+              id="de-print"
+              :style="iconStyle"
+              :icon-css="printIconCss"
+              title="Print this document (Ctrl+P)."
+              @click.native="resetBookmark"
+            >
+              Reset 
+            </ejs-button> 
+            <ejs-button
+              id="de-print"
+              :style="iconStyle"
+              :icon-css="printIconCss"
+              title="Print this document (Ctrl+P)."
+              @click.native="insertBookmark"
+            >
+              InsertBookmark {{ bookmark }}
+            </ejs-button> 
          
             <ejs-dropdownbutton
               ref="de-export"
@@ -121,13 +156,19 @@
               insImg
             </ejs-button>
             <ejs-button
-              id="de-print"
               :style="iconStyle"
-              :icon-css="printIconCss"
-              title="Print this document (Ctrl+P)."
-              @click.native="resize"
+    
+              class="no-underline text-white inline-block"
+              @click.native="undo"
             >
-              resize
+              undo
+            </ejs-button>
+            <ejs-button
+              class="no-underline text-white inline-block"
+              :style="iconStyle"
+              @click.native="togglePane"
+            >
+              Pane
             </ejs-button>
             <ejs-button
               class="no-underline text-white inline-block"
@@ -137,31 +178,17 @@
             >
               Cropie
             </ejs-button>
-            <ejs-button
-              class="no-underline text-white inline-block"
-              :style="iconStyle"
-              @click.native="sidebarToggle"
-            >
-              Sidebar
-            </ejs-button>
           </div>
         </div>
       </div>
       <ejs-documenteditorcontainer
         id="container"
         ref="doceditcontainer"
-        style="width: 100%; height: 90vh "
+        class="editor1"
+        :class="{editor1Toggle : sidebar }" 
+        style="  "
         :enable-toolbar="true"
       />"
-      <!-- <ejs-documenteditorcontainer
-        id="container"
-        ref="doceditcontainer"
-   
-        :enable-toolbar="true"
-        style="height:calc(100vh - 124px);  "
-        @destroyed="destroyed()"
-        @created="created"
-      />-->
     </div>
     <cropieModal />
   </div>
@@ -182,6 +209,7 @@ import {
   SfdtExport,
   WordExport
 } from '@syncfusion/ej2-vue-documenteditor'
+import { setTimeout } from 'timers'
 
 const fb = require('~/services/firebaseConfig.js')
 const smtp = require('~/services/smtp.js')
@@ -210,23 +238,35 @@ export default {
       id2: '',
       img: 'https://i.imgur.com/ofHthFG.jpg',
       tog: true,
-      windowWidth: window.innerWidth
+      prop: true,
+      bookmark: 1
     }
   },
   computed: {
-    ...mapState(['currentUser', 'userProfile'])
+    ...mapState(['currentUser', 'userProfile', 'sidebar']),
+    isMobile() {
+      return this.windowWidth <= 800
+    }
+  },
+  watch: {
+    isMobile: function() {
+      this.$refs.doceditcontainer.ej2Instances.showPropertiesPane = false
+    }
   },
   mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth
-      this.zoom()
-    }
-    setTimeout(() => {
-      this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-      this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-      this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-      this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-    }, 150)
+    window.addEventListener('resize', this.onResize)
+    // if (this.isMobile) {
+    //   console.log('on')
+    //   setTimeout(() => {
+    //     this.$refs.doceditcontainer.ej2Instances.showPropertiesPane = false
+    //     this.zoom()
+    //   }, 1000)
+    // } else {
+    //   setTimeout(() => {
+    //     this.$refs.doceditcontainer.ej2Instances.showPropertiesPane = true
+    //     this.zoom()
+    //   }, 1000)
+    // }
   },
   provide: {
     DocumentEditorContainer: [
@@ -242,77 +282,79 @@ export default {
   },
 
   created() {
-    // setTimeout(() => {
-    //   this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-    //   this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-    //   this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-    //   this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-    // }, 100)
     this.$bus.$on('openFile', value => {
       this.openDocument(value)
-      console.log(value)
       this.documentName = value
-      setTimeout(() => {
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-      }, 1)
+      this.resize()
     })
     this.$bus.$on('openBlanc', value => {
-      // this.openBlank(value)
       this.documentName = value
-      setTimeout(() => {
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.zoom()
-      }, 1)
+
+      this.onResize()
     })
-    this.$bus.$on('toggle', value => {
-      // this.openBlank(value)
+    this.$bus.$on('createLebenslauf', value => {
+      console.log('inside bus')
+      this.createLebenslauf()
+      this.resize()
+    })
+    this.$bus.$on('toggleSidebar', value => {
       setTimeout(() => {
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.zoom()
-      }, 1)
+        if (window.innerWidth < 800) {
+          this.resize()
+        } else {
+          this.onResize()
+        }
+      }, 2)
     })
   },
 
+  beforeDestroy: function() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+
   methods: {
-    // changeDocument: function(value) {
-    //   this.documentName = value
-    //   this.openDocument(this.documentName)
-    // },
-    // triggerSave: function() {
-    //   setTimeout(() => {
-    //     this.saveBtnClick()
-    //   }, 1000)
-    // },
-    sidebarToggle() {
+    togglePane() {
       this.tog = !this.tog
-      this.$refs.doceditcontainer.showPropertiesPane = this.tog
-      setTimeout(() => {
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
-        this.zoom()
-      }, 10)
+      this.$refs.doceditcontainer.ej2Instances.showPropertiesPane = this.tog
+      this.resize()
     },
     zoom() {
       this.$refs.doceditcontainer.ej2Instances.documentEditor.fitPage(
         'FitPageWidth'
       )
     },
-    resize() {
-      this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
+    redo() {
+      this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.redo()
     },
-    created() {
-      console.log('created')
+    undo() {
+      this.$refs.doceditcontainer.ej2Instances.documentEditor.editorHistory.undo()
+    },
+    resize() {
+      if (this.$refs.doceditcontainer) {
+        setTimeout(() => {
+          this.$refs.doceditcontainer.ej2Instances.documentEditor.resize()
+          this.zoom()
+        }, 1)
+      }
+    },
+    onResize() {
+      if (this.$refs.doceditcontainer) {
+        if (window) {
+          console.log(window.innerWidth)
+          if (window.innerWidth > 800) {
+            console.log('on')
+            this.$refs.doceditcontainer.ej2Instances.showPropertiesPane = true
+            setTimeout(() => {
+              this.zoom()
+            }, 1)
+          } else {
+            this.$refs.doceditcontainer.ej2Instances.showPropertiesPane = false
+            setTimeout(() => {
+              this.zoom()
+            }, 1)
+          }
+        }
+      }
     },
     onExport: function(args) {
       switch (args.item.id) {
@@ -402,13 +444,89 @@ export default {
           console.log(err)
         })
     },
-    // openBlank: function(documentName) {
-    //   this.$nextTick(() => {
-    //     this.$refs.doceditcontainer.ej2Instances.documentEditor.openBlank()
-    //     console.log(documentName)
-    //     this.documentName = documentName
-    //   })
-    // },
+    createLebenslauf: function() {
+      console.log('inside functions')
+      fb.usersCollection
+        .doc(this.currentUser.uid)
+        .collection('dokumente')
+        .doc('Lebenslauf_Template')
+        .get()
+        .then(res => {
+          const newData = JSON.stringify(res.data())
+          if (newData) {
+            this.$refs.doceditcontainer.ej2Instances.documentEditor.open(
+              newData
+            )
+            this.onResize()
+          }
+          this.documentName = 'Lebenslauf_Template'
+
+          // const categoryList = []
+
+          fb.usersCollection
+            .doc(this.currentUser.uid)
+            .collection('fragebogen')
+            .doc('fragebogen1')
+            .get()
+            .then(snapshot => {
+              const data = snapshot.data().arr
+
+              // console.log(data)
+              for (let i = 1; i < 6; i++) {
+                // console.log(i)
+                // console.log(data[i])
+                // if ([2].indexOf(i) > -1) {
+                //   console.log(data[i])
+                //   this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertText(
+                //     ' ' + data[i]
+                //   )
+                // } else {
+                //   if ([10, 11, 13, 14].indexOf(i) > -1) {
+                //     this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertText(
+                //       ', ' + data[i]
+                //     )
+                //   } else {
+                this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectBookmark(
+                  i
+                )
+                this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectCell()
+                const text = this.$refs.doceditcontainer.ej2Instances
+                  .documentEditor.editor.selection.text
+                const control = '' + i
+                console.log(text + control)
+                // eslint-disable-next-line eqeqeq
+                if (Number(text) == Number(control)) {
+                  console.log('true')
+
+                  this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.characterFormat.fontFamily =
+                    'Calibri'
+                  this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertText(
+                    data[i]
+                  )
+                } else {
+                  this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertText(
+                    ''
+                  )
+                }
+              }
+              // if ([].indexOf(i) > -1 && data[i + 1] !== '') {
+              //   console.log('ifClause')
+              //   this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertRow()
+              // }
+            })
+            .catch(error => {
+              console.log(error)
+            })
+        })
+        .catch(error => {
+          console.log(error)
+        })
+
+        .catch(err => {
+          console.log(err)
+          this.onResize()
+        })
+    },
 
     openDocument: function(documentName) {
       fb.usersCollection
@@ -422,23 +540,57 @@ export default {
             this.$refs.doceditcontainer.ej2Instances.documentEditor.open(
               newData
             )
+            this.onResize()
           }
         })
         .catch(err => {
           console.log(err)
+          this.onResize()
         })
     },
-    // showDialog: function() {
-    //   this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectBookmark(
-    //     '3'
-    //   )
-    //   this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectCell()
-    //   this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertImage(
-    //     this.img,
-    //     160,
-    //     217
-    //   )
-    // },
+    insertBookmark: function() {
+      const b = this.bookmark
+      this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertText(
+        '' + b
+      )
+      this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectCell()
+      setTimeout(() => {
+        this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertBookmark(
+          b
+        )
+      }, 100)
+
+      console.log(b)
+      this.bookmark = ++this.bookmark
+    },
+    skipBookmark: function() {
+      this.bookmark = ++this.bookmark
+    },
+    resetBookmark: function() {
+      this.bookmark = 1
+    },
+    insertContent: function() {
+      this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectBookmark(
+        1
+      )
+      this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectCell()
+      this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertImage(
+        this.img,
+        160,
+        217
+      )
+      setTimeout(() => {
+        this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectBookmark(
+          2
+        )
+        this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.selection.selectCell()
+        this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertImage(
+          this.img,
+          10,
+          217
+        )
+      }, 1000)
+    },
     insertImage: function() {
       this.$refs.doceditcontainer.ej2Instances.documentEditor.editor.insertImage(
         this.img,
@@ -510,8 +662,27 @@ export default {
 
 <style>
 @import '../../node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css';
+
+.editor1 {
+  width: calc(100vw - 220px);
+  height: calc(100vh - 43px);
+  overflow: hidden;
+  margin-bottom: -150px;
+  margin-right: 0;
+}
+.editor1Toggle {
+  width: calc(100vw - 70px) !important;
+  height: calc(100vh - 43px);
+  overflow: hidden;
+  margin-bottom: -30px;
+}
 .e-de-ctnr-toolbar {
-  display: none !important;
+  /* display: none !important; */
+}
+
+.e-de-ctn-title {
+  background-color: white !important;
+  color: black;
 }
 
 #documenteditor_titlebar {

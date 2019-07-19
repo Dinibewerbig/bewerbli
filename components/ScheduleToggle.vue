@@ -21,7 +21,9 @@
 
 <script>
 export default {
-  props: ['value'],
+  props: {
+    value: { type: Number, default: null }
+  },
   computed: {
     isMonthly() {
       return this.value === 'monthly'

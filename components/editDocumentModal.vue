@@ -64,8 +64,7 @@
 </template>
 
   <script>
-import { XIcon } from 'vue-feather-icons'
-import { CopyIcon } from 'vue-feather-icons'
+import { XIcon, CopyIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 const fb = require('~/services/firebaseConfig.js')
 export default {

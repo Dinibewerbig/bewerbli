@@ -1,12 +1,39 @@
 import Vuex from 'vuex'
 import * as types from './mutation-types'
+import apiPeople from '~/store/api/people'
+import apiGmail from '~/store/api/gmail'
+import dataPeople from '~/store/data/people'
+import dataGmail from '~/store/data/gmail'
 
 const fb = require('~/services/firebaseConfig.js')
 
 const store = () => {
   return new Vuex.Store({
     state: {
+      config: null,
+      isClient: false,
+      isTesting: false,
+      apiGoogle: null,
+      auth: {
+        token: null,
+        user: null
+      },
+      google: {
+        people_my: {
+          connections: [],
+          names: {
+            displayName: '',
+            displayNameLastFirst: '',
+            familyName: '',
+            givenName: ''
+          }
+        },
+        gmail: {
+          inbox: []
+        }
+      },
       currentUser: null,
+      sidebar: false,
       firma: '',
       userProfile: {},
       posts: [],
@@ -96,6 +123,13 @@ const store = () => {
       ]
     },
     getters: {
+      getConfig: state => state.config,
+      isClient: state => state.isClient,
+      isTesting: state => state.config.app_env === 'testing',
+      getAuth: state => state.auth,
+      isAuth: state => !!state.auth.token,
+      getGapi: state => state.apiGoogle,
+      getGoogleData: state => state.google,
       privatProducts: state => state.privat,
       schulProducts: state => state.schule,
       getNumberOfPrivatProducts: state =>
@@ -126,6 +160,61 @@ const store = () => {
       }
     },
     actions: {
+      receivePeopleMyNames({ commit, state }) {
+        let names = null
+        if (!state.isTesting) {
+          apiPeople.getMyNames().then(names => {
+            commit('SET_PEOPLE_MY_NAMES', names)
+            if (state.config.debug) {
+              console.log('api.people.get - OK.')
+            }
+          })
+        } else {
+          names = dataPeople.names[0]
+          commit('SET_PEOPLE_MY_NAMES', names)
+          if (state.config.debug) {
+            console.log('data.people.get - OK.')
+          }
+        }
+      },
+      receivePeopleMyConnections({ commit, state }) {
+        let connections = null
+        if (!state.isTesting) {
+          apiPeople.getMyConnections().then(connections => {
+            commit('SET_PEOPLE_MY_CONNECTIONS', connections)
+            if (state.config.debug) {
+              console.log('api.people.connections.list - OK.')
+            }
+          })
+        } else {
+          connections = dataPeople.connections
+          commit('SET_PEOPLE_MY_CONNECTIONS', connections)
+          if (state.config.debug) {
+            console.log('data.people.connections.list - OK.')
+          }
+        }
+      },
+      receiveGmailMyMessages({ commit, state }) {
+        let messages = null
+        return new Promise((resolve, reject) => {
+          if (!state.isTesting) {
+            apiGmail.getMyMessages().then(messages => {
+              commit('SET_GMAIL_MY_MESSAGES_LIST', messages)
+              if (state.config.debug) {
+                console.log('api.gmail.messages.list - OK.')
+              }
+              resolve(messages)
+            })
+          } else {
+            messages = dataGmail.messages
+            commit('SET_GMAIL_MY_MESSAGES_LIST', messages)
+            if (state.config.debug) {
+              console.log('data.gmail.messages.list - OK.')
+            }
+            resolve(messages)
+          }
+        })
+      },
       clearData({ commit }) {
         commit('setCurrentUser', null)
       },
@@ -283,6 +372,33 @@ const store = () => {
       }
     },
     mutations: {
+      SET_CONFIG(state, config) {
+        state.config = config
+      },
+      SET_IS_CLIENT(state, isClient) {
+        state.isClient = isClient
+      },
+      SET_IS_TESTING(state, isTesting) {
+        state.isTesting = isTesting
+      },
+      SET_GOOGLE_API(state, apiGoogle) {
+        state.apiGoogle = apiGoogle
+      },
+      SET_USER(state, userData) {
+        state.auth.user = userData
+      },
+      SET_TOKEN(state, token) {
+        state.auth.token = token
+      },
+      SET_PEOPLE_MY_NAMES(state, names) {
+        state.google.people_my.names = names
+      },
+      SET_PEOPLE_MY_CONNECTIONS(state, connections) {
+        state.google.people_my.connections = connections
+      },
+      SET_GMAIL_MY_MESSAGES_LIST(state, messages) {
+        state.google.gmail.inbox = messages
+      },
       [types.ADD_TO_CART](state, { id }) {
         const record = state.added.find(p => p.id === id)
         console.log('add to cart')
@@ -324,6 +440,15 @@ const store = () => {
       },
       setUserProfile(state, val) {
         state.userProfile = val
+      },
+      toggleSidebar(state, val) {
+        state.sidebar = !state.sidebar
+      },
+      sidebarTrue(state, val) {
+        state.sidebar = true
+      },
+      sidebarFalse(state, val) {
+        state.sidebar = false
       },
       setPosts(state, val) {
         if (val) {

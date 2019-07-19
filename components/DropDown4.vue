@@ -70,10 +70,12 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import { ArrowRightIcon } from 'vue-feather-icons'
-import { FeatherIcon } from 'vue-feather-icons'
-import { ClipboardIcon } from 'vue-feather-icons'
-import { TrelloIcon } from 'vue-feather-icons'
+import {
+  ArrowRightIcon,
+  TrelloIcon,
+  ClipboardIcon,
+  FeatherIcon
+} from 'vue-feather-icons'
 
 const fb = require('~/services/firebaseConfig.js')
 export default {

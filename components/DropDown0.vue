@@ -40,9 +40,8 @@
 
 <script>
 // import Zondicon from 'vue-zondicons'
-import { ArrowRightIcon } from 'vue-feather-icons'
+import { ArrowRightIcon, LayersIcon } from 'vue-feather-icons'
 
-import { LayersIcon } from 'vue-feather-icons'
 export default {
   components: {
     ArrowRightIcon,

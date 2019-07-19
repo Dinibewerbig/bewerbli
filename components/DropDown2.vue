@@ -80,10 +80,7 @@
 
 <script>
 // import Zondicon from 'vue-zondicons'
-import { UserIcon } from 'vue-feather-icons'
-import { HomeIcon } from 'vue-feather-icons'
-import { EyeIcon } from 'vue-feather-icons'
-import { ArrowRightIcon } from 'vue-feather-icons'
+import { UserIcon, ArrowRightIcon, EyeIcon, HomeIcon } from 'vue-feather-icons'
 
 export default {
   components: {

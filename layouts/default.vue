@@ -1,6 +1,6 @@
 <template>
   <div class="layout ">
-    <Header class="table" />
+    <Header class="" />
     
     <nuxt />
     <loginModal />

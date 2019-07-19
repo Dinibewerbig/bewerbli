@@ -1,176 +1,41 @@
 <template>
-  <div class="noScroll bg-elabackground">
+  <div class="noScroll bg-elabackground w-full relative">
     <div class="flex flex-1">
       <!--Sidebar-->
       <aside
         id="sidebar"
         :class="{sidebar : sidebar }"
-        class="bg-elasidebar w-1/2 md:w-1/4 lg:w-1/5 border-r border-side-nav hidden md:block lg:block"
+        class="bg-elasidebar border-r sidebar1"
       >
-        <ul class="list-reset items-center flex flex-col">
-          <li class="h-16 flex">
-            <!-- <transition mode="out-in"> -->
-
-            <img class="w-48 -ml-4" src="~/assets/logoo2.svg" @click="$router.push('/')">
-          </li>
-          <li class="w-full">
-            <nuxt-link
-              to="/dashboard/dashboard"
-              class="h-full py-4 px-12 mt-4 hover:bg-elahighlight group flex items-center no-underline text-white hover:text-grey"
-            >
-              <font-awesome-icon
-                class="text-icon mr-3"
-                style="font-size: 20px;"
-                :icon="['fas', 'home']"
-              />
-              <span class="ml-1 font-normal">
-                Dashboard
-              </span>
-            </nuxt-link>
-          </li>
-          <li class="w-full">
-            <nuxt-link
-              to="/dashboard/bestellungen"
-              class="h-full py-4 px-12 hover:bg-elahighlight group flex items-center no-underline text-white hover:text-grey"
-            >
-              <font-awesome-icon
-                class="text-icon mr-3"
-                style="font-size: 20px;"
-                :icon="['fas', 'home']"
-              />
-              <span class="ml-1 font-normal">
-                Bestellungen
-              </span>
-            </nuxt-link>
-          </li>
-          <li class="w-full">
-            <nuxt-link
-              to="/dashboard/fragebogen/dokumente"
-              class="h-full py-4 px-12 hover:bg-elahighlight group flex items-center no-underline text-white hover:text-grey"
-            >
-              <font-awesome-icon
-                class="text-icon mr-3"
-                style="font-size: 20px;"
-                :icon="['fas', 'home']"
-              />
-              <span class="ml-1 font-normal">
-                Dokumente
-              </span>
-            </nuxt-link>
-          </li>
-          <li class="w-full">
-            <nuxt-link
-              to="/dashboard/fragebogen/start/deckblatt"
-              class="h-full py-4 px-12 hover:bg-elahighlight group flex items-center no-underline text-white hover:text-grey"
-            >
-              <font-awesome-icon
-                class="text-icon mr-3"
-                style="font-size: 20px;"
-                :icon="['fas', 'home']"
-              />
-              <span class="ml-1 font-normal">
-                Auswahl
-              </span>
-            </nuxt-link>
-          </li>
-
-          <li class="w-full">
-            <nuxt-link
-              to="/dashboard/fragebogen/fragebogen"
-              class="w-full h-full py-4 px-12 hover:bg-elahighlight group flex items-center no-underline text-white hover:text-grey"
-            >
-              <font-awesome-icon
-                class="text-icon mr-3"
-                style="font-size: 20px;"
-                :icon="['fas', 'home']"
-              />
-              <span class="ml-1 font-normal">
-                zeige fragebogen
-              </span>
-            </nuxt-link>
-          </li>
-          <li class="w-full">
-            <nuxt-link
-              to="/dashboard/editor"
-              class="w-full h-full py-4 px-12 hover:bg-elahighlight group flex items-center no-underline text-white hover:text-grey"
-            >
-              <font-awesome-icon
-                class="text-icon mr-3"
-                style="font-size: 20px;"
-                :icon="['fas', 'home']"
-              />
-              <span class="ml-1 font-normal">
-                Editor
-              </span>
-            </nuxt-link>
-          </li>
-          <li class="w-full">
-            <nuxt-link
-              to="/dashboard/account"
-              class="h-full py-4 px-12 hover:bg-elahighlight group flex items-center no-underline text-white hover:text-grey"
-            >
-              <font-awesome-icon
-                class="text-icon mr-3"
-                style="font-size: 20px;"
-                :icon="['fas', 'home']"
-              />
-              <span class="ml-1 font-normal">
-                Dein Konto
-              </span>
-            </nuxt-link>
-          </li>
-        </ul>
+        <sidebarOpen v-if="!sidebar" />
+        <sidebarClosed v-else />
       </aside>
       <!--Screen-->
-      <div class="min-h-screen flex flex-col w-full">
+      <div class="min-h-screen min-w-screen flex w-full">
         <!--Header Section Starts Here-->
-        <header :class="{headerToggle: sidebar }" class="bg-white header  h-16 w-full flex borderbottom">
-          <div class="flex w-full justify-between">
-            <div class="p-1 mx-3 items-center inline-flex">
-              <font-awesome-icon style="font-size: 20px; color: grey" :icon="['fas', 'bars']" @click="toggleSidebar" />
-            </div>
-            <div class="flex items-center mr-12 ml-6 pl-6 border-l border-grey">
-              <!-- <img
-                v-if="!currentUser"
-                src="https://secure.gravatar.com/avatar/89a1f952b925a3c377fd9fd0ade70f7d?s=35&r=g&d=identicon"
-                alt="avatar"
-                width="35"
-                height="35"
-                class="rounded-full"
-              >-->
-              <img
-                v-if="currentUser"
-                alt="avatar"
-                :src="currentUser.photoURL"
-                width="35"
-                height="35"
-                class="rounded-full"
-              >
-              <div class="ml-3 flex-1">
-                <div class="text-black text-sm lowercase leading-tight">
-                  {{ userProfile.name }}
-                </div>
-                <div
-                  class="text-primary hover:underline text-sm font-bold leading-tight no-underline block"
-                  @click="logout"
-                >
-                  Log out
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-        <!--/Header-->
+        <!-- <header
+          :class="{headerToggle: sidebar }"
+          class="bg-white header h-16 w-full flex borderbottom"
+        >
+          <div class="flex w-full justify-end">
+          <div class="p-1 mx-3 items-center inline-flex">
+              <font-awesome-icon
+                style="font-size: 20px; color: grey"
+                :icon="['fas', 'bars']"
+                @click="toggleSidebar"
+              />
+            </div> 
+      </div>
+      </header>-->
 
-        <!--/Sidebar-->
         <!--Main-->
-        <main class="bg-elabackground flex-1 p-3 overflow-hidden">
-          <vue-custom-scrollbar class="scroll-area" :settings="settings">
-            <nuxt-child :key="$router.fullPath" class="w9 mx-auto" />
+        <main :class="{main : sidebar }" class="bg-elabackground pt-3 w-full overflow-hidden">
+          <vue-custom-scrollbar class="scroll-area w-full" :settings="settings">
+            <nuxt-child :key="$router.fullPath" class="w9 mx-auto " />
           </vue-custom-scrollbar>
-          <!--/Grid Form-->
+        <!--/Grid Form-->
         </main>
-        <!--/Main-->
+      <!--/Main-->
       </div>
     </div>
   </div>
@@ -178,6 +43,8 @@
 <script>
 import { mapState } from 'vuex'
 import vueCustomScrollbar from 'vue-custom-scrollbar'
+import sidebarOpen from '~/components/sidebarOpen'
+import sidebarClosed from '~/components/sidebarClosed'
 
 import //   UserIcon,
 //   MailIcon,
@@ -188,7 +55,9 @@ import //   UserIcon,
 const fb = require('~/services/firebaseConfig.js')
 export default {
   components: {
-    vueCustomScrollbar
+    vueCustomScrollbar,
+    sidebarOpen,
+    sidebarClosed
     // UserIcon,
     // MailIcon,
     // EditIcon,
@@ -197,13 +66,36 @@ export default {
   layout: 'dashboard',
   data() {
     return {
-      sidebar: true,
+      tog: false,
+      noScrollY: false,
       settings: {
         maxScrollbarLength: 200,
         suppressScrollX: true,
+        suppressScrollY: false,
         minScrollbarLength: 100
       }
     }
+  },
+  watch: {
+    $route: function() {
+      console.log('route changed')
+      if (this.$nuxt.$route.name === 'dashboard-editor') {
+        this.settings.suppressScrollY = true
+      } else {
+        this.settings.suppressScrollY = false
+      }
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.onResize)
+    this.onResize()
+    setTimeout(() => {
+      if (this.$nuxt.$route.name === 'dashboard-editor') {
+        this.settings.suppressScrollY = true
+      } else {
+        this.settings.suppressScrollY = false
+      }
+    }, 5)
   },
   computed: {
     ...mapState([
@@ -211,14 +103,24 @@ export default {
       'currentUser',
       'posts',
       'answers',
-      'hiddenPosts'
+      'hiddenPosts',
+      'sidebar'
     ])
   },
   methods: {
+    user() {
+      console.log(this.userProfile)
+    },
+    onResize() {
+      if (window.innerWidth < 1130) {
+        this.$store.commit('sidebarTrue')
+      } else {
+        this.$store.commit('sidebarFalse')
+      }
+    },
     toggleSidebar() {
-      console.log('toggle')
-      this.sidebar = !this.sidebar
-      this.$bus.$emit('toggle')
+      this.$store.commit('toggleSidebar')
+      this.$bus.$emit('toggleSidebar', this.sidebar)
     },
     logout() {
       fb.auth
@@ -238,15 +140,19 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  display: none;
+  width: 48px !important;
+}
+.sidebar1 {
+  width: 190px;
 }
 
 .header {
-  width: calc(100vw - 200px);
+  width: calc(100vw - 173px);
 }
 .headerToggle {
-  width: 100vw;
+  width: calc(100vw - 39px);
 }
+
 .noScroll {
   position: fixed;
 }
@@ -262,7 +168,7 @@ export default {
   font-weight: 500;
 }
 .w9 {
-  width: 95%;
+  width: 97%;
 }
 .scroll-area {
   position: relative;

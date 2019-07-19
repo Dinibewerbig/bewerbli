@@ -46,8 +46,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import { ArrowRightIcon } from 'vue-feather-icons'
-import { ShoppingCartIcon } from 'vue-feather-icons'
+import { ArrowRightIcon, ShoppingCartIcon } from 'vue-feather-icons'
 
 const fb = require('~/services/firebaseConfig.js')
 export default {

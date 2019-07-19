@@ -28,58 +28,56 @@
           >
             Neu
           </button>
+          <button
+            class="ml-auto border-info2 border text-info2 font-normal py-2 px-2 mr-4 rounded"
+            @click.stop="createLebenslauf()"
+          >
+            Create Lebenslauf
+          </button>
         </div>
       </div>
 
-      <nuxt-link
-        to="/angebot/deckblatt"
-        class="flex-1 cursor-pointer select-none shadow-sm mb-2 mx-2 no-underline"
-        @click.native="clicked"
-      >
-        <div class="py-3 px-4 border-b border-grey-light">
-          <div class="flex items-center">
-            <div class="text-info2 w-1/5 text-xl ">
-              <BookIcon class="mr-2 ml-4 text-2xl" />Deckblatt
+      <div class="py-3 px-4 border-b border-grey-light">
+        <div class="flex items-center">
+          <div class="text-info2 w-1/5 text-xl ">
+            <BookIcon class="mr-2 ml-4 text-2xl" />Deckblatt
               
-              <!-- <Zondicon icon="arrow-thin-right" class="zondicon fill-current text-info1 w-5" /> -->
-            </div>
-            <div class="text-info2 italic">
-              Du hast noch keinen Fragebogen ausgefüllt.
-            </div>
+            <!-- <Zondicon icon="arrow-thin-right" class="zondicon fill-current text-info1 w-5" /> -->
+          </div>
+          <div class="text-info2 italic">
+            Du hast noch keinen Fragebogen ausgefüllt.
+          </div>
 
-            <button
-              class="ml-auto border-info2 border text-info2 font-normal py-2 px-2 mr-4 rounded"
-            >
-              Neu
-            </button>
-          </div>
+          <button
+            class="ml-auto border-info2 border text-info2 font-normal py-2 px-2 mr-4 rounded"
+          >
+            Neu
+          </button>
         </div>
-      </nuxt-link>
-      <nuxt-link
-        to="/angebot/lebenslauf"
-        class="flex-1 cursor-pointer select-none shadow-sm mb-2 mx-2 no-underline"
-        @click.native="clicked"
-      >
-        <div class="py-3 px-4 border-b border-grey-light">
-          <div class="flex items-center">
-            <div class="text-info3 w-1/5 text-xl ">
-              <UserCheckIcon class="mr-2 ml-4 text-2xl" />Lebenslauf
+      </div>
+
+ 
+      <div class="py-3 px-4 border-b border-grey-light">
+        <div class="flex items-center">
+          <div class="text-info3 w-1/5 text-xl ">
+            <UserCheckIcon class="mr-2 ml-4 text-2xl" />Lebenslauf
               
-              <!-- <Zondicon icon="arrow-thin-right" class="zondicon fill-current text-info1 w-5" /> -->
-            </div>
-            <div class="text-info3 italic">
-              Du hast noch keinen Fragebogen ausgefüllt.
-            </div>
-            <button
-              class="ml-auto border-info3 border text-info3 font-normal py-2 px-2 mr-4 rounded"
-            >
-              Neu
-            </button>
+            <!-- <Zondicon icon="arrow-thin-right" class="zondicon fill-current text-info1 w-5" /> -->
           </div>
+          <div class="text-info3 italic">
+            Du hast noch keinen Fragebogen ausgefüllt.
+          </div>
+          <button
+            class="ml-auto border-info3 border text-info3 font-normal py-2 px-2 mr-4 rounded"
+            @click="$modal.show('newlebenslauf-modal', { route:'/dashboard/fragebogen/dokumente' })"
+          >
+            Neu
+          </button>
         </div>
-      </nuxt-link>
+      </div>
     </div>
     <NewdocumentModal />
+    <NewLebenslaufModal />
     <EditdocumentModal />
   </div>
 </template>
@@ -87,12 +85,16 @@
 <script>
 // import Zondicon from 'vue-zondicons'
 import { mapState } from 'vuex'
-import { Edit3Icon } from 'vue-feather-icons'
-import { FileTextIcon } from 'vue-feather-icons'
-import { BookIcon } from 'vue-feather-icons'
-import { UserCheckIcon } from 'vue-feather-icons'
+import {
+  UserCheckIcon,
+  BookIcon,
+  FileTextIcon,
+  Edit3Icon
+} from 'vue-feather-icons'
+
 import NewdocumentModal from '~/components/NewdocumentModal.vue'
 import EditdocumentModal from '~/components/editDocumentModal.vue'
+import NewLebenslaufModal from '~/components/newLebenslaufModal.vue'
 
 export default {
   components: {
@@ -101,7 +103,8 @@ export default {
     UserCheckIcon,
     NewdocumentModal,
     Edit3Icon,
-    EditdocumentModal
+    EditdocumentModal,
+    NewLebenslaufModal
   },
   data() {
     return {}
@@ -119,11 +122,18 @@ export default {
       this.$router.push('/dashboard/editor')
       setTimeout(() => {
         this.$bus.$emit('openFile', documentName)
-      }, 700)
+      }, 1000)
     },
     deleteDocument(documentName) {
       this.$bus.$emit('deleteFile', documentName)
       return false
+    },
+    createLebenslauf() {
+      console.log('opening')
+      this.$router.push('/dashboard/editor')
+      setTimeout(() => {
+        this.$bus.$emit('createLebenslauf')
+      }, 1000)
     }
   }
 }

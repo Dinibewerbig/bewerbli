@@ -66,7 +66,7 @@
               <div class="w-2/3">
                 <div class="mb-4">
                   <vue-single-select
-                    v-model="beruf"
+                
                     placeholder="Wähle deinen Lehrberuf"
                     :options="['Schüler oder Schülerinnen', 'Lehrabgänger', 'Erwachsene']"
                     :required="true"

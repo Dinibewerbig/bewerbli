@@ -3,7 +3,7 @@ import 'firebase/firestore'
 
 // firebase init goes here
 const config = {
-  apiKey: 'AIzaSyCsGxUaE71sH2O0VO2Iu4XTM5wyJ9XQQiI',
+  apiKey: 'AIzaSyB9wlxXHcLDddY8_o1LgCwiE-jO7BR9m6s',
   authDomain: 'bewerbli.firebaseapp.com',
   databaseURL: 'https://bewerbli.firebaseio.com',
   projectId: 'bewerbli',

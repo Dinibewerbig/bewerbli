@@ -85,7 +85,13 @@
 
 <script>
 export default {
-  props: ['schedule', 'name', 'price', 'features', 'image'],
+  props: {
+    schedule: Boolean,
+    name: { type: String, default: '' },
+    price: { type: Number, default: null },
+    features: { type: String, default: '' },
+    image: { type: String, default: '' }
+  },
   data() {
     return {
       selected: 'false',

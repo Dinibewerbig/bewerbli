@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="248" height="54" viewBox="0 0 248 54">
-  <g fill="none" fill-rule="evenodd" transform="translate(0 -2)">
-    <text fill="#FFF" font-family="Ubuntu-Bold, Ubuntu" font-size="43.28" font-weight="bold" letter-spacing="-.37" transform="translate(65)">
-      <tspan x="0" y="40">b</tspan> <tspan x="25.771" y="40" letter-spacing="-.07">e</tspan> <tspan x="50.977" y="40" letter-spacing=".828">wer</tspan> <tspan x="130.412" y="40" letter-spacing="1.03">b</tspan> <tspan x="157.583" y="40" letter-spacing="1.23">l</tspan> <tspan x="172.49" y="40" letter-spacing=".828">i</tspan>
-    </text>
-    <path fill="#FFF" d="M48.32416,42.8549847 C67.82416,8.64396424 30.2695526,2 19.5,2 C8.73044738,2 -1.0658141e-14,10.7304474 -1.0658141e-14,21.5 C-1.0658141e-14,32.2695526 28.82416,77.0660052 48.32416,42.8549847 Z"/>
-    <path fill="#7D23AA" d="M37.5431928,26.0584226 C50.6422183,2.81876284 31.6785594,12.8120079 24.4441674,12.8120079 C17.2097754,12.8120079 11.3451419,18.7426297 11.3451419,26.0584226 C11.3451419,33.3742154 24.4441674,49.2980823 37.5431928,26.0584226 Z" transform="rotate(169 26.693 24.444)"/>
-  </g>
-</svg>

@@ -52,7 +52,9 @@ export default {
     PlanCard,
     ScheduleToggle
   },
-  props: ['schedule'],
+  props: {
+    schedule: Boolean
+  },
   data() {
     return {
       selectedPlan: 'Anschreiben'

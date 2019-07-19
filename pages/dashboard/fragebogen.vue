@@ -1,6 +1,6 @@
 <template>
   <main class="">
-    <div class="  mx-auto py-8">
+    <div class="   py-8">
       <nuxt-child />
     </div>
     <footer1 />

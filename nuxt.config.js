@@ -80,21 +80,10 @@ export const loading = {
 export const css = [
   '~/assets/css/tailwind.css',
   '~/assets/css/app.styl',
-  '~/assets/css/editor.css'
-  // '~/node_modules/@syncfusion/ej2-vue-documenteditor/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-base/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-buttons/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-dropdowns/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-inputs/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-navigations/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-popups/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-splitbuttons/styles/material.css'
-  // '~/node_modules/@syncfusion/ej2-vue-pdfviewer/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-vue-calendars/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-vue-gantt/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-grids/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-layouts/styles/material.css',
-  // '~/node_modules/@syncfusion/ej2-lists/styles/material.css'
+  '~/assets/css/editor.css',
+  '~/assets/css/scheduler.css',
+  '~/assets/css/grid.css',
+  '~/assets/css/email.css'
 ]
 export const plugins = [
   {
@@ -115,16 +104,30 @@ export const plugins = [
   { src: '~/plugins/listview', ssr: false },
   { src: '~/plugins/bus', ssr: false },
   { src: '~/plugins/cropie', ssr: false },
-  { src: '~/plugins/editor', ssr: false }
+  { src: '~/plugins/editor', ssr: false },
+  { src: '~/plugins/tooltip', ssr: false },
+  { src: '~/plugins/vue-select', ssr: false },
+  { src: '~/plugins/number-input', ssr: false },
+  { src: '~/plugins/scheduler', ssr: false },
+  { src: '~/plugins/grid', ssr: false },
+  { src: '~/plugins/localStorage.js', ssr: false }
 ]
 export const router = {
-  middleware: ['router-auth']
+  base: '/',
+  middleware: ['ini-app']
 }
 export const modules = [
   'nuxt-fontawesome',
   '@neneos/nuxt-animate.css',
   'vue-scrollto/nuxt',
-  '@nuxtjs/moment'
+  'bootstrap-vue/nuxt',
+  '@nuxtjs/moment',
+  [
+    'nuxt-svg-sprite-module',
+    {
+      directory: '~/assets/icons'
+    }
+  ]
 ]
 export const fontawesome = {
   imports: [
@@ -139,6 +142,8 @@ export const fontawesome = {
   ]
 }
 export const build = {
+  devtool: 'eval-source-map', // eval-source-map inline-source-map
+  vendor: ['lodash'],
   /*
    ** You can extend webpack config here
    */

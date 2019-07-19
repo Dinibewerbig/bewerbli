@@ -100,11 +100,14 @@
 
 <script>
 // import Zondicon from 'vue-zondicons'
-import { ArrowRightIcon } from 'vue-feather-icons'
-import { FileTextIcon } from 'vue-feather-icons'
-import { BookIcon } from 'vue-feather-icons'
-import { UserCheckIcon } from 'vue-feather-icons'
-import { LayersIcon } from 'vue-feather-icons'
+import {
+  ArrowRightIcon,
+  LayersIcon,
+  FileTextIcon,
+  BookIcon,
+  UserCheckIcon
+} from 'vue-feather-icons'
+
 export default {
   components: {
     ArrowRightIcon,
